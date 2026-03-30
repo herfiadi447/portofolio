@@ -417,15 +417,24 @@ section {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 3rem;
+    align-items: stretch;
 }
 
 .portfolio-box {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.portfolio-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
 }
 
 .portfolio-info h4 {
@@ -438,6 +447,7 @@ section {
     font-size: 1.5rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
+    flex-grow: 1;
 }
 
 .portfolio-info a {
