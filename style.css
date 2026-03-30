@@ -21,6 +21,8 @@
     --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
+    --header-bg: rgba(11, 15, 25, 0.8);
+    --nav-bg: rgba(11, 15, 25, 0.95);
 }
 
 .light-mode {
@@ -32,6 +34,8 @@
     --main-color-hover: #1d4ed8;
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(0, 0, 0, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --nav-bg: rgba(255, 255, 255, 0.95);
 }
 
 html {
@@ -70,7 +74,7 @@ body {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: rgba(11, 15, 25, 0.8);
+    background: var(--header-bg);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -564,7 +568,7 @@ section {
         left: 0;
         width: 100%;
         padding: 1rem 3%;
-        background: rgba(11, 15, 25, 0.95);
+        background: var(--nav-bg);
         backdrop-filter: blur(10px);
         border-top: 1px solid var(--glass-border);
         box-shadow: 0 .5rem 1rem rgba(0,0,0, .2);
