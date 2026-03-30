@@ -23,6 +23,17 @@
     --glass-border: rgba(255, 255, 255, 0.08);
 }
 
+.light-mode {
+    --bg-color: #f8fafc;
+    --second-bg-color: #e2e8f0;
+    --text-color: #0f172a;
+    --text-muted: #475569;
+    --main-color: #2563eb;
+    --main-color-hover: #1d4ed8;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.1);
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -101,6 +112,45 @@ body {
     color: var(--text-color);
     display: none;
     cursor: pointer;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#theme-toggle {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: .3s;
+}
+
+#theme-toggle:hover {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+.lang-selector select {
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: .3s;
+}
+
+.lang-selector select:hover {
+    border-color: var(--main-color);
+}
+
+.lang-selector select option {
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* General Sections */
@@ -502,6 +552,10 @@ section {
 @media (max-width: 768px) {
     #menu-icon {
         display: block;
+    }
+    
+    .nav-controls {
+        gap: 1.5rem;
     }
     
     .navbar {

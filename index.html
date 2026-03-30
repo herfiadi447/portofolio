@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,25 +22,33 @@
     <header class="header">
         <a href="#" class="logo">HR<span>A.</span></a>
         
-        <i class='bx bx-menu' id="menu-icon"></i>
-        
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#portfolio">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="active" data-i18n="nav_home">Beranda</a>
+            <a href="#about" data-i18n="nav_about">Tentang</a>
+            <a href="#skills" data-i18n="nav_skills">Keahlian</a>
+            <a href="#experience" data-i18n="nav_experience">Pengalaman</a>
+            <a href="#portfolio" data-i18n="nav_projects">Proyek</a>
+            <a href="#contact" data-i18n="nav_contact">Kontak</a>
         </nav>
+
+        <div class="nav-controls">
+            <select id="lang-switch" class="lang-selector">
+                <option value="id" selected>ID</option>
+                <option value="en">EN</option>
+                <option value="jp">JP</option>
+            </select>
+            <i class='bx bx-moon' id="theme-toggle"></i>
+            <i class='bx bx-menu' id="menu-icon"></i>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, It's Me</h3>
+            <h3 data-i18n="hero_hello">Halo, Saya</h3>
             <h1>Herfiadi Reski Alviansyah</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>I am a Geophysics undergraduate with a strong interest in Geoinformatics, WebGIS development, and Artificial Intelligence integration. I'm passionate about building scalable spatial data solutions.</p>
+            <h3><span data-i18n="hero_im">Dan saya seorang</span> <span class="multiple-text"></span></h3>
+            <p data-i18n="hero_desc">Saya seorang mahasiswa S1 Geofisika dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.</p>
             
             <div class="social-media">
                 <a href="https://linkedin.com/in/herfiadi-reski-alviansyah-b66482333" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -48,8 +56,8 @@
             </div>
             
             <div class="btn-group">
-                <a href="assets/CV.pdf" class="btn" download>Download CV</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="assets/CV.pdf" class="btn" download data-i18n="btn_cv">Unduh CV</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Hubungi Saya</a>
             </div>
         </div>
         
@@ -62,40 +70,40 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h2 class="heading">About <span>Me</span></h2>
+        <h2 class="heading" data-i18n="about_heading">Tentang <span>Saya</span></h2>
         
         <div class="about-content">
             <div class="about-text">
-                <h3>Geophysics Undergraduate & WebGIS Enthusiast</h3>
-                <p>I have experience in designing and developing WebGIS platforms equipped with AI-based chatbots for various use cases. I am proficient in utilizing modern GIS technologies for processing and presenting spatial data. With a Bachelor of Geophysics (S.Si) from Hasanuddin University (expected 2026), my commitment lies in continuously developing innovative solutions at the intersection of GIS and Artificial Intelligence.</p>
+                <h3 data-i18n="about_subheading">Mahasiswa Geofisika & Penggiat WebGIS</h3>
+                <p data-i18n="about_desc">Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai mahasiswa Geofisika (S.Si) di Universitas Hasanuddin (lulus 2026), komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
+        <h2 class="heading" data-i18n="skills_heading"><span>Keahlian</span> Saya</h2>
         
         <div class="skills-container">
             <div class="skill-category glass-card">
                 <i class='bx bx-map-alt'></i>
-                <h3>WebGIS & Spatial Data</h3>
+                <h3 data-i18n="skills_cat1">WebGIS & Data Spasial</h3>
                 <ul class="skill-list">
-                    <li>WebGIS Development (Flask, Leaflet, Folium)</li>
-                    <li>Spatial Data Analysis & Modeling</li>
-                    <li>Interpolation, Overlay, Buffer, Raster Analysis</li>
-                    <li>Suitability Analysis & Geospatial Machine Learning</li>
+                    <li data-i18n="skills_item1">Pengembangan WebGIS (Flask, Leaflet, Folium)</li>
+                    <li data-i18n="skills_item2">Analisis & Pemodelan Data Spasial</li>
+                    <li data-i18n="skills_item3">Interpolasi, Overlay, Buffer, Analisis Raster</li>
+                    <li data-i18n="skills_item4">Analisis Kecocokan Lahan & Machine Learning Spasial</li>
                 </ul>
             </div>
             
             <div class="skill-category glass-card">
                 <i class='bx bx-code-alt'></i>
-                <h3>Software & AI</h3>
+                <h3 data-i18n="skills_cat2">Perangkat Lunak & AI</h3>
                 <ul class="skill-list">
-                    <li>Python Programming for GIS</li>
-                    <li>AI Chatbot Integration (RAG, n8n, Supabase)</li>
-                    <li>Database Management (PostgreSQL/PostGIS, MySQL)</li>
-                    <li>UI/UX Development for GIS Applications</li>
+                    <li data-i18n="skills_item5">Pemrograman Python untuk GIS</li>
+                    <li data-i18n="skills_item6">Integrasi Chatbot AI (RAG, n8n, Supabase)</li>
+                    <li data-i18n="skills_item7">Manajemen Database (PostgreSQL/PostGIS, MySQL)</li>
+                    <li data-i18n="skills_item8">Pengembangan UI/UX untuk Aplikasi GIS</li>
                 </ul>
             </div>
         </div>
@@ -103,21 +111,21 @@
 
     <!-- Experience Section (Timeline) -->
     <section class="experience" id="experience">
-        <h2 class="heading">My <span>Experience</span></h2>
+        <h2 class="heading" data-i18n="exp_heading"><span>Pengalaman</span> Saya</h2>
         
         <div class="timeline">
             <!-- Item 1 -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-date" data-i18n="exp_date1">2025 - Sekarang</div>
                 <div class="timeline-content glass-card">
-                    <h3>Junior Web Developer</h3>
+                    <h3 data-i18n="exp_title1">Junior Web Developer</h3>
                     <h4>PT Geocode Smart Solution</h4>
-                    <p>
-                        • Developed WebGIS platforms: GeoAI Barru, Geopangansidrap, and Sijagung.<br>
-                        • Implemented AI chatbot features via n8n and Supabase to enhance interactivity.<br>
-                        • Managed spatial data with PostgreSQL/PostGIS and MySQL.<br>
-                        • Improved UI/UX for GIS applications using Leaflet and Folium.
+                    <p data-i18n="exp_desc1">
+                        • Mengembangkan platform WebGIS: GeoAI Barru, Geopangansidrap, dan Sijagung.<br>
+                        • Menerapkan fitur chatbot AI via n8n dan Supabase untuk interaktivitas pengguna.<br>
+                        • Manajemen data spasial dengan PostgreSQL/PostGIS dan MySQL.<br>
+                        • Meningkatkan UI/UX aplikasi GIS menggunakan Leaflet dan Folium.
                     </p>
                 </div>
             </div>
@@ -127,11 +135,11 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2025</div>
                 <div class="timeline-content glass-card">
-                    <h3>Intern</h3>
+                    <h3 data-i18n="exp_title2">Intern</h3>
                     <h4>UPT PLN Makassar</h4>
-                    <p>
-                        • Developed a spatial distribution map of High-Voltage Transmission Towers (SUTT) in Makassar City.<br>
-                        • Created a landslide susceptibility map for each SUTT location.
+                    <p data-i18n="exp_desc2">
+                        • Membuat peta distribusi spasial Saluran Udara Tegangan Tinggi (SUTT) di Kota Makassar.<br>
+                        • Membuat peta kerentanan tanah longsor untuk tiap lokasi SUTT.
                     </p>
                 </div>
             </div>
@@ -141,11 +149,11 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2025</div>
                 <div class="timeline-content glass-card">
-                    <h3>Field Surveyor</h3>
-                    <h4>OPLAH Project, Kabupaten Sidrap</h4>
-                    <p>
-                        • Conducted field surveys mapping agricultural farmer groups (POKTAN) using geospatial data collecting techniques.<br>
-                        • Collected and validated spatial and attribute data for mapped areas.
+                    <h3 data-i18n="exp_title3">Surveyor Lapangan</h3>
+                    <h4 data-i18n="exp_subtitle3">Proyek OPLAH, Kab. Sidrap</h4>
+                    <p data-i18n="exp_desc3">
+                        • Melakukan survei lapangan untuk memetakan kelompok tani (POKTAN) menggunakan teknik pengumpulan data geospasial.<br>
+                        • Mengumpulkan dan memvalidasi data spasial dan atribut untuk setiap wilayah.
                     </p>
                 </div>
             </div>
@@ -154,14 +162,14 @@
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
+        <h2 class="heading" data-i18n="proj_heading">Proyek <span>Terbaru</span></h2>
         
         <div class="portfolio-container">
             <!-- Project 1 -->
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>GeoAI WebGIS Barru</h4>
-                    <p>Geospatial platform featuring an AI layer and interactive map elements.</p>
+                    <p data-i18n="proj_desc1">Platform geospasial yang dilengkapi dengan lapisan analisis AI dan elemen peta interaktif.</p>
                     <a href="https://geobarru.vercel.app/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
                 </div>
             </div>
@@ -170,7 +178,7 @@
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>Geopangansidrap</h4>
-                    <p>WebGIS platform for agricultural mapping and food security analysis.</p>
+                    <p data-i18n="proj_desc2">Platform WebGIS untuk pemetaan pertanian dan analisis ketahanan pangan.</p>
                     <a href="https://geopangansidrap.id/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
                 </div>
             </div>
@@ -179,7 +187,7 @@
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>Sijagung</h4>
-                    <p>Agricultural WebGIS tailored for tracking and monitoring corn production.</p>
+                    <p data-i18n="proj_desc3">WebGIS pertanian yang dirancang untuk melacak dan memonitor produksi jagung.</p>
                     <a href="https://sijagung.id/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
                 </div>
             </div>
@@ -188,7 +196,7 @@
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>BengkelPro App</h4>
-                    <p>Workshop management web application with Admin/Mekanik roles, POS workflow, and inventory management.</p>
+                    <p data-i18n="proj_desc4">Aplikasi manajemen bengkel dengan peran Admin/Mekanik, sistem kasir (POS), dan manajemen inventaris.</p>
                 </div>
             </div>
             
@@ -196,7 +204,7 @@
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>AI GIS Chatbot</h4>
-                    <p>Integration of Groq API, n8n, and Supabase vector database for intelligent spatial data queries.</p>
+                    <p data-i18n="proj_desc5">Integrasi API Groq, n8n, dan Supabase vector database untuk kueri data spasial yang cerdas.</p>
                 </div>
             </div>
             
@@ -204,7 +212,7 @@
             <div class="portfolio-box glass-card">
                 <div class="portfolio-info">
                     <h4>XAUUSD Trading Bot</h4>
-                    <p>Automated scalping algorithm in M5 timeframe using EMA 200 filtering and RSI conditions.</p>
+                    <p data-i18n="proj_desc6">Algoritma scalping otomatis di timeframe M5 menggunakan makro tren EMA 200 dan kondisi RSI.</p>
                 </div>
             </div>
         </div>
@@ -212,13 +220,13 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
+        <h2 class="heading" data-i18n="contact_heading">Hubungi <span>Saya!</span></h2>
         
         <div class="contact-info glass-card">
             <div class="contact-item">
                 <i class='bx bx-phone'></i>
                 <div>
-                    <h3>Phone</h3>
+                    <h3 data-i18n="contact_phone">Telepon</h3>
                     <p>0822 8558 0351</p>
                 </div>
             </div>
@@ -234,7 +242,7 @@
             <div class="contact-item">
                 <i class='bx bx-current-location'></i>
                 <div>
-                    <h3>Location</h3>
+                    <h3 data-i18n="contact_location">Lokasi</h3>
                     <p>Makassar, Indonesia</p>
                 </div>
             </div>
@@ -244,7 +252,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2026 by Herfiadi Reski Alviansyah | All Rights Reserved.</p>
+            <p data-i18n="footer_text">Hak Cipta &copy; 2026 oleh Herfiadi Reski Alviansyah | Hak Cipta Dilindungi Undang-undang.</p>
         </div>
         
         <div class="footer-iconTop">
