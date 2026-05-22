@@ -346,30 +346,57 @@ function parseMarkdown(text) {
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
 
-    // 2. Bold: **text** -> <strong>text</strong>
+    // 2. Inline Code: `code` -> <code>code</code>
+    html = html.replace(/`(.*?)`/g, '<code style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.2rem 0.4rem; border-radius: 0.4rem; font-family: monospace; font-size: 0.9em; color: var(--main-color-hover);">$1</code>');
+
+    // 3. Bold: **text** -> <strong>text</strong>
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-    // 3. Links: [text](url) -> <a href="url" target="_blank" class="chat-link">text</a>
+    // 4. Links: [text](url) -> <a href="url" target="_blank" style="color: var(--main-color); text-decoration: underline; font-weight: 600;">$1</a>
     html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--main-color); text-decoration: underline; font-weight: 600;">$1</a>');
 
-    // 4. Bullet lists: lines starting with * or -
+    // 5. Line-by-line parsing for lists and paragraphs
     const lines = html.split('\n');
-    let inList = false;
+    let inBulletList = false;
+    let inNumList = false;
     let result = [];
 
     for (let i = 0; i < lines.length; i++) {
         let line = lines[i].trim();
         
-        if (line.startsWith('* ') || line.startsWith('- ')) {
-            if (!inList) {
-                result.push('<ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: disc;">');
-                inList = true;
+        // Match bullet list (* or -)
+        const bulletMatch = line.match(/^[\*\-]\s+(.*)$/);
+        // Match numbered list (1., 2., etc.)
+        const numListMatch = line.match(/^(\d+)\.\s+(.*)$/);
+
+        if (bulletMatch) {
+            if (inNumList) {
+                result.push('</ol>');
+                inNumList = false;
             }
-            result.push(`<li style="margin-bottom: 0.4rem;">${line.substring(2)}</li>`);
-        } else {
-            if (inList) {
+            if (!inBulletList) {
+                result.push('<ul style="margin-left: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: disc;">');
+                inBulletList = true;
+            }
+            result.push(`<li style="margin-bottom: 0.4rem; line-height: 1.5;">${bulletMatch[1]}</li>`);
+        } else if (numListMatch) {
+            if (inBulletList) {
                 result.push('</ul>');
-                inList = false;
+                inBulletList = false;
+            }
+            if (!inNumList) {
+                result.push('<ol style="margin-left: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: decimal;">');
+                inNumList = true;
+            }
+            result.push(`<li style="margin-bottom: 0.4rem; line-height: 1.5;">${numListMatch[2]}</li>`);
+        } else {
+            if (inBulletList) {
+                result.push('</ul>');
+                inBulletList = false;
+            }
+            if (inNumList) {
+                result.push('</ol>');
+                inNumList = false;
             }
             
             if (line === '') {
@@ -380,9 +407,8 @@ function parseMarkdown(text) {
         }
     }
 
-    if (inList) {
-        result.push('</ul>');
-    }
+    if (inBulletList) result.push('</ul>');
+    if (inNumList) result.push('</ol>');
 
     return result.join('');
 }
@@ -460,7 +486,14 @@ async function sendMessage(text) {
         removeTypingIndicator();
 
         if (!response.ok) {
-            throw new Error('Gagal terhubung ke asisten AI');
+            let errorMessage = 'Gagal terhubung ke asisten AI';
+            try {
+                const errorData = await response.json();
+                if (errorData && errorData.error) {
+                    errorMessage = errorData.error;
+                }
+            } catch (e) {}
+            throw new Error(errorMessage);
         }
 
         const data = await response.json();
@@ -479,7 +512,15 @@ async function sendMessage(text) {
 
     } catch (error) {
         removeTypingIndicator();
-        appendMessage('bot', 'Maaf, terjadi gangguan koneksi. Silakan coba lagi nanti atau hubungi Herfiadi secara langsung.');
+        
+        let displayError = 'Maaf, terjadi gangguan koneksi. Silakan coba lagi nanti atau hubungi Herfiadi secara langsung.';
+        if (error.message.includes('Groq API Key is not configured')) {
+            displayError = '<strong>Konfigurasi Diperlukan:</strong> Groq API Key belum dikonfigurasi di dashboard Vercel.<br><br>Silakan tambahkan environment variable <code>GROQ_API_KEY</code> di pengaturan proyek Vercel Anda, lalu lakukan redeploy.';
+        } else if (error.message.includes('Groq API Error')) {
+            displayError = `<strong>Groq API Error:</strong> ${error.message}`;
+        }
+        
+        appendMessage('bot', displayError);
         console.error(error);
     }
 }
