@@ -46,7 +46,14 @@ const translations = {
         contact_phone: "Telepon",
         contact_location: "Lokasi",
         footer_text: "Hak Cipta &copy; 2026 oleh Herfiadi Reski Alviansyah | Hak Cipta Dilindungi Undang-undang.",
-        typed_strings: ['Sarjana Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial']
+        typed_strings: ['Sarjana Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial'],
+        chat_header_title: "Asisten GeoAI",
+        chat_header_status: "Online | Llama-3.3",
+        chat_welcome: "Halo! Saya asisten AI Herfiadi. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?",
+        chat_suggest_1: "Apa saja proyek WebGIS Herfiadi?",
+        chat_suggest_2: "Bagaimana latar belakang pendidikannya?",
+        chat_suggest_3: "Bagaimana cara menghubungi Herfiadi?",
+        chat_placeholder: "Tulis pesan..."
     },
     en: {
         nav_home: "Home",
@@ -94,7 +101,14 @@ const translations = {
         contact_phone: "Phone",
         contact_location: "Location",
         footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | All Rights Reserved.",
-        typed_strings: ['Geophysics Graduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst']
+        typed_strings: ['Geophysics Graduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst'],
+        chat_header_title: "GeoAI Assistant",
+        chat_header_status: "Online | Llama-3.3",
+        chat_welcome: "Hello! I am Herfiadi's AI assistant. How can I help you regarding Herfiadi's skills, projects, or experience?",
+        chat_suggest_1: "What WebGIS projects has Herfiadi built?",
+        chat_suggest_2: "What is his educational background?",
+        chat_suggest_3: "How can I contact Herfiadi?",
+        chat_placeholder: "Type a message..."
     },
     jp: {
         nav_home: "ホーム",
@@ -142,7 +156,14 @@ const translations = {
         contact_phone: "電話番号",
         contact_location: "場所",
         footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | 全著作権所有.",
-        typed_strings: ['地球物理学卒業生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト']
+        typed_strings: ['地球物理学卒業生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト'],
+        chat_header_title: "GeoAI アシスタント",
+        chat_header_status: "オンライン | Llama-3.3",
+        chat_welcome: "こんにちは！ヘルフィアディのAIアシスタントです。ヘルフィアディのスキル、プロジェクト、または経歴について何かお手伝いできることはありますか？",
+        chat_suggest_1: "ヘルフィアディはどのようなWebGISプロジェクトを構築しましたか？",
+        chat_suggest_2: "彼の学歴はどうなっていますか？",
+        chat_suggest_3: "ヘルフィアディに連絡するにはどうすればいいですか？",
+        chat_placeholder: "メッセージを入力..."
     }
 };
 
@@ -158,6 +179,14 @@ function updateLanguage(lang) {
         const key = el.getAttribute('data-i18n');
         if (data[key]) {
             el.innerHTML = data[key];
+        }
+    });
+
+    // Update all placeholders with data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (data[key]) {
+            el.placeholder = data[key];
         }
     });
 
@@ -269,4 +298,150 @@ document.querySelectorAll('.glass-card').forEach(card => {
     card.style.transform = 'translateY(50px)';
     card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(card);
+});
+
+// --- Chatbot Logic ---
+const chatToggleBtn = document.getElementById('chat-toggle-btn');
+const chatWindow = document.getElementById('chat-window');
+const chatCloseBtn = document.getElementById('chat-close-btn');
+const chatForm = document.getElementById('chat-form');
+const chatInput = document.getElementById('chat-input');
+const chatMessages = document.getElementById('chat-messages');
+const chatSuggestions = document.getElementById('chat-suggestions');
+const chatIconMain = document.querySelector('.chat-icon-main');
+const chatIconClose = document.querySelector('.chat-icon-close');
+
+let chatHistory = [];
+
+// Toggle Chat Window
+function toggleChat() {
+    const isOpen = chatWindow.style.display !== 'none';
+    if (isOpen) {
+        chatWindow.style.display = 'none';
+        chatIconMain.style.display = 'block';
+        chatIconClose.style.display = 'none';
+    } else {
+        chatWindow.style.display = 'flex';
+        chatIconMain.style.display = 'none';
+        chatIconClose.style.display = 'block';
+        scrollToBottom();
+    }
+}
+
+if (chatToggleBtn && chatWindow) {
+    chatToggleBtn.addEventListener('click', toggleChat);
+    chatCloseBtn.addEventListener('click', toggleChat);
+}
+
+// Scroll to bottom
+function scrollToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Append message
+function appendMessage(sender, text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', `${sender}-message`);
+    
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = text.replace(/\n/g, '<br>');
+    messageDiv.appendChild(paragraph);
+    
+    chatMessages.appendChild(messageDiv);
+    scrollToBottom();
+}
+
+// Show Typing Indicator
+function showTypingIndicator() {
+    const indicatorDiv = document.createElement('div');
+    indicatorDiv.classList.add('message', 'bot-message', 'typing-indicator-container');
+    indicatorDiv.id = 'typing-indicator';
+    
+    indicatorDiv.innerHTML = `
+        <div class="typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    `;
+    chatMessages.appendChild(indicatorDiv);
+    scrollToBottom();
+}
+
+// Remove Typing Indicator
+function removeTypingIndicator() {
+    const indicator = document.getElementById('typing-indicator');
+    if (indicator) {
+        indicator.remove();
+    }
+}
+
+// Send message to serverless API
+async function sendMessage(text) {
+    if (!text.trim()) return;
+
+    // Append user message
+    appendMessage('user', text);
+    chatInput.value = '';
+    
+    // Hide suggestions after the first message
+    chatSuggestions.style.display = 'none';
+
+    // Show typing indicator
+    showTypingIndicator();
+
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: text,
+                history: chatHistory
+            })
+        });
+
+        removeTypingIndicator();
+
+        if (!response.ok) {
+            throw new Error('Gagal terhubung ke asisten AI');
+        }
+
+        const data = await response.json();
+        
+        // Append bot reply
+        appendMessage('bot', data.reply);
+
+        // Update history
+        chatHistory.push({ role: 'user', content: text });
+        chatHistory.push({ role: 'assistant', content: data.reply });
+
+        // Keep history size small (last 6 messages)
+        if (chatHistory.length > 12) {
+            chatHistory = chatHistory.slice(-12);
+        }
+
+    } catch (error) {
+        removeTypingIndicator();
+        appendMessage('bot', 'Maaf, terjadi gangguan koneksi. Silakan coba lagi nanti atau hubungi Herfiadi secara langsung.');
+        console.error(error);
+    }
+}
+
+// Form Submit
+if (chatForm) {
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = chatInput.value;
+        sendMessage(text);
+    });
+}
+
+// Suggestions click handler
+document.querySelectorAll('.suggestion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const text = btn.textContent;
+        sendMessage(text);
+    });
 });

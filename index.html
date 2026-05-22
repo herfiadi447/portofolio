@@ -265,6 +265,51 @@
         </div>
     </footer>
 
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <!-- Floating Button -->
+        <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Open Chatbot">
+            <i class='bx bx-bot chat-icon-main'></i>
+            <i class='bx bx-x chat-icon-close' style="display: none;"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chat-window glass-card" id="chat-window" style="display: none;">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar">
+                        <i class='bx bx-bot'></i>
+                    </div>
+                    <div>
+                        <h4 data-i18n="chat_header_title">GeoAI Assistant</h4>
+                        <span data-i18n="chat_header_status">Online | Llama-3.3</span>
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="chat-close-btn">&times;</button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <p data-i18n="chat_welcome">Halo! Saya asisten AI Herfiadi. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?</p>
+                </div>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="chat-suggestions" id="chat-suggestions">
+                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_1">Apa saja proyek WebGIS Herfiadi?</button>
+                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_2">Bagaimana latar belakang pendidikannya?</button>
+                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_3">Bagaimana cara menghubungi Herfiadi?</button>
+            </div>
+
+            <form class="chat-input-area" id="chat-form">
+                <input type="text" id="chat-input" placeholder="Tulis pesan..." data-i18n-placeholder="chat_placeholder" required autocomplete="off">
+                <button type="submit" class="chat-send-btn" aria-label="Send message">
+                    <i class='bx bx-send'></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Typed JS for typing animation -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     
