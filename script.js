@@ -338,14 +338,67 @@ function scrollToBottom() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// Parse basic Markdown (bold, lists, links, paragraphs) into safe HTML
+function parseMarkdown(text) {
+    // 1. Escape HTML tags to prevent injection
+    let html = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+    // 2. Bold: **text** -> <strong>text</strong>
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // 3. Links: [text](url) -> <a href="url" target="_blank" class="chat-link">text</a>
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--main-color); text-decoration: underline; font-weight: 600;">$1</a>');
+
+    // 4. Bullet lists: lines starting with * or -
+    const lines = html.split('\n');
+    let inList = false;
+    let result = [];
+
+    for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        
+        if (line.startsWith('* ') || line.startsWith('- ')) {
+            if (!inList) {
+                result.push('<ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: disc;">');
+                inList = true;
+            }
+            result.push(`<li style="margin-bottom: 0.4rem;">${line.substring(2)}</li>`);
+        } else {
+            if (inList) {
+                result.push('</ul>');
+                inList = false;
+            }
+            
+            if (line === '') {
+                result.push('<div style="height: 0.8rem;"></div>');
+            } else {
+                result.push(`<p style="margin-bottom: 0.6rem; line-height: 1.5;">${line}</p>`);
+            }
+        }
+    }
+
+    if (inList) {
+        result.push('</ul>');
+    }
+
+    return result.join('');
+}
+
 // Append message
 function appendMessage(sender, text) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', `${sender}-message`);
     
-    const paragraph = document.createElement('p');
-    paragraph.innerHTML = text.replace(/\n/g, '<br>');
-    messageDiv.appendChild(paragraph);
+    if (sender === 'bot') {
+        messageDiv.innerHTML = parseMarkdown(text);
+    } else {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        messageDiv.appendChild(paragraph);
+    }
     
     chatMessages.appendChild(messageDiv);
     scrollToBottom();
