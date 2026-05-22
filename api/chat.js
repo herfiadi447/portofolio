@@ -156,7 +156,7 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
       const errText = await response.text();
       console.warn(`Model ${modelUsed} failed with: ${errText}. Attempting fallback model.`);
       
-      modelUsed = 'llama3-8b-8192';
+      modelUsed = 'llama-3.1-8b-instant';
       response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
