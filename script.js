@@ -9,12 +9,12 @@ const translations = {
         nav_contact: "Kontak",
         hero_hello: "Halo, Saya",
         hero_im: "Dan saya seorang",
-        hero_desc: "Saya seorang mahasiswa S1 Geofisika dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.",
+        hero_desc: "Saya seorang Sarjana Geofisika (S.Si) dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.",
         btn_cv: "Unduh CV",
         btn_contact: "Hubungi Saya",
         about_heading: "Tentang <span>Saya</span>",
-        about_subheading: "Mahasiswa Geofisika & Penggiat WebGIS",
-        about_desc: "Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai mahasiswa Geofisika (S.Si) di Universitas Hasanuddin (lulus 2026), komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.",
+        about_subheading: "Sarjana Geofisika & Penggiat WebGIS",
+        about_desc: "Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai lulusan Geofisika (S.Si) dari Universitas Hasanuddin, komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.",
         skills_heading: "<span>Keahlian</span> Saya",
         skills_cat1: "WebGIS & Data Spasial",
         skills_item1: "Pengembangan WebGIS (Flask, Leaflet, Folium)",
@@ -46,7 +46,7 @@ const translations = {
         contact_phone: "Telepon",
         contact_location: "Lokasi",
         footer_text: "Hak Cipta &copy; 2026 oleh Herfiadi Reski Alviansyah | Hak Cipta Dilindungi Undang-undang.",
-        typed_strings: ['Mahasiswa Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial']
+        typed_strings: ['Sarjana Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial']
     },
     en: {
         nav_home: "Home",
@@ -57,12 +57,12 @@ const translations = {
         nav_contact: "Contact",
         hero_hello: "Hello, I'm",
         hero_im: "And I'm a",
-        hero_desc: "I am a Geophysics undergraduate with a strong interest in Geoinformatics, WebGIS development, and Artificial Intelligence integration. I'm passionate about building scalable spatial data solutions.",
+        hero_desc: "I hold a Bachelor's degree (S.Si) in Geophysics with a strong interest in Geoinformatics, WebGIS development, and Artificial Intelligence integration. I'm passionate about building scalable spatial data solutions.",
         btn_cv: "Download CV",
         btn_contact: "Contact Me",
         about_heading: "About <span>Me</span>",
-        about_subheading: "Geophysics Undergraduate & WebGIS Enthusiast",
-        about_desc: "I have experience in designing and developing WebGIS platforms equipped with AI-based chatbots for various use cases. I am proficient in utilizing modern GIS technologies for processing and presenting spatial data. With a Bachelor of Geophysics (S.Si) from Hasanuddin University (expected 2026), my commitment lies in continuously developing innovative solutions at the intersection of GIS and Artificial Intelligence.",
+        about_subheading: "Geophysics Graduate & WebGIS Enthusiast",
+        about_desc: "I have experience in designing and developing WebGIS platforms equipped with AI-based chatbots for various use cases. I am proficient in utilizing modern GIS technologies for processing and presenting spatial data. As a Geophysics graduate (S.Si) from Hasanuddin University, my commitment lies in continuously developing innovative solutions at the intersection of GIS and Artificial Intelligence.",
         skills_heading: "My <span>Skills</span>",
         skills_cat1: "WebGIS & Spatial Data",
         skills_item1: "WebGIS Development (Flask, Leaflet, Folium)",
@@ -94,7 +94,7 @@ const translations = {
         contact_phone: "Phone",
         contact_location: "Location",
         footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | All Rights Reserved.",
-        typed_strings: ['Geophysics Undergraduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst']
+        typed_strings: ['Geophysics Graduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst']
     },
     jp: {
         nav_home: "ホーム",
@@ -105,12 +105,12 @@ const translations = {
         nav_contact: "連絡先",
         hero_hello: "こんにちは、私の名前は",
         hero_im: "私は",
-        hero_desc: "私は地球物理学を専攻する学部生で、地球情報学、WebGIS開発、人工知能の統合に強い関心を持っています。効率的な空間データソリューションの構築に情熱を注いでいます。",
+        hero_desc: "私は地球物理学の学士号（S.Si）を取得しており、地球情報学、WebGIS開発、人工知能の統合に強い関心を持っています。効率的な空間データソリューションの構築に情熱を注いでいます。",
         btn_cv: "経歴書をダウンロード",
         btn_contact: "お問い合わせ",
         about_heading: "私に<span>ついて</span>",
-        about_subheading: "地球物理学専攻 & WebGISエンジニア",
-        about_desc: "私は様々な用途に応じたAIチャットボットを備えたWebGISプラットフォームの設計および開発の経験があります。空間データの処理と提示のための最新のGIS技術の活用に熟練しています。ハサヌディン大学（2026年卒業予定）での地球物理学（S.Si）の学位を背景に、GISと人工知能の交差点で革新的なソリューションを開発し続けることに取り組んでいます。",
+        about_subheading: "地球物理学卒業生 & WebGISエンジニア",
+        about_desc: "私は様々な用途に応じたAIチャットボットを備えたWebGISプラットフォームの設計および開発の経験があります。空間データの処理と提示のための最新のGIS技術の活用に熟練しています。ハサヌディン大学で取得した地球物理学（S.Si）の学位を背景に、GISと人工知能の交差点で革新的なソリューションを開発し続けることに取り組んでいます。",
         skills_heading: "私の<span>スキル</span>",
         skills_cat1: "WebGIS & 空間データ",
         skills_item1: "WebGIS開発 (Flask, Leaflet, Folium)",
@@ -142,7 +142,7 @@ const translations = {
         contact_phone: "電話番号",
         contact_location: "場所",
         footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | 全著作権所有.",
-        typed_strings: ['地球物理学の学生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト']
+        typed_strings: ['地球物理学卒業生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト']
     }
 };
 
