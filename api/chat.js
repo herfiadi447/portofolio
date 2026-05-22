@@ -133,20 +133,44 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
 
   messages.push({ role: 'user', content: message });
 
+  let response;
+  let modelUsed = 'llama-3.3-70b-versatile';
+  
   try {
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: modelUsed,
         messages: messages,
         temperature: 0.7,
         max_tokens: 500
       })
     });
+
+    // Fallback if the main model fails or returns an error
+    if (!response.ok) {
+      const errText = await response.text();
+      console.warn(`Model ${modelUsed} failed with: ${errText}. Attempting fallback model.`);
+      
+      modelUsed = 'llama3-8b-8192';
+      response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: modelUsed,
+          messages: messages,
+          temperature: 0.7,
+          max_tokens: 500
+        })
+      });
+    }
 
     if (!response.ok) {
       const errText = await response.text();
