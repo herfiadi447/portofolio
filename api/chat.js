@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { message, history } = req.body;
+  const { message, history, language } = req.body;
 
   if (!message) {
     return res.status(400).json({ error: 'Message is required' });
@@ -28,9 +28,16 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Groq API Key is not configured' });
   }
 
+  const langNames = {
+    id: 'Indonesian',
+    en: 'English',
+    jp: 'Japanese'
+  };
+  const targetLanguage = langNames[language] || 'the same language the user is using (Indonesian, English, or Japanese)';
+
   const systemPrompt = `You are an AI assistant representing Herfiadi Reski Alviansyah, a WebGIS & AI Developer and Geophysics Graduate (S.Si) from Hasanuddin University. 
 Your goal is to answer questions from visitors to Herfiadi's portfolio website in a professional, polite, and helpful manner.
-Respond using the same language the user is using (Indonesian, English, or Japanese). Keep your answers concise, clear, and relevant to his professional profile.
+You MUST respond using ${targetLanguage}. Keep your answers concise, clear, and relevant to his professional profile.
 
 Here is Herfiadi's complete profile and CV information:
 

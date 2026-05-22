@@ -391,6 +391,7 @@ async function sendMessage(text) {
     showTypingIndicator();
 
     try {
+        const activeLang = document.documentElement.lang || 'id';
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
@@ -398,7 +399,8 @@ async function sendMessage(text) {
             },
             body: JSON.stringify({
                 message: text,
-                history: chatHistory
+                history: chatHistory,
+                language: activeLang
             })
         });
 
