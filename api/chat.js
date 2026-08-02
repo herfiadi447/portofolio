@@ -31,9 +31,10 @@ module.exports = async function handler(req, res) {
   const langNames = {
     id: 'Indonesian',
     en: 'English',
-    jp: 'Japanese'
+    jp: 'Japanese',
+    zh: 'Simplified Chinese (简体中文)'
   };
-  const targetLanguage = langNames[language] || 'the same language the user is using (Indonesian, English, or Japanese)';
+  const targetLanguage = langNames[language] || 'the same language the user is using (Indonesian, English, Japanese, or Chinese)';
 
   const systemPrompt = `You are an AI assistant representing Herfiadi Reski Alviansyah, a WebGIS & AI Developer and Geophysics Graduate (S.Si) from Hasanuddin University. 
 Your goal is to answer questions from visitors to Herfiadi's portfolio website in a professional, polite, and helpful manner.
