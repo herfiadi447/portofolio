@@ -1,357 +1,693 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="light" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Herfiadi Reski Alviansyah - WebGIS & AI Developer">
-    <title>Herfiadi Reski Alviansyah - Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Boxicons for icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <!-- Navigation -->
-    <header class="header">
-        <a href="#" class="logo">HR<span>A.</span></a>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Portfolio of Herfiadi Reski Alviansyah - Geophysics Graduate & WebGIS Developer"/>
+    <title>GEO_PORTFOLIO_V1.0 | Herfiadi Reski Alviansyah</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
         
-        <nav class="navbar">
-            <a href="#home" class="active" data-i18n="nav_home">Beranda</a>
-            <a href="#about" data-i18n="nav_about">Tentang</a>
-            <a href="#skills" data-i18n="nav_skills">Keahlian</a>
-            <a href="#experience" data-i18n="nav_experience">Pengalaman</a>
-            <a href="#portfolio" data-i18n="nav_projects">Proyek</a>
-            <a href="#awards" data-i18n="nav_awards">Prestasi</a>
-            <a href="#contact" data-i18n="nav_contact">Kontak</a>
-        </nav>
+        .topographic-pattern {
+            background-color: #EDEFEA;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 Q 50 50 100 100 T 200 100' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M0 120 Q 50 70 100 120 T 200 120' fill='none' stroke='%2316232E' stroke-width='0.3' opacity='0.05'/%3E%3Cpath d='M0 80 Q 50 30 100 80 T 200 80' fill='none' stroke='%2316232E' stroke-width='0.3' opacity='0.05'/%3E%3C/svg%3E");
+        }
 
-        <div class="nav-controls">
-            <select id="lang-switch" class="lang-selector">
+        .blueprint-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(22, 35, 46, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(22, 35, 46, 0.03) 1px, transparent 1px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .transition-precise {
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(to bottom, transparent, #A6673A, transparent);
+            opacity: 0.1;
+            animation: scanline 8s linear infinite;
+        }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "background": "#EDEFEA",
+                    "on-surface-variant": "#44474b",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e9e4",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#16232e",
+                    "outline-variant": "#c4c7cb",
+                    "outline": "#16232E",
+                    "on-primary-container": "#7d8b98",
+                    "primary": "#16232E",
+                    "surface-variant": "#e1e3de",
+                    "secondary": "#A6673A",
+                    "tertiary": "#2C5F5B",
+                    "on-surface": "#16232E",
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "sidebar-width": "320px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["IBM Plex Sans"],
+                    "headline-md": ["Space Grotesk"],
+                    "label-caps": ["IBM Plex Mono"],
+                    "label-data": ["IBM Plex Mono"],
+                    "headline-lg": ["Space Grotesk"],
+                    "headline-xl": ["Space Grotesk"],
+                    "body-lg": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["11px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "label-data": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-primary font-body-md selection:bg-secondary/30">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-background/90 backdrop-blur-sm border-b border-outline/10">
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tighter uppercase">
+            GEO_PORTFOLIO_V1.0
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#hero" data-i18n="nav_home">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#about" data-i18n="nav_about">About</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#skills" data-i18n="nav_skills">Skills</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#experience" data-i18n="nav_experience">Experience</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#projects" data-i18n="nav_projects">Projects</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#awards" data-i18n="nav_awards">Achievements</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#contact" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Selector Switch styled according to DESIGN.md -->
+            <select id="lang-switch" class="bg-transparent border border-primary text-label-caps font-bold py-1 px-2 rounded-none focus:ring-0 focus:border-secondary outline-none cursor-pointer text-xs">
                 <option value="id" selected>ID</option>
                 <option value="en">EN</option>
                 <option value="jp">JP</option>
             </select>
-            <i class='bx bx-moon' id="theme-toggle"></i>
-            <i class='bx bx-menu' id="menu-icon"></i>
+            <button class="px-4 py-2 border border-primary text-label-caps font-bold hover:bg-primary hover:text-white transition-precise text-xs" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">CONNECT</button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3 data-i18n="hero_hello">Halo, Saya</h3>
-            <h1>Herfiadi Reski Alviansyah</h1>
-            <h3><span data-i18n="hero_im">Dan saya seorang</span> <span class="multiple-text"></span></h3>
-            <p data-i18n="hero_desc">Saya seorang Sarjana Geofisika (S.Si) dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.</p>
-            
-            <div class="social-media">
-                <a href="https://linkedin.com/in/herfiadi-reski-alviansyah-b66482333" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="mailto:herfiadireskialviansyah03@gmail.com"><i class='bx bx-envelope'></i></a>
+    <!-- SideNavBar (Contextual Sidebar) -->
+    <aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container-low border-r border-outline/10 w-16 hover:w-sidebar-width transition-all duration-300 overflow-hidden group">
+        <div class="mt-20 px-4 mb-12 flex items-center gap-4">
+            <div class="w-8 h-8 bg-primary shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-sm">precision_manufacturing</span>
             </div>
-            
-            <div class="btn-group">
-                <a href="assets/CV_Herfiadi%20Reski%20Alviansyah.pdf" class="btn" download data-i18n="btn_cv">Unduh CV</a>
-                <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Hubungi Saya</a>
+            <div class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <p class="font-label-caps text-label-caps text-on-surface">METADATA_01</p>
+                <p class="text-[10px] font-label-data text-on-surface-variant">S. Sulawesi / 5.1478° S, 119.4327° E</p>
             </div>
         </div>
-        
-        <div class="home-img">
-            <div class="img-wrapper">
-                <img src="assets/profile_new.jpg" alt="Herfiadi Reski Alviansyah">
-            </div>
+        <div class="flex flex-col flex-1 gap-1 px-2">
+            <button class="flex items-center gap-4 p-3 bg-secondary/10 text-secondary transition-precise group/item rounded-none">
+                <span class="material-symbols-outlined" data-icon="layers">layers</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Map View</span>
+            </button>
+            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Project Layers</span>
+            </button>
+            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Skill Legend</span>
+            </button>
+            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="explore">explore</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Experience Logs</span>
+            </button>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="heading" data-i18n="about_heading">Tentang <span>Saya</span></h2>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <h3 data-i18n="about_subheading">Sarjana Geofisika & Penggiat WebGIS</h3>
-                <p data-i18n="about_desc">Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai lulusan Geofisika (S.Si) dari Universitas Hasanuddin dengan GPA 3.81, komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.</p>
-            </div>
+        <div class="p-4 border-t border-outline/10 group-hover:block hidden">
+            <button class="w-full py-2 bg-secondary text-white text-label-caps font-bold rounded-none hover:brightness-110" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">SEND MESSAGE</button>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2 class="heading" data-i18n="skills_heading"><span>Keahlian</span> Saya</h2>
-        
-        <div class="skills-container">
-            <div class="skill-category glass-card">
-                <i class='bx bx-map-alt'></i>
-                <h3 data-i18n="skills_cat1">WebGIS & Data Spasial</h3>
-                <ul class="skill-list">
-                    <li data-i18n="skills_item1">Perangkat Lunak GIS: ArcMap/ArcGIS, QGIS</li>
-                    <li data-i18n="skills_item2">Pengembangan WebGIS (Flask, Leaflet, Folium)</li>
-                    <li data-i18n="skills_item3">Analisis Spasial: Overlay, Buffer, Interpolasi, Analisis Raster, Terrain Analysis, Suitability Analysis</li>
-                    <li data-i18n="skills_item4">Geospatial Machine Learning untuk Pemodelan Kesesuaian Lahan</li>
-                </ul>
-            </div>
-            
-            <div class="skill-category glass-card">
-                <i class='bx bx-code-alt'></i>
-                <h3 data-i18n="skills_cat2">Perangkat Lunak & AI</h3>
-                <ul class="skill-list">
-                    <li data-i18n="skills_item5">Pemrograman Python untuk GIS (GeoPandas, Rasterio, GDAL, PyGMT)</li>
-                    <li data-i18n="skills_item6">Integrasi Chatbot AI (RAG, n8n, Supabase)</li>
-                    <li data-i18n="skills_item7">Manajemen Database (PostgreSQL/PostGIS, MySQL)</li>
-                    <li data-i18n="skills_item8">Pengembangan UI/UX untuk Aplikasi GIS</li>
-                </ul>
-            </div>
-
-            <div class="skill-category glass-card">
-                <i class='bx bx-globe'></i>
-                <h3 data-i18n="skills_cat3">Bahasa</h3>
-                <ul class="skill-list">
-                    <li data-i18n="skills_lang1">Bahasa Indonesia – Penutur Asli (Native)</li>
-                    <li data-i18n="skills_lang2">Bahasa Inggris – Upper-Intermediate CEFR (EF SET)</li>
-                </ul>
-            </div>
+        <div class="p-2 mb-4 border-t border-outline/10">
+            <button class="flex items-center gap-4 p-3 w-full text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="window.open('https://linkedin.com/in/herfiadi-reski-alviansyah-b66482333', '_blank')">
+                <span class="material-symbols-outlined" data-icon="settings">share</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100">LinkedIn</span>
+            </button>
+            <button class="flex items-center gap-4 p-3 w-full text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="window.open('https://github.com/herfiadi447', '_blank')">
+                <span class="material-symbols-outlined" data-icon="help_outline">code</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100">GitHub</span>
+            </button>
         </div>
-    </section>
+    </aside>
 
-    <!-- Experience Section (Timeline) -->
-    <section class="experience" id="experience">
-        <h2 class="heading" data-i18n="exp_heading"><span>Pengalaman</span> Saya</h2>
-        
-        <div class="timeline">
-            <!-- Item 1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date" data-i18n="exp_date1">2025</div>
-                <div class="timeline-content glass-card">
-                    <h3 data-i18n="exp_title1">Junior Web Developer</h3>
-                    <h4>PT Geocode Smart Solution</h4>
-                    <p data-i18n="exp_desc1">
+    <main class="ml-0 lg:ml-16 topographic-pattern min-h-screen blueprint-grid">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex flex-col justify-center px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline/20" id="hero">
+            <div class="scan-line absolute top-0 left-0 w-full z-0"></div>
+            <div class="z-10 max-w-5xl">
+                <div class="mb-6">
+                    <span class="font-label-data text-label-data px-2 py-1 bg-primary text-white">5°08'S, 119°26'E</span>
+                    <span class="ml-4 font-label-caps text-label-caps text-tertiary tracking-widest uppercase">GEOSPATIAL_DEVELOPMENT</span>
+                </div>
+                <h1 class="font-headline-xl text-headline-xl text-primary leading-none mb-8">
+                    GEOSPATIAL ENGINEERING <br/>
+                    <span class="text-secondary">&amp;</span> WEBGIS DEVELOPMENT
+                </h1>
+                <p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant mb-12">
+                    <span data-i18n="hero_hello">Halo, Saya</span> <strong class="text-secondary font-bold">Herfiadi Reski Alviansyah</strong>, <span data-i18n="hero_im">Dan saya seorang</span> <span class="multiple-text text-secondary font-bold"></span>. <br/>
+                    <span class="block mt-4 text-base" data-i18n="hero_desc">Saya seorang Sarjana Geofisika (S.Si) dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.</span>
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-8 py-4 bg-secondary text-white font-label-caps text-sm font-bold flex items-center gap-3 transition-precise hover:brightness-110 rounded-none" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                        <span data-i18n="btn_projects">LIHAT PROYEK</span>
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <!-- CV Download Button (<a> tag fix with download attribute) -->
+                    <a href="assets/CV_Herfiadi_Reski_Alviansyah.pdf" download="CV_Herfiadi_Reski_Alviansyah.pdf" class="px-8 py-4 border border-primary text-primary font-label-caps text-sm font-bold transition-precise hover:bg-primary hover:text-white inline-flex items-center justify-center rounded-none" data-i18n="btn_cv">
+                        UNDUH CV
+                    </a>
+                </div>
+            </div>
+            <!-- Absolute decorative metadata -->
+            <div class="absolute bottom-12 right-12 text-right hidden xl:block">
+                <p class="font-label-data text-label-data text-primary/40 uppercase">System Status: Active</p>
+                <p class="font-label-data text-label-data text-primary/40 uppercase">Projection: EPSG:4326</p>
+                <p class="font-label-data text-label-data text-primary/40 uppercase">Scale: 1:5,000</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="about">
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="md:w-1/3">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-2 whitespace-nowrap" data-i18n="about_heading">◉ DATASET_01: PROFIL</h2>
+                    <div class="h-px w-full bg-outline/20 mb-8"></div>
+                    <div class="aspect-square bg-surface-container border border-outline/10 p-2 relative">
+                        <img class="w-full h-full object-cover" alt="Herfiadi Reski Alviansyah" src="assets/profile_new.jpg"/>
+                        <div class="absolute top-4 left-4 font-label-data text-[10px] text-white bg-secondary px-1 uppercase">ID_VERIFIED</div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 flex flex-col justify-center">
+                    <p class="font-body-lg text-body-lg text-on-surface mb-6 leading-relaxed" data-i18n="about_desc">
+                        Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai lulusan Geofisika (S.Si) dari Universitas Hasanuddin dengan GPA 3.81, komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 border-t border-outline/10 pt-8 mt-4">
+                        <div>
+                            <p class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="about_edu_title">PENDIDIKAN</p>
+                            <p class="font-body-md text-body-md font-bold" data-i18n="about_edu_val">Teknik Geofisika</p>
+                            <p class="font-label-data text-label-data text-on-surface-variant" data-i18n="about_edu_inst">Universitas Hasanuddin</p>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="about_loc_title">DOMISILI</p>
+                            <p class="font-body-md text-body-md font-bold" data-i18n="about_loc_val">Makassar, Indonesia</p>
+                            <p class="font-label-data text-label-data text-on-surface-variant" data-i18n="about_loc_tz">Waktu Indonesia Tengah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-primary text-white border-b border-outline/20" id="skills">
+            <h2 class="font-headline-md text-headline-md mb-12" data-i18n="skills_heading">◉ LEGEND: KEAHLIAN</h2>
+            <!-- Grid of 2 clean columns for WebGIS and Software/AI skill categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline/20 border border-outline/20">
+                <!-- Skill Card 1: WebGIS & Data Spasial -->
+                <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
+                    <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="map">map</span>
+                    <h3 class="font-label-caps text-label-caps mb-4 text-secondary uppercase" data-i18n="skills_cat1">WebGIS & Data Spasial</h3>
+                    <ul class="space-y-3">
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item1">
+                            Perangkat Lunak GIS: ArcMap/ArcGIS, QGIS
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item2">
+                            Pengembangan WebGIS (Flask, Leaflet, Folium)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item3">
+                            Analisis Spasial: Overlay, Buffer, Interpolasi, Analisis Raster, Terrain Analysis, Suitability Analysis
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item4">
+                            Geospatial Machine Learning untuk Pemodelan Kesesuaian Lahan
+                        </li>
+                    </ul>
+                </div>
+                <!-- Skill Card 2: Software & AI -->
+                <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
+                    <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="code">code</span>
+                    <h3 class="font-label-caps text-label-caps mb-4 text-secondary uppercase" data-i18n="skills_cat2">Perangkat Lunak & AI</h3>
+                    <ul class="space-y-3">
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item5">
+                            Pemrograman Python untuk GIS (GeoPandas, Rasterio, GDAL, PyGMT)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item6">
+                            Integrasi Chatbot AI (RAG, n8n, Supabase)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item7">
+                            Manajemen Database (PostgreSQL/PostGIS, MySQL)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item8">
+                            Pengembangan UI/UX untuk Aplikasi GIS
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section (Timeline) -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="experience">
+            <h2 class="font-headline-md text-headline-md text-primary mb-16" data-i18n="exp_heading">◉ TIMELINE: PENGALAMAN</h2>
+            <div class="space-y-0 border-l border-outline/20 ml-4 md:ml-0">
+                <!-- Entry 1: Junior Web Developer -->
+                <div class="relative pl-12 pb-16">
+                    <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-secondary"></div>
+                    <p class="font-label-data text-label-data text-secondary mb-2" data-i18n="exp_date1">2025</p>
+                    <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title1">Junior Web Developer</h3>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">PT Geocode Smart Solution</p>
+                    <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc1">
                         • Mengembangkan platform WebGIS: GeoAI Barru, Geopangansidrap, dan Sijagung.<br>
                         • Menerapkan fitur chatbot AI via n8n dan Supabase untuk interaktivitas pengguna.<br>
                         • Manajemen data spasial dengan PostgreSQL/PostGIS dan MySQL.<br>
                         • Meningkatkan UI/UX aplikasi GIS menggunakan Leaflet dan Folium.
                     </p>
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="PT Geocode Smart Solution - GeoAI Barru development" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: GEOAI_DEV</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="PT Geocode Smart Solution - UI/UX configuration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR1.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: UI_INTERFACE</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="PT Geocode Smart Solution - Backend integration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR3.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_03: BACKEND_AI</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date" data-i18n="exp_date2">2025</div>
-                <div class="timeline-content glass-card">
-                    <h3 data-i18n="exp_title2">GIS Transmission Planning Intern</h3>
-                    <h4 data-i18n="exp_subtitle2">UPT PLN Makassar</h4>
-                    <p data-i18n="exp_desc2">
+                <!-- Entry 2: GIS Transmission Planning Intern -->
+                <div class="relative pl-12 pb-16">
+                    <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-primary"></div>
+                    <p class="font-label-data text-label-data text-primary/60 mb-2" data-i18n="exp_date2">2025</p>
+                    <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title2">GIS Transmission Planning Intern</h3>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase" data-i18n="exp_subtitle2">UPT PLN Makassar</p>
+                    <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc2">
                         • Membuat peta distribusi spasial Saluran Udara Tegangan Tinggi (SUTT) di Kota Makassar.<br>
                         • Membuat peta kerentanan tanah longsor untuk tiap lokasi SUTT.
                     </p>
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="UPT PLN Makassar - Transmission grid mapping" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: SUTT_DISTRIBUTION</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="UPT PLN Makassar - Soil vulnerability analysis" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN1.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: SLIDE_SUSCEPTIBILITY</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="UPT PLN Makassar - Field team briefing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN2.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_03: GIS_METADATA</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 3 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date" data-i18n="exp_date3">2025</div>
-                <div class="timeline-content glass-card">
-                    <h3 data-i18n="exp_title3">Surveyor Lapangan</h3>
-                    <h4 data-i18n="exp_subtitle3">Hasanuddin University – LPPM Witaris</h4>
-                    <p data-i18n="exp_desc3">
+                <!-- Entry 3: Field Surveyor -->
+                <div class="relative pl-12 pb-16">
+                    <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-primary"></div>
+                    <p class="font-label-data text-label-data text-primary/60 mb-2" data-i18n="exp_date3">2025</p>
+                    <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title3">Surveyor Lapangan</h3>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase" data-i18n="exp_subtitle3">Hasanuddin University – LPPM Witaris</p>
+                    <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc3">
                         • Melakukan survei lapangan untuk memetakan kelompok tani (POKTAN) menggunakan teknik pengumpulan data geospasial.<br>
                         • Mengumpulkan dan memvalidasi data spasial dan atribut untuk setiap wilayah yang dipetakan.
                     </p>
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Field Surveyor - Mapping farmer groups" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: FARMER_MAPPING</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Field Surveyor - Land validation check" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH1.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: FIELD_VALIDATION</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Field Surveyor - Spatial data collection" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH2.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_03: SURVEY_LOGS</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 4 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date" data-i18n="exp_date4">2024</div>
-                <div class="timeline-content glass-card">
-                    <h3 data-i18n="exp_title4">Data Entry Intern</h3>
-                    <h4 data-i18n="exp_subtitle4">Kedaireka MBKM, Kabupaten Barru</h4>
-                    <p data-i18n="exp_desc4">
+                <!-- Entry 4: Data Entry Intern -->
+                <div class="relative pl-12">
+                    <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-primary"></div>
+                    <p class="font-label-data text-label-data text-primary/60 mb-2" data-i18n="exp_date4">2024</p>
+                    <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title4">Data Entry Intern</h3>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase" data-i18n="exp_subtitle4">Kedaireka MBKM, Kabupaten Barru</p>
+                    <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc4">
                         • Berkolaborasi dengan Pemerintah Kabupaten Barru dalam program Kedaireka MBKM untuk mengembangkan platform WebGIS analisis kesesuaian lahan pertanian.<br>
                         • Membantu membangun sistem WebGIS interaktif untuk mendukung pemangku kepentingan lokal dalam efisiensi sumber daya pertanian dan pengambilan keputusan tata guna lahan.<br>
                         • Berkontribusi dalam entry, organisasi, dan verifikasi data spasial dan atribut di dalam platform.
                     </p>
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Data Entry Intern - Agricultural WebGIS setup" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA1.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: WEBGIS_COLLAB</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Data Entry Intern - Spatial data audit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA3.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: DATA_AUDIT</p>
+                        </div>
+                        <div class="group">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Data Entry Intern - Land suitability system" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA4.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_03: SUITABILITY_INDEX</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading" data-i18n="proj_heading">Proyek <span>Terbaru</span></h2>
-        
-        <div class="portfolio-container">
-            <!-- Project 1 -->
-            <div class="portfolio-box glass-card">
-                <a href="http://geoaibarru.com/" target="_blank"><img src="geoaibarru.png" alt="GeoAI Barru" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--glass-border); transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a>
-                <div class="portfolio-info">
-                    <h4>GeoAI Barru</h4>
-                    <p data-i18n="proj_desc1">Platform geospasial yang dilengkapi dengan lapisan analisis AI dan elemen peta interaktif.</p>
-                    <a href="http://geoaibarru.com/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
-                </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="portfolio-box glass-card">
-                <a href="https://geopangansidrap.id/" target="_blank"><img src="geopangansidrap.png" alt="Geopangansidrap" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--glass-border); transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a>
-                <div class="portfolio-info">
-                    <h4>Geopangansidrap</h4>
-                    <p data-i18n="proj_desc2">Platform WebGIS untuk pemetaan pertanian dan analisis ketahanan pangan.</p>
-                    <a href="https://geopangansidrap.id/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="portfolio-box glass-card">
-                <a href="https://sijagung.id/" target="_blank"><img src="sijagung.png" alt="Sijagung" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--glass-border); transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a>
-                <div class="portfolio-info">
-                    <h4>Sijagung</h4>
-                    <p data-i18n="proj_desc3">WebGIS pertanian yang dirancang untuk melacak dan memonitor produksi jagung.</p>
-                    <a href="https://sijagung.id/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
-                </div>
-            </div>
-
-            <!-- Project 6 (Moved to 4th) -->
-            <div class="portfolio-box glass-card">
-                <a href="https://geobarru.vercel.app/" target="_blank"><img src="geobarru.png" alt="WebGIS Pertanian Kab. Barru" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--glass-border); transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a>
-                <div class="portfolio-info">
-                    <h4>WebGIS Kab. Barru</h4>
-                    <p data-i18n="proj_desc6">WebGIS analisis kesesuaian lahan budidaya tanaman semangka di Kab. Barru, dilengkapi fitur AI Chatbot untuk analisis dan pemantauan lahan.</p>
-                    <a href="https://geobarru.vercel.app/" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>
-                </div>
-            </div>
-            
-            <!-- Project 4 (Moved to 5th) -->
-            <div class="portfolio-box glass-card">
-                <div class="portfolio-info">
-                    <h4>BengkelPro App</h4>
-                    <p data-i18n="proj_desc4">Aplikasi manajemen bengkel dengan peran Admin/Mekanik, sistem kasir (POS), dan manajemen inventaris.</p>
-                </div>
-            </div>
-            
-            <!-- Project 5 (Moved to 6th) -->
-            <div class="portfolio-box glass-card">
-                <div class="portfolio-info">
-                    <h4>AI GIS Chatbot</h4>
-                    <p data-i18n="proj_desc5">Integrasi API Groq, n8n, dan Supabase vector database untuk kueri data spasial yang cerdas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section class="awards" id="awards" style="background: var(--second-bg-color);">
-        <h2 class="heading" data-i18n="awards_heading">Penghargaan & <span>Prestasi</span></h2>
-        
-        <div class="portfolio-container" style="display: flex; justify-content: center;">
-            <div class="portfolio-box glass-card" style="max-width: 800px; width: 100%;">
-                <div class="portfolio-info">
-                    <h4 data-i18n="award_title1" style="color: var(--main-color-hover); margin-bottom: 1.5rem;">Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)</h4>
-                    <p data-i18n="award_desc1">Diberikan untuk proyek "WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia" yang dipresentasikan pada 44th Asian Conference on Remote Sensing (ACRS 2025).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="heading" data-i18n="contact_heading">Hubungi <span>Saya!</span></h2>
-        
-        <div class="contact-info glass-card">
-            <div class="contact-item">
-                <i class='bx bx-phone'></i>
+        <!-- Projects Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20 bg-surface-container-low" id="projects">
+            <div class="flex justify-between items-end mb-16">
                 <div>
-                    <h3 data-i18n="contact_phone">Telepon</h3>
-                    <p><a href="https://wa.me/6282285580351" target="_blank">0822 8558 0351</a></p>
+                    <h2 class="font-headline-md text-headline-md text-primary mb-2" data-i18n="proj_heading">◉ LAYERS: PROYEK TERBARU</h2>
+                    <p class="font-label-data text-label-data text-on-surface-variant uppercase">Interactive Spatial Repositories</p>
                 </div>
             </div>
             
-            <div class="contact-item">
-                <i class='bx bx-envelope'></i>
-                <div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:herfiadireskialviansyah03@gmail.com">herfiadireskialviansyah03@gmail.com</a></p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Project Card 1: GeoAI Barru -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <a href="http://geoaibarru.com/" target="_blank">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-precise scale-100 group-hover:scale-105" alt="GeoAI Barru WebGIS Platform" src="geoaibarru.png"/>
+                        </a>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">WEBGIS</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">AI_AGENT</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">GeoAI Barru</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc1">
+                            Platform geospasial yang dilengkapi dengan lapisan analisis AI dan elemen peta interaktif.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: GAI-BARRU</span>
+                            <a class="font-label-caps text-label-caps font-bold hover:underline flex items-center gap-1" href="http://geoaibarru.com/" target="_blank">
+                                LIVE_DEMO
+                                <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Geopangansidrap -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <a href="https://geopangansidrap.id/" target="_blank">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-precise scale-100 group-hover:scale-105" alt="Geopangansidrap agricultural mapping" src="geopangansidrap.png"/>
+                        </a>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">WEBGIS</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">SPATIAL</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Geopangansidrap</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc2">
+                            Platform WebGIS untuk pemetaan pertanian dan analisis ketahanan pangan.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: GPS-SIDRAP</span>
+                            <a class="font-label-caps text-label-caps font-bold hover:underline flex items-center gap-1" href="https://geopangansidrap.id/" target="_blank">
+                                LIVE_DEMO
+                                <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Sijagung -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <a href="https://sijagung.id/" target="_blank">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-precise scale-100 group-hover:scale-105" alt="Sijagung production tracking" src="sijagung.png"/>
+                        </a>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">WEBGIS</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">AGRICULTURE</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Sijagung</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc3">
+                            WebGIS pertanian yang dirancang untuk melacak dan memonitor produksi jagung.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: SJ-JAGUNG</span>
+                            <a class="font-label-caps text-label-caps font-bold hover:underline flex items-center gap-1" href="https://sijagung.id/" target="_blank">
+                                LIVE_DEMO
+                                <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: WebGIS Kab. Barru -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <a href="https://geobarru.vercel.app/" target="_blank">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-precise scale-100 group-hover:scale-105" alt="WebGIS Pertanian Kabupaten Barru" src="geobarru.png"/>
+                        </a>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">WEBGIS</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">CHATBOT</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">WebGIS Kab. Barru</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc6">
+                            WebGIS analisis kesesuaian lahan budidaya tanaman semangka di Kab. Barru, dilengkapi fitur AI Chatbot untuk analisis dan pemantauan lahan.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: WG-BARRU</span>
+                            <a class="font-label-caps text-label-caps font-bold hover:underline flex items-center gap-1" href="https://geobarru.vercel.app/" target="_blank">
+                                LIVE_DEMO
+                                <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: BengkelPro App -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <!-- CSS Technical Placeholder -->
+                    <div class="aspect-[16/10] bg-surface-container-high border-b border-outline/10 flex items-center justify-center font-label-data text-xs text-on-surface-variant/60 uppercase">
+                        SCREENSHOT_PENDING
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">MANAGEMENT</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">POS</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">BengkelPro App</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc4">
+                            Aplikasi manajemen bengkel dengan peran Admin/Mekanik, sistem kasir (POS), dan manajemen inventaris.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: BP-MANAGEMENT</span>
+                            <span class="font-label-caps text-label-caps text-primary/40 font-bold">DEV_LOCAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6: AI GIS Chatbot -->
+                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
+                    <!-- CSS Technical Placeholder -->
+                    <div class="aspect-[16/10] bg-surface-container-high border-b border-outline/10 flex items-center justify-center font-label-data text-xs text-on-surface-variant/60 uppercase">
+                        SCREENSHOT_PENDING
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">AI_CHATBOT</span>
+                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">VECTOR_DB</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">AI GIS Chatbot</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc5">
+                            Integrasi API Groq, n8n, dan Supabase vector database untuk kueri data spasial yang cerdas.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
+                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: AI-GIS-BOT</span>
+                            <span class="font-label-caps text-label-caps text-primary/40 font-bold">API_ENDPOINT</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="contact-item">
-                <i class='bx bx-current-location'></i>
-                <div>
-                    <h3 data-i18n="contact_location">Lokasi</h3>
-                    <p>Makassar, Indonesia</p>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="awards">
+            <h2 class="font-headline-md text-headline-md text-primary mb-12" data-i18n="awards_heading">Penghargaan & Prestasi</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Redesigned Single Card for Gold Prize ACRS 2025 -->
+                <div class="flex flex-col md:flex-row gap-6 items-start p-8 border border-outline/10 hover:border-secondary transition-precise bg-white/50">
+                    <div class="text-secondary shrink-0">
+                        <span class="material-symbols-outlined text-5xl" data-icon="workspace_premium" data-weight="fill">workspace_premium</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-wider" data-i18n="award_title1">Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)</h4>
+                        <p class="font-headline-md text-headline-md text-primary mb-4 leading-tight">
+                            "WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia"
+                        </p>
+                        <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="award_desc1">
+                            Diberikan untuk proyek "WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia" yang dipresentasikan pada 44th Asian Conference on Remote Sensing (ACRS 2025).
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p data-i18n="footer_text">Hak Cipta &copy; 2026 oleh Herfiadi Reski Alviansyah | Hak Cipta Dilindungi Undang-undang.</p>
-        </div>
-        
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
+        <!-- Contact Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="contact">
+            <div class="max-w-4xl">
+                <h2 class="font-headline-md text-headline-md text-primary mb-2" data-i18n="contact_heading">Hubungi Saya!</h2>
+                <p class="font-label-data text-label-data text-on-surface-variant uppercase mb-12" data-i18n="contact_sub">Transmission established. Waiting for input.</p>
+                <form class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="relative">
+                            <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">USER_NAME</label>
+                            <input class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="Entry identification..." data-i18n-placeholder="contact_name" type="text" required/>
+                        </div>
+                        <div class="relative">
+                            <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">EMAIL_ADDRESS</label>
+                            <input class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="protocol@domain.com" data-i18n-placeholder="contact_email" type="email" required/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">TRANSMISSION_CONTENT</label>
+                        <textarea class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="Describe project parameters or collaboration scope..." data-i18n-placeholder="contact_msg" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="px-12 py-4 bg-primary text-white font-label-caps text-sm font-bold flex items-center gap-3 transition-precise hover:bg-secondary rounded-none">
+                        <span data-i18n="btn_send">SEND DATA PACKET</span>
+                        <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                    </button>
+                </form>
+            </div>
+        </section>
 
-    <!-- Chatbot Widget -->
-    <div class="chatbot-widget" id="chatbot-widget">
-        <!-- Floating Button -->
-        <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Open Chatbot">
-            <i class='bx bx-bot chat-icon-main'></i>
-            <i class='bx bx-x chat-icon-close' style="display: none;"></i>
+        <!-- Footer -->
+        <footer class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-primary border-t border-primary-container">
+            <div class="text-secondary font-label-caps text-label-caps font-bold">
+                GEOPHYSICS_LAB
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="font-label-data text-label-data text-on-primary-container hover:text-on-primary transition-colors" href="#hero">System Base</a>
+                <a class="font-label-data text-label-data text-on-primary-container hover:text-on-primary transition-colors" href="#about">Dataset</a>
+                <a class="font-label-data text-label-data text-on-primary-container hover:text-on-primary transition-colors" href="#projects">Layers</a>
+                <a class="font-label-data text-label-data text-on-primary-container hover:text-on-primary transition-colors" href="#experience">Timeline</a>
+            </div>
+            <div class="font-label-data text-label-data text-primary-fixed-dim text-center md:text-right" data-i18n="footer_text">
+                © 2026 GEOPHYSICS_LAB. <br/>
+                PRECISION: 0.0001m. PROJECTION: EPSG:4326.
+            </div>
+        </footer>
+    </main>
+
+    <!-- Floating GeoAI Assistant Widget (DESIGN.md sharp corners and colors) -->
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4">
+        <div class="hidden w-80 bg-background border border-outline shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 duration-300" id="ai-chat">
+            <div class="bg-primary p-3 flex justify-between items-center">
+                <span class="font-label-caps text-[10px] text-white">GEO_ASSISTANT_V2.1</span>
+                <!-- Updated click handler to match modified script.js toggle chat function -->
+                <button class="text-white hover:text-secondary bg-transparent p-0 border-none outline-none cursor-pointer flex items-center" onclick="toggleChat()"><span class="material-symbols-outlined text-sm">close</span></button>
+            </div>
+            <div class="h-64 p-4 overflow-y-auto font-label-data text-xs bg-surface-container-lowest no-scrollbar flex flex-col gap-3" id="chat-messages">
+                <div class="message bot-message self-start bg-[#16232e]/5 border border-outline/10 p-2 max-w-[85%]">
+                    <p data-i18n="chat_welcome"><span class="text-secondary font-bold">[SYS]:</span> Terminal ready. How can I assist with your spatial data exploration?</p>
+                </div>
+            </div>
+            <!-- Quick Suggestions styled matching DESIGN.md technical theme -->
+            <div class="p-3 border-t border-outline/10 bg-background flex flex-col gap-1.5" id="chat-suggestions">
+                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_1">Apa saja proyek WebGIS Herfiadi?</button>
+                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_2">Bagaimana latar belakang pendidikannya?</button>
+                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_3">Bagaimana cara menghubungi Herfiadi?</button>
+            </div>
+            <div class="p-3 border-t border-outline/10 bg-background">
+                <form class="flex gap-2" id="chat-form">
+                    <input class="flex-1 bg-surface-container-low border-none focus:ring-1 focus:ring-secondary text-xs font-label-data py-2 px-3 outline-none" placeholder="Enter query..." id="chat-input" data-i18n-placeholder="chat_placeholder" type="text" required autocomplete="off"/>
+                    <button type="submit" class="bg-primary text-white px-3 flex items-center justify-center border-none outline-none cursor-pointer hover:bg-secondary"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+                </form>
+            </div>
+        </div>
+        <!-- Main floating assistant trigger button -->
+        <button class="w-16 h-16 bg-secondary text-white border border-secondary hover:bg-primary transition-precise flex items-center justify-center shadow-lg group rounded-none" onclick="toggleChat()">
+            <span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform" data-icon="hub">hub</span>
         </button>
-
-        <!-- Chat Window -->
-        <div class="chat-window glass-card" id="chat-window" style="display: none;">
-            <div class="chat-header">
-                <div class="chat-header-info">
-                    <div class="chat-avatar">
-                        <i class='bx bx-bot'></i>
-                    </div>
-                    <div>
-                        <h4 data-i18n="chat_header_title">GeoAI Assistant</h4>
-                        <span data-i18n="chat_header_status">Online | Llama-3.3</span>
-                    </div>
-                </div>
-                <button class="chat-close-btn" id="chat-close-btn">&times;</button>
-            </div>
-            
-            <div class="chat-messages" id="chat-messages">
-                <div class="message bot-message">
-                    <p data-i18n="chat_welcome">Halo! Saya asisten AI Herfiadi. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?</p>
-                </div>
-            </div>
-
-            <!-- Quick Suggestions -->
-            <div class="chat-suggestions" id="chat-suggestions">
-                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_1">Apa saja proyek WebGIS Herfiadi?</button>
-                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_2">Bagaimana latar belakang pendidikannya?</button>
-                <button type="button" class="suggestion-btn" data-i18n="chat_suggest_3">Bagaimana cara menghubungi Herfiadi?</button>
-            </div>
-
-            <form class="chat-input-area" id="chat-form">
-                <input type="text" id="chat-input" placeholder="Tulis pesan..." data-i18n-placeholder="chat_placeholder" required autocomplete="off">
-                <button type="submit" class="chat-send-btn" aria-label="Send message">
-                    <i class='bx bx-send'></i>
-                </button>
-            </form>
-        </div>
     </div>
 
     <!-- Typed JS for typing animation -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
