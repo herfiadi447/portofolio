@@ -16,12 +16,20 @@
         
         .topographic-pattern {
             background-color: #EDEFEA;
-            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 Q 50 50 100 100 T 200 100' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M0 120 Q 50 70 100 120 T 200 120' fill='none' stroke='%2316232E' stroke-width='0.3' opacity='0.05'/%3E%3Cpath d='M0 80 Q 50 30 100 80 T 200 80' fill='none' stroke='%2316232E' stroke-width='0.3' opacity='0.05'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10 80 C 40 10, 260 10, 290 80 C 310 130, 190 280, 150 280 C 110 280, -10 130, 10 80 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M 50 90 C 70 40, 230 40, 250 90 C 265 130, 175 230, 150 230 C 125 230, 35 130, 50 90 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.06'/%3E%3Cpath d='M 90 100 C 105 65, 195 65, 210 100 C 220 130, 165 180, 150 180 C 135 180, 80 130, 90 100 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 120 110 C 130 90, 170 90, 180 110 C 185 125, 160 145, 150 145 C 140 145, 115 125, 120 110 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 0 220 C 30 200, 80 250, 100 290' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 0 200 C 40 180, 90 240, 110 290' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.04'/%3E%3Cpath d='M 220 0 C 240 30, 280 20, 300 50' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 240 0 C 260 40, 290 35, 300 70' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.04'/%3E%3C/svg%3E");
         }
 
         .blueprint-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(22, 35, 46, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(22, 35, 46, 0.03) 1px, transparent 1px);
+        }
+
+        .topo-blueprint-hero {
+            background-color: #EDEFEA;
+            background-size: auto, 40px 40px;
+            background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10 80 C 40 10, 260 10, 290 80 C 310 130, 190 280, 150 280 C 110 280, -10 130, 10 80 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M 50 90 C 70 40, 230 40, 250 90 C 265 130, 175 230, 150 230 C 125 230, 35 130, 50 90 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.06'/%3E%3Cpath d='M 90 100 C 105 65, 195 65, 210 100 C 220 130, 165 180, 150 180 C 135 180, 80 130, 90 100 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 120 110 C 130 90, 170 90, 180 110 C 185 125, 160 145, 150 145 C 140 145, 115 125, 120 110 Z' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 0 220 C 30 200, 80 250, 100 290' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 0 200 C 40 180, 90 240, 110 290' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.04'/%3E%3Cpath d='M 220 0 C 240 30, 280 20, 300 50' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M 240 0 C 260 40, 290 35, 300 70' fill='none' stroke='%2316232E' stroke-width='0.5' opacity='0.04'/%3E%3C/svg%3E"),
+                              linear-gradient(to right, rgba(22, 35, 46, 0.03) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(22, 35, 46, 0.03) 1px, transparent 1px);
         }
 
@@ -194,9 +202,9 @@
         </div>
     </aside>
 
-    <main class="ml-0 lg:ml-16 topographic-pattern min-h-screen blueprint-grid">
+    <main class="ml-0 lg:ml-16 min-h-screen blueprint-grid">
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex flex-col justify-center px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline/20" id="hero">
+        <section class="relative min-h-screen flex flex-col justify-center px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline/20 topo-blueprint-hero" id="hero">
             <div class="scan-line absolute top-0 left-0 w-full z-0"></div>
             <div class="z-10 max-w-5xl">
                 <div class="mb-6">
