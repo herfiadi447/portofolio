@@ -312,7 +312,7 @@ if (menuIcon && navbar) {
 }
 
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+let navLinks = document.querySelectorAll('nav a');
 
 // --- Reusable Smooth Scroll Helper ---
 function scrollToSection(targetId) {
@@ -343,7 +343,7 @@ window.onscroll = () => {
             // Update Top Navigation
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                const linkSelector = 'header nav a[href*=' + id + ']';
+                const linkSelector = 'nav a[href*=' + id + ']';
                 const linkEl = document.querySelector(linkSelector);
                 if (linkEl) {
                     linkEl.classList.add('active');
@@ -363,7 +363,7 @@ window.onscroll = () => {
         };
     });
 
-    let header = document.querySelector('header');
+    let header = document.querySelector('nav');
     if (header) {
         header.classList.toggle('sticky', window.scrollY > 100);
     }
