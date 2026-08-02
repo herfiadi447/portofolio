@@ -273,7 +273,7 @@ const translations = {
         proj_desc6: "巴鲁县西瓜种植适宜性分析 WebGIS，内置 AI 聊天机器人，支持农业监测与分析。",
         awards_heading: "奖项与成就",
         award_title1: "金奖 – ACRS 2025（亚洲遥感协会）",
-        award_desc1: "凭借项目"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia"在第 44 届亚洲遥感大会（ACRS 2025）上荣获金奖。",
+        award_desc1: "凭借项目 \"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia\" 在第 44 届亚洲遥感大会（ACRS 2025）上荣获金奖。",
         contact_heading: "联系我！",
         contact_sub: "欢迎通过以下渠道与我取得联系。",
         footer_text: "© 2026 GEOPHYSICS_LAB. 版权所有。",
