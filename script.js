@@ -12,11 +12,16 @@ const translations = {
         hero_im: "Dan saya seorang",
         hero_desc: "Saya seorang Sarjana Geofisika (S.Si) dengan minat kuat di bidang Geoinformatika, pengembangan WebGIS, dan integrasi Artificial Intelligence. Saya berdedikasi membangun solusi data spasial yang efisien.",
         btn_cv: "Unduh CV",
-        btn_contact: "Hubungi Saya",
-        about_heading: "Tentang <span>Saya</span>",
-        about_subheading: "Sarjana Geofisika & Penggiat WebGIS",
+        btn_projects: "Lihat Proyek",
+        about_heading: "◉ DATASET_01: PROFIL",
         about_desc: "Saya memiliki pengalaman dalam merancang dan mengembangkan platform WebGIS yang dilengkapi chatbot berbasis AI untuk berbagai kebutuhan. Saya mahir menggunakan teknologi GIS modern untuk pemrosesan dan presentasi data spasial. Sebagai lulusan Geofisika (S.Si) dari Universitas Hasanuddin dengan GPA 3.81, komitmen saya adalah terus mengembangkan solusi inovatif yang menggabungkan GIS dan Kecerdasan Buatan.",
-        skills_heading: "<span>Keahlian</span> Saya",
+        about_edu_title: "PENDIDIKAN",
+        about_edu_val: "Teknik Geofisika",
+        about_edu_inst: "Universitas Hasanuddin",
+        about_loc_title: "DOMISILI",
+        about_loc_val: "Makassar, Indonesia",
+        about_loc_tz: "Waktu Indonesia Tengah",
+        skills_heading: "◉ LEGEND: KEAHLIAN",
         skills_cat1: "WebGIS & Data Spasial",
         skills_item1: "Perangkat Lunak GIS: ArcMap/ArcGIS, QGIS",
         skills_item2: "Pengembangan WebGIS (Flask, Leaflet, Folium)",
@@ -27,10 +32,7 @@ const translations = {
         skills_item6: "Integrasi Chatbot AI (RAG, n8n, Supabase)",
         skills_item7: "Manajemen Database (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "Pengembangan UI/UX untuk Aplikasi GIS",
-        skills_cat3: "Bahasa",
-        skills_lang1: "Bahasa Indonesia – Penutur Asli (Native)",
-        skills_lang2: "Bahasa Inggris – Upper-Intermediate CEFR (EF SET)",
-        exp_heading: "<span>Pengalaman</span> Saya",
+        exp_heading: "◉ TIMELINE: PENGALAMAN",
         exp_date1: "2025",
         exp_title1: "Junior Web Developer",
         exp_desc1: "• Mengembangkan platform WebGIS: GeoAI Barru, Geopangansidrap, dan Sijagung.<br>• Menerapkan fitur chatbot AI via n8n dan Supabase untuk interaktivitas pengguna.<br>• Manajemen data spasial dengan PostgreSQL/PostGIS dan MySQL.<br>• Meningkatkan UI/UX aplikasi GIS menggunakan Leaflet dan Folium.",
@@ -46,28 +48,29 @@ const translations = {
         exp_title4: "Data Entry Intern",
         exp_subtitle4: "Kedaireka MBKM, Kabupaten Barru",
         exp_desc4: "• Berkolaborasi dengan Pemerintah Kabupaten Barru dalam program Kedaireka MBKM untuk mengembangkan platform WebGIS analisis kesesuaian lahan pertanian.<br>• Membantu membangun sistem WebGIS interaktif untuk mendukung pemangku kepentingan lokal dalam efisiensi sumber daya pertanian dan pengambilan keputusan tata guna lahan.<br>• Berkontribusi dalam entry, organisasi, dan verifikasi data spasial dan atribut di dalam platform.",
-        proj_heading: "Proyek <span>Terbaru</span>",
+        proj_heading: "◉ LAYERS: PROYEK TERBARU",
         proj_desc1: "Platform geospasial yang dilengkapi dengan lapisan analisis AI dan elemen peta interaktif.",
         proj_desc2: "Platform WebGIS untuk pemetaan pertanian dan analisis ketahanan pangan.",
         proj_desc3: "WebGIS pertanian yang dirancang untuk melacak dan memonitor produksi jagung.",
         proj_desc4: "Aplikasi manajemen bengkel dengan peran Admin/Mekanik, sistem kasir (POS), dan manajemen inventaris.",
         proj_desc5: "Integrasi API Groq, n8n, dan Supabase vector database untuk kueri data spasial yang cerdas.",
         proj_desc6: "WebGIS analisis kesesuaian lahan budidaya tanaman semangka di Kab. Barru, dilengkapi fitur AI Chatbot untuk analisis dan pemantauan lahan.",
-        awards_heading: "Penghargaan & <span>Prestasi</span>",
+        awards_heading: "Penghargaan & Prestasi",
         award_title1: "Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)",
         award_desc1: "Diberikan untuk proyek \"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia\" yang dipresentasikan pada 44th Asian Conference on Remote Sensing (ACRS 2025).",
-        contact_heading: "Hubungi <span>Saya!</span>",
-        contact_phone: "Telepon",
-        contact_location: "Lokasi",
-        footer_text: "Hak Cipta &copy; 2026 oleh Herfiadi Reski Alviansyah | Hak Cipta Dilindungi Undang-undang.",
+        contact_heading: "Hubungi Saya!",
+        contact_sub: "Transmisi terhubung. Menunggu input.",
+        contact_name: "Identifikasi entri...",
+        contact_email: "protokol@domain.com",
+        contact_msg: "Jelaskan parameter proyek atau ruang lingkup kolaborasi...",
+        btn_send: "KIRIM PAKET DATA",
+        footer_text: "© 2026 GEOPHYSICS_LAB. Hak Cipta Dilindungi Undang-undang.",
         typed_strings: ['Sarjana Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial'],
-        chat_header_title: "Asisten GeoAI",
-        chat_header_status: "Online | Llama-3.3",
-        chat_welcome: "Halo! Saya asisten AI Herfiadi. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?",
+        chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> Terminal siap. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?",
         chat_suggest_1: "Apa saja proyek WebGIS Herfiadi?",
         chat_suggest_2: "Bagaimana latar belakang pendidikannya?",
         chat_suggest_3: "Bagaimana cara menghubungi Herfiadi?",
-        chat_placeholder: "Tulis pesan..."
+        chat_placeholder: "Kirim query..."
     },
     en: {
         nav_home: "Home",
@@ -75,17 +78,22 @@ const translations = {
         nav_skills: "Skills",
         nav_experience: "Experience",
         nav_projects: "Projects",
-        nav_awards: "Awards",
+        nav_awards: "Achievements",
         nav_contact: "Contact",
         hero_hello: "Hello, I'm",
         hero_im: "And I'm a",
         hero_desc: "I hold a Bachelor's degree (S.Si) in Geophysics with a strong interest in Geoinformatics, WebGIS development, and Artificial Intelligence integration. I'm passionate about building scalable spatial data solutions.",
         btn_cv: "Download CV",
-        btn_contact: "Contact Me",
-        about_heading: "About <span>Me</span>",
-        about_subheading: "Geophysics Graduate & WebGIS Enthusiast",
+        btn_projects: "View Projects",
+        about_heading: "◉ DATASET_01: PROFILE",
         about_desc: "I have experience in designing and developing WebGIS platforms equipped with AI-based chatbots for various use cases. I am proficient in utilizing modern GIS technologies for processing and presenting spatial data. As a Geophysics graduate (S.Si) from Hasanuddin University with a GPA of 3.81, my commitment lies in continuously developing innovative solutions at the intersection of GIS and Artificial Intelligence.",
-        skills_heading: "My <span>Skills</span>",
+        about_edu_title: "EDUCATION",
+        about_edu_val: "Geophysics Engineering",
+        about_edu_inst: "Hasanuddin University",
+        about_loc_title: "LOCATION",
+        about_loc_val: "Makassar, Indonesia",
+        about_loc_tz: "Central Indonesia Time",
+        skills_heading: "◉ LEGEND: SKILLS",
         skills_cat1: "WebGIS & Spatial Data",
         skills_item1: "GIS Software: ArcMap/ArcGIS, QGIS",
         skills_item2: "WebGIS Development (Flask, Leaflet, Folium)",
@@ -96,10 +104,7 @@ const translations = {
         skills_item6: "AI Chatbot Integration (RAG, n8n, Supabase)",
         skills_item7: "Database Management (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "UI/UX Development for GIS Applications",
-        skills_cat3: "Languages",
-        skills_lang1: "Indonesian – Native",
-        skills_lang2: "English – Upper-Intermediate CEFR (EF SET)",
-        exp_heading: "My <span>Experience</span>",
+        exp_heading: "◉ TIMELINE: EXPERIENCE",
         exp_date1: "2025",
         exp_title1: "Junior Web Developer",
         exp_desc1: "• Developed WebGIS platforms: GeoAI Barru, Geopangansidrap, and Sijagung.<br>• Implemented AI chatbot features via n8n and Supabase to enhance interactivity.<br>• Managed spatial data with PostgreSQL/PostGIS and MySQL.<br>• Improved UI/UX for GIS applications using Leaflet and Folium.",
@@ -115,28 +120,29 @@ const translations = {
         exp_title4: "Data Entry Intern",
         exp_subtitle4: "Kedaireka MBKM, Kabupaten Barru",
         exp_desc4: "• Collaborated with the Barru Regency Government under the Kedaireka MBKM program to develop a WebGIS platform for agricultural land suitability analysis.<br>• Assisted in building an interactive WebGIS system to support local stakeholders in agricultural resource efficiency and land-use decision-making.<br>• Contributed to spatial and attribute data entry, organization, and verification within the platform.",
-        proj_heading: "Latest <span>Projects</span>",
+        proj_heading: "◉ LAYERS: LATEST PROJECTS",
         proj_desc1: "Geospatial platform featuring an AI analysis layer and interactive map elements.",
         proj_desc2: "WebGIS platform for agricultural mapping and food security analysis.",
         proj_desc3: "Agricultural WebGIS tailored for tracking and monitoring corn production.",
         proj_desc4: "Workshop management web application with Admin/Mechanic roles, POS workflow, and inventory management.",
         proj_desc5: "Integration of Groq API, n8n, and Supabase vector database for intelligent spatial data queries.",
         proj_desc6: "WebGIS for watermelon cultivation suitability analysis in Barru Regency, equipped with an AI Chatbot for agricultural monitoring and analysis.",
-        awards_heading: "Awards & <span>Achievements</span>",
+        awards_heading: "Awards & Achievements",
         award_title1: "Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)",
         award_desc1: "Awarded for the project \"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia\" presented at the 44th Asian Conference on Remote Sensing (ACRS 2025).",
-        contact_heading: "Contact <span>Me!</span>",
-        contact_phone: "Phone",
-        contact_location: "Location",
-        footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | All Rights Reserved.",
+        contact_heading: "Contact Me!",
+        contact_sub: "Transmission established. Waiting for input.",
+        contact_name: "Entry identification...",
+        contact_email: "protocol@domain.com",
+        contact_msg: "Describe project parameters or collaboration scope...",
+        btn_send: "SEND DATA PACKET",
+        footer_text: "© 2026 GEOPHYSICS_LAB. All Rights Reserved.",
         typed_strings: ['Geophysics Graduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst'],
-        chat_header_title: "GeoAI Assistant",
-        chat_header_status: "Online | Llama-3.3",
-        chat_welcome: "Hello! I am Herfiadi's AI assistant. How can I help you regarding Herfiadi's skills, projects, or experience?",
+        chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> Terminal ready. How can I assist with your spatial data exploration?",
         chat_suggest_1: "What WebGIS projects has Herfiadi built?",
         chat_suggest_2: "What is his educational background?",
         chat_suggest_3: "How can I contact Herfiadi?",
-        chat_placeholder: "Type a message..."
+        chat_placeholder: "Enter query..."
     },
     jp: {
         nav_home: "ホーム",
@@ -150,11 +156,16 @@ const translations = {
         hero_im: "私は",
         hero_desc: "私は地球物理学の学士号（S.Si）を取得しており、地球情報学、WebGIS開発、人工知能の統合に強い関心を持っています。効率的な空間データソリューションの構築に情熱を注いでいます。",
         btn_cv: "経歴書をダウンロード",
-        btn_contact: "お問い合わせ",
-        about_heading: "私に<span>ついて</span>",
-        about_subheading: "地球物理学卒業生 & WebGISエンジニア",
+        btn_projects: "プロジェクト表示",
+        about_heading: "◉ DATASET_01: プロフィール",
         about_desc: "私は様々な用途に応じたAIチャットボットを備えたWebGISプラットフォームの設計および開発の経験があります。空間データの処理と提示のための最新のGIS技術の活用に熟練しています。ハサヌディン大学をGPA 3.81で卒業した地球物理学（S.Si）の学位を背景に、GISと人工知能の交差点で革新的なソリューションを開発し続けることに取り組んでいます。",
-        skills_heading: "私の<span>スキル</span>",
+        about_edu_title: "学歴",
+        about_edu_val: "地球物理学工学",
+        about_edu_inst: "ハサヌディン大学",
+        about_loc_title: "所在地",
+        about_loc_val: "マカッサル、インドネシア",
+        about_loc_tz: "中部インドネシア時間",
+        skills_heading: "◉ LEGEND: スキル",
         skills_cat1: "WebGIS & 空間データ",
         skills_item1: "GISソフトウェア: ArcMap/ArcGIS, QGIS",
         skills_item2: "WebGIS開発 (Flask, Leaflet, Folium)",
@@ -165,47 +176,45 @@ const translations = {
         skills_item6: "AIチャットボット統合 (RAG, n8n, Supabase)",
         skills_item7: "データベース管理 (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "GISアプリケーションのUI/UX開発",
-        skills_cat3: "言語",
-        skills_lang1: "インドネシア語 – 母国語 (Native)",
-        skills_lang2: "英語 – 中上級 CEFR (EF SET)",
-        exp_heading: "私の<span>経歴</span>",
+        exp_heading: "◉ TIMELINE: 経歴",
         exp_date1: "2025",
         exp_title1: "ジュニアWeb開発者",
         exp_desc1: "• WebGISプラットフォーム「GeoAI Barru」「Geopangansidrap」「Sijagung」の開発。<br>• ユーザー対話性を向上させるためのn8nおよびSupabaseを介したAIチャットボット機能の実装。<br>• PostgreSQL/PostGISとMySQLを使用した空間データの管理。<br>• LeafletとFoliumを使用したGISアプリケーションのUI/UXの改善。",
         exp_date2: "2025",
         exp_title2: "GIS送電計画インターン",
         exp_subtitle2: "UPT PLNマカッサル",
-        exp_desc2: "• マカッサル市における高圧送電塔（SUTT）の空間分布図の作成。<br>• 各SUTT地点の地滑り感受性マップの作成。",
+        exp_desc2: "• マカッサル市における高圧送電塔（SUTT）の空間分布図 of 作成。<br>• 各SUTT地点の地滑り感受性マップの作成。",
         exp_date3: "2025",
         exp_title3: "フィールドサーベイヤー",
         exp_subtitle3: "ハサヌディン大学 – LPPM Witaris",
-        exp_desc3: "• 地理空間データ収集技術を使用した農業農家グループ（POKTAN）のマッピングのための現地調査。<br>• マッピングされた各領域 of 空間および属性データの収集と検証。",
+        exp_desc3: "• 地理空間データ収集技術を使用した農業農家グループ（POKTAN）のマッピングのための現地調査。<br>• マッピングされた各領域の空間および属性データの収集と検証。",
         exp_date4: "2024",
         exp_title4: "データ入力インターン",
         exp_subtitle4: "Kedaireka MBKM、バル県",
         exp_desc4: "• 農業適地分析のためのWebGISプラットフォーム開発に向け、Kedaireka MBKMプログラムのもとでバル県政府と協働。<br>• 農業資源の効率化および土地利用の意思決定において、地域のステークホルダーを支援するインタラクティブなWebGISシステムの構築を補助。<br>• プラットフォーム内における空間および属性データの入力、整理、検証に貢献。",
-        proj_heading: "最新の<span>プロジェクト</span>",
+        proj_heading: "◉ LAYERS: 最新のプロジェクト",
         proj_desc1: "AI分析レイヤーとインタラクティブなマップ要素を備えた地理空間プラットフォーム。",
         proj_desc2: "農業マッピングと食料安全保障分析のためのWebGISプラットフォーム。",
         proj_desc3: "トウモロコシ生産の追跡と監視に特化した農業WebGIS。",
         proj_desc4: "管理者/メカニックの役割、POSワークフロー、在庫管理を備えたワークショップ管理Webアプリケーション。",
         proj_desc5: "高度な空間データクエリ用のGroq API、n8n、およびSupabaseベクターデータベースの統合。",
         proj_desc6: "バル県のスイカ栽培適性分析用WebGIS。農地監視と分析を支援するAIチャットボット機能を搭載。",
-        awards_heading: "受賞 & <span>実績</span>",
+        awards_heading: "受賞 & 実績",
         award_title1: "ゴールドプライズ（最優秀賞） – ACRS 2025 (アジア遠隔探査協会)",
         award_desc1: "第44回アジア遠隔探査会議（ACRS 2025）にて発表されたプロジェクト「WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia」に対して授与されました。",
         contact_heading: "お問い合わせ",
-        contact_phone: "電話番号",
-        contact_location: "場所",
-        footer_text: "Copyright &copy; 2026 by Herfiadi Reski Alviansyah | 全著作権所有.",
+        contact_sub: "送信準備完了。入力を待っています。",
+        contact_name: "入力識別子...",
+        contact_email: "protocol@domain.com",
+        contact_msg: "プロジェクトのパラメータまたはコラボレーションの範囲について記述してください...",
+        btn_send: "データパケット送信",
+        footer_text: "© 2026 GEOPHYSICS_LAB. All Rights Reserved.",
         typed_strings: ['地球物理学卒業生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト'],
-        chat_header_title: "GeoAI アシスタント",
-        chat_header_status: "オンライン | Llama-3.3",
-        chat_welcome: "こんにちは！ヘルフィアディのAIアシスタントです。ヘルフィアディのスキル、プロジェクト、または経歴について何かお手伝いできることはありますか？",
+        chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> ターミナル準備完了。空間データの探索をどのようにサポートできますか？",
         chat_suggest_1: "ヘルフィアディはどのようなWebGISプロジェクトを構築しましたか？",
         chat_suggest_2: "彼の学歴はどうなっていますか？",
         chat_suggest_3: "ヘルフィアディに連絡するにはどうすればいいですか？",
-        chat_placeholder: "メッセージを入力..."
+        chat_placeholder: "クエリを入力..."
     }
 };
 
@@ -236,13 +245,17 @@ function updateLanguage(lang) {
     if (typedInstance) {
         typedInstance.destroy();
     }
-    typedInstance = new Typed('.multiple-text', {
-        strings: data.typed_strings,
-        typeSpeed: 50,
-        backSpeed: 50,
-        backDelay: 1000,
-        loop: true
-    });
+    
+    // Safety check for typing animation element
+    if (document.querySelector('.multiple-text')) {
+        typedInstance = new Typed('.multiple-text', {
+            strings: data.typed_strings,
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000,
+            loop: true
+        });
+    }
 
     // Save language preference
     localStorage.setItem('portfolio_lang', lang);
@@ -250,49 +263,56 @@ function updateLanguage(lang) {
 }
 
 const langSwitch = document.getElementById('lang-switch');
-langSwitch.addEventListener('change', (e) => {
-    updateLanguage(e.target.value);
-});
+if (langSwitch) {
+    langSwitch.addEventListener('change', (e) => {
+        updateLanguage(e.target.value);
+    });
+}
 
-// --- Theme Toggle Logic ---
+// --- Theme Toggle Logic (Preserved for codebase stability, safely skipped if toggle icon is absent) ---
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 function updateTheme(isLight) {
     if (isLight) {
         body.classList.add('light-mode');
-        themeToggle.classList.replace('bx-moon', 'bx-sun');
+        if (themeToggle) themeToggle.classList.replace('bx-moon', 'bx-sun');
         localStorage.setItem('portfolio_theme', 'light');
     } else {
         body.classList.remove('light-mode');
-        themeToggle.classList.replace('bx-sun', 'bx-moon');
+        if (themeToggle) themeToggle.classList.replace('bx-sun', 'bx-moon');
         localStorage.setItem('portfolio_theme', 'dark');
     }
 }
 
-themeToggle.addEventListener('click', () => {
-    const isLightMode = !body.classList.contains('light-mode');
-    updateTheme(isLightMode);
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isLightMode = !body.classList.contains('light-mode');
+        updateTheme(isLightMode);
+    });
+}
 
-// --- Initialization ---
-// Initialize Theme (Default: Dark unless specified in localStorage)
-const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+// Initialize Theme (Default: Light for Technical Cartography design style)
+const savedTheme = localStorage.getItem('portfolio_theme') || 'light';
 updateTheme(savedTheme === 'light');
 
 // Initialize Language (Default: ID unless specified in localStorage)
 const savedLang = localStorage.getItem('portfolio_lang') || 'id';
-langSwitch.value = savedLang;
+if (langSwitch) {
+    langSwitch.value = savedLang;
+}
 updateLanguage(savedLang);
 
 // --- Navigation & Animate on Scroll UI ---
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    };
+}
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -307,78 +327,54 @@ window.onscroll = () => {
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                const linkSelector = 'header nav a[href*=' + id + ']';
+                const linkEl = document.querySelector(linkSelector);
+                if (linkEl) {
+                    linkEl.classList.add('active');
+                }
             });
         };
     });
 
     let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
+    if (header) {
+        header.classList.toggle('sticky', window.scrollY > 100);
+    }
 
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+    if (menuIcon && navbar) {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    }
 };
 
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.glass-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(50px)';
-    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(card);
-});
-
-// --- Chatbot Logic ---
-const chatToggleBtn = document.getElementById('chat-toggle-btn');
-const chatWindow = document.getElementById('chat-window');
-const chatCloseBtn = document.getElementById('chat-close-btn');
+// --- Chatbot Logic (Configured for Stitch's new widget IDs) ---
+const chatWindow = document.getElementById('ai-chat');
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
 const chatSuggestions = document.getElementById('chat-suggestions');
-const chatIconMain = document.querySelector('.chat-icon-main');
-const chatIconClose = document.querySelector('.chat-icon-close');
 
 let chatHistory = [];
 
 // Toggle Chat Window
 function toggleChat() {
-    const isOpen = chatWindow.style.display !== 'none';
-    if (isOpen) {
-        chatWindow.style.display = 'none';
-        chatIconMain.style.display = 'block';
-        chatIconClose.style.display = 'none';
-    } else {
-        chatWindow.style.display = 'flex';
-        chatIconMain.style.display = 'none';
-        chatIconClose.style.display = 'block';
-        scrollToBottom();
+    if (chatWindow) {
+        chatWindow.classList.toggle('hidden');
+        if (!chatWindow.classList.contains('hidden')) {
+            scrollToBottom();
+        }
     }
-}
-
-if (chatToggleBtn && chatWindow) {
-    chatToggleBtn.addEventListener('click', toggleChat);
-    chatCloseBtn.addEventListener('click', toggleChat);
 }
 
 // Scroll to bottom
 function scrollToBottom() {
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    if (chatMessages) {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 }
+
+// Expose toggleChat to window so HTML onclick handlers can trigger it
+window.toggleChat = toggleChat;
 
 // Parse basic Markdown (bold, lists, links, paragraphs) into safe HTML
 function parseMarkdown(text) {
@@ -389,13 +385,13 @@ function parseMarkdown(text) {
         .replace(/>/g, "&gt;");
 
     // 2. Inline Code: `code` -> <code>code</code>
-    html = html.replace(/`(.*?)`/g, '<code style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.2rem 0.4rem; border-radius: 0.4rem; font-family: monospace; font-size: 0.9em; color: var(--main-color-hover);">$1</code>');
+    html = html.replace(/`(.*?)`/g, '<code style="background: rgba(22, 35, 46, 0.05); border: 1px solid rgba(22, 35, 46, 0.1); padding: 0.1rem 0.3rem; font-family: monospace; font-size: 0.9em; color: #A6673A;">$1</code>');
 
     // 3. Bold: **text** -> <strong>text</strong>
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-    // 4. Links: [text](url) -> <a href="url" target="_blank" style="color: var(--main-color); text-decoration: underline; font-weight: 600;">$1</a>
-    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--main-color); text-decoration: underline; font-weight: 600;">$1</a>');
+    // 4. Links: [text](url) -> <a href="$2" target="_blank" style="color: #A6673A; text-decoration: underline; font-weight: 600;">$1</a>
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: #A6673A; text-decoration: underline; font-weight: 600;">$1</a>');
 
     // 5. Line-by-line parsing for lists and paragraphs
     const lines = html.split('\n');
@@ -417,20 +413,20 @@ function parseMarkdown(text) {
                 inNumList = false;
             }
             if (!inBulletList) {
-                result.push('<ul style="margin-left: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: disc;">');
+                result.push('<ul style="margin-left: 1.5rem; margin-top: 0.3rem; margin-bottom: 0.3rem; list-style-type: disc;">');
                 inBulletList = true;
             }
-            result.push(`<li style="margin-bottom: 0.4rem; line-height: 1.5;">${bulletMatch[1]}</li>`);
+            result.push(`<li style="margin-bottom: 0.3rem; line-height: 1.4;">${bulletMatch[1]}</li>`);
         } else if (numListMatch) {
             if (inBulletList) {
                 result.push('</ul>');
                 inBulletList = false;
             }
             if (!inNumList) {
-                result.push('<ol style="margin-left: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; list-style-type: decimal;">');
+                result.push('<ol style="margin-left: 1.5rem; margin-top: 0.3rem; margin-bottom: 0.3rem; list-style-type: decimal;">');
                 inNumList = true;
             }
-            result.push(`<li style="margin-bottom: 0.4rem; line-height: 1.5;">${numListMatch[2]}</li>`);
+            result.push(`<li style="margin-bottom: 0.3rem; line-height: 1.4;">${numListMatch[2]}</li>`);
         } else {
             if (inBulletList) {
                 result.push('</ul>');
@@ -442,9 +438,9 @@ function parseMarkdown(text) {
             }
             
             if (line === '') {
-                result.push('<div style="height: 0.8rem;"></div>');
+                result.push('<div style="height: 0.6rem;"></div>');
             } else {
-                result.push(`<p style="margin-bottom: 0.6rem; line-height: 1.5;">${line}</p>`);
+                result.push(`<p style="margin-bottom: 0.4rem; line-height: 1.4;">${line}</p>`);
             }
         }
     }
@@ -457,12 +453,16 @@ function parseMarkdown(text) {
 
 // Append message
 function appendMessage(sender, text) {
+    if (!chatMessages) return;
     const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message', `${sender}-message`);
+    messageDiv.classList.add('message', `${sender}-message`, 'self-start', 'max-w-[85%]', 'p-2', 'border', 'font-label-data', 'text-xs');
     
     if (sender === 'bot') {
+        messageDiv.classList.add('bg-[#16232e]/5', 'border-outline/10');
         messageDiv.innerHTML = parseMarkdown(text);
     } else {
+        messageDiv.classList.replace('self-start', 'self-end');
+        messageDiv.classList.add('bg-[#A6673A]/10', 'border-[#A6673A]/35', 'text-secondary');
         const paragraph = document.createElement('p');
         paragraph.textContent = text;
         messageDiv.appendChild(paragraph);
@@ -474,16 +474,23 @@ function appendMessage(sender, text) {
 
 // Show Typing Indicator
 function showTypingIndicator() {
+    if (!chatMessages) return;
     const indicatorDiv = document.createElement('div');
-    indicatorDiv.classList.add('message', 'bot-message', 'typing-indicator-container');
+    indicatorDiv.classList.add('message', 'bot-message', 'typing-indicator-container', 'self-start', 'bg-[#16232e]/5', 'border', 'border-outline/10', 'p-2');
     indicatorDiv.id = 'typing-indicator';
     
     indicatorDiv.innerHTML = `
-        <div class="typing-indicator">
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
+        <div style="display: flex; gap: 4px; padding: 4px 8px;">
+            <div style="width: 6px; height: 6px; background-color: #A6673A; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both;"></div>
+            <div style="width: 6px; height: 6px; background-color: #A6673A; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.2s;"></div>
+            <div style="width: 6px; height: 6px; background-color: #A6673A; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.4s;"></div>
         </div>
+        <style>
+            @keyframes bounce {
+                0%, 80%, 100% { transform: scale(0); }
+                40% { transform: scale(1.0); }
+            }
+        </style>
     `;
     chatMessages.appendChild(indicatorDiv);
     scrollToBottom();
@@ -503,10 +510,10 @@ async function sendMessage(text) {
 
     // Append user message
     appendMessage('user', text);
-    chatInput.value = '';
+    if (chatInput) chatInput.value = '';
     
     // Hide suggestions after the first message
-    chatSuggestions.style.display = 'none';
+    if (chatSuggestions) chatSuggestions.style.display = 'none';
 
     // Show typing indicator
     showTypingIndicator();
@@ -571,8 +578,10 @@ async function sendMessage(text) {
 if (chatForm) {
     chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const text = chatInput.value;
-        sendMessage(text);
+        if (chatInput) {
+            const text = chatInput.value;
+            sendMessage(text);
+        }
     });
 }
 
@@ -583,3 +592,11 @@ document.querySelectorAll('.suggestion-btn').forEach(btn => {
         sendMessage(text);
     });
 });
+
+// Technical console text effect
+const logData = () => {
+    const timestamp = new Date().toLocaleTimeString('en-GB', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    console.log(`[${timestamp}] GEO_SYSTEM_IDLE: Awaiting spatial input...`);
+};
+setInterval(logData, 10000);
+logData();
