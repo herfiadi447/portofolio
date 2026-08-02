@@ -32,6 +32,9 @@ const translations = {
         skills_item6: "Integrasi Chatbot AI (RAG, n8n, Supabase)",
         skills_item7: "Manajemen Database (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "Pengembangan UI/UX untuk Aplikasi GIS",
+        skills_cat3: "Bahasa",
+        skills_item9: "Bahasa Indonesia — Penutur Asli (Native)",
+        skills_item10: "Bahasa Inggris — Upper-Intermediate (CEFR, EF SET)",
         exp_heading: "◉ TIMELINE: PENGALAMAN",
         exp_date1: "2025",
         exp_title1: "Junior Web Developer",
@@ -59,11 +62,7 @@ const translations = {
         award_title1: "Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)",
         award_desc1: "Diberikan untuk proyek \"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia\" yang dipresentasikan pada 44th Asian Conference on Remote Sensing (ACRS 2025).",
         contact_heading: "Hubungi Saya!",
-        contact_sub: "Transmisi terhubung. Menunggu input.",
-        contact_name: "Identifikasi entri...",
-        contact_email: "protokol@domain.com",
-        contact_msg: "Jelaskan parameter proyek atau ruang lingkup kolaborasi...",
-        btn_send: "KIRIM PAKET DATA",
+        contact_sub: "Jalur transmisi langsung aktif. Pilih protokol.",
         footer_text: "© 2026 GEOPHYSICS_LAB. Hak Cipta Dilindungi Undang-undang.",
         typed_strings: ['Sarjana Geofisika', 'Pengembang WebGIS', 'Arsitek Solusi AI', 'Analis Data Spasial'],
         chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> Terminal siap. Ada yang bisa saya bantu terkait keahlian, proyek, atau pengalaman Herfiadi?",
@@ -104,6 +103,9 @@ const translations = {
         skills_item6: "AI Chatbot Integration (RAG, n8n, Supabase)",
         skills_item7: "Database Management (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "UI/UX Development for GIS Applications",
+        skills_cat3: "Languages",
+        skills_item9: "Indonesian — Native",
+        skills_item10: "English — Upper-Intermediate (CEFR, EF SET)",
         exp_heading: "◉ TIMELINE: EXPERIENCE",
         exp_date1: "2025",
         exp_title1: "Junior Web Developer",
@@ -131,11 +133,7 @@ const translations = {
         award_title1: "Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)",
         award_desc1: "Awarded for the project \"WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia\" presented at the 44th Asian Conference on Remote Sensing (ACRS 2025).",
         contact_heading: "Contact Me!",
-        contact_sub: "Transmission established. Waiting for input.",
-        contact_name: "Entry identification...",
-        contact_email: "protocol@domain.com",
-        contact_msg: "Describe project parameters or collaboration scope...",
-        btn_send: "SEND DATA PACKET",
+        contact_sub: "Direct transmission paths active. Select a protocol.",
         footer_text: "© 2026 GEOPHYSICS_LAB. All Rights Reserved.",
         typed_strings: ['Geophysics Graduate', 'WebGIS Developer', 'AI Solutions Architect', 'Spatial Data Analyst'],
         chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> Terminal ready. How can I assist with your spatial data exploration?",
@@ -169,13 +167,16 @@ const translations = {
         skills_cat1: "WebGIS & 空間データ",
         skills_item1: "GISソフトウェア: ArcMap/ArcGIS, QGIS",
         skills_item2: "WebGIS開発 (Flask, Leaflet, Folium)",
-        skills_item3: "空間解析: オーバーレイ、バッファ、内挿、ラスター解析、地形解析 (Terrain Analysis)、適性分析 (Suitability Analysis)",
+        skills_item3: "空間解析: オーバーレイ、バッファ、内挿、ラスター解析、地形解析 (Terrain Analysis), 適性分析 (Suitability Analysis)",
         skills_item4: "土地適性モデリングのための地理空間機械学習",
         skills_cat2: "ソフトウェア & AI",
         skills_item5: "GIS用Pythonプログラミング (GeoPandas, Rasterio, GDAL, PyGMT)",
         skills_item6: "AIチャットボット統合 (RAG, n8n, Supabase)",
         skills_item7: "データベース管理 (PostgreSQL/PostGIS, MySQL)",
         skills_item8: "GISアプリケーションのUI/UX開発",
+        skills_cat3: "言語",
+        skills_item9: "インドネシア語 — 母国語 (Native)",
+        skills_item10: "英語 — 中上級 (CEFR, EF SET)",
         exp_heading: "◉ TIMELINE: 経歴",
         exp_date1: "2025",
         exp_title1: "ジュニアWeb開発者",
@@ -183,7 +184,7 @@ const translations = {
         exp_date2: "2025",
         exp_title2: "GIS送電計画インターン",
         exp_subtitle2: "UPT PLNマカッサル",
-        exp_desc2: "• マカッサル市における高圧送電塔（SUTT）の空間分布図 of 作成。<br>• 各SUTT地点の地滑り感受性マップの作成。",
+        exp_desc2: "• 各SUTT地点の地滑り感受性マップの作成。<br>• マカッサル市における高圧送電塔（SUTT）の空間分布図の作成。",
         exp_date3: "2025",
         exp_title3: "フィールドサーベイヤー",
         exp_subtitle3: "ハサヌディン大学 – LPPM Witaris",
@@ -203,11 +204,7 @@ const translations = {
         award_title1: "ゴールドプライズ（最優秀賞） – ACRS 2025 (アジア遠隔探査協会)",
         award_desc1: "第44回アジア遠隔探査会議（ACRS 2025）にて発表されたプロジェクト「WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia」に対して授与されました。",
         contact_heading: "お問い合わせ",
-        contact_sub: "送信準備完了。入力を待っています。",
-        contact_name: "入力識別子...",
-        contact_email: "protocol@domain.com",
-        contact_msg: "プロジェクトのパラメータまたはコラボレーションの範囲について記述してください...",
-        btn_send: "データパケット送信",
+        contact_sub: "直接送信パスが有効です。プロトコルを選択してください。",
         footer_text: "© 2026 GEOPHYSICS_LAB. All Rights Reserved.",
         typed_strings: ['地球物理学卒業生', 'WebGIS 開発者', 'AI ソリューションアーキテクト', '空間データ アナリスト'],
         chat_welcome: "<span class='text-secondary font-bold'>[SYS]:</span> ターミナル準備完了。空間データの探索をどのようにサポートできますか？",
@@ -325,12 +322,24 @@ window.onscroll = () => {
         let id = sec.getAttribute('id');
 
         if(top >= offset && top < offset + height) {
+            // Update Top Navigation
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 const linkSelector = 'header nav a[href*=' + id + ']';
                 const linkEl = document.querySelector(linkSelector);
                 if (linkEl) {
                     linkEl.classList.add('active');
+                }
+            });
+
+            // Update Sidebar Navigation
+            const sidebarLinks = document.querySelectorAll('[id^="sidebar-link-"]');
+            sidebarLinks.forEach(link => {
+                link.classList.remove('bg-secondary/10', 'text-secondary');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('id') === 'sidebar-link-' + id) {
+                    link.classList.remove('text-on-surface-variant');
+                    link.classList.add('bg-secondary/10', 'text-secondary');
                 }
             });
         };
@@ -600,3 +609,49 @@ const logData = () => {
 };
 setInterval(logData, 10000);
 logData();
+
+// --- Lightbox Modal Logic ---
+const lightboxModal = document.getElementById('lightbox-modal');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, alt, captionText) {
+    if (lightboxModal && lightboxImg && lightboxCaption) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightboxCaption.textContent = captionText || alt || "IMAGE_PREVIEW";
+        lightboxModal.classList.remove('hidden');
+        lightboxModal.classList.add('flex');
+        document.body.style.overflow = 'hidden'; // Disable background scroll
+    }
+}
+
+function closeLightbox() {
+    if (lightboxModal) {
+        lightboxModal.classList.remove('flex');
+        lightboxModal.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore background scroll
+    }
+}
+
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+            closeLightbox();
+        }
+    });
+}
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// Expose openLightbox to window for inline onclick triggers
+window.openLightbox = openLightbox;

@@ -65,6 +65,9 @@
                     "secondary": "#A6673A",
                     "tertiary": "#2C5F5B",
                     "on-surface": "#16232E",
+                    "surface-container-low": "#f2f4ef",
+                    "surface-container": "#ecefea",
+                    "surface-container-lowest": "#ffffff",
             },
             "borderRadius": {
                     "DEFAULT": "0px",
@@ -104,7 +107,7 @@
 </head>
 <body class="bg-background text-primary font-body-md selection:bg-secondary/30">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-background/90 backdrop-blur-sm border-b border-outline/10">
+    <nav class="fixed top-0 w-full z-[1020] flex justify-between items-center px-gutter py-4 bg-background/90 backdrop-blur-sm border-b border-outline/10">
         <div class="text-headline-md font-headline-md font-bold text-primary tracking-tighter uppercase">
             GEO_PORTFOLIO_V1.0
         </div>
@@ -129,7 +132,7 @@
     </nav>
 
     <!-- SideNavBar (Contextual Sidebar) -->
-    <aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container-low border-r border-outline/10 w-16 hover:w-sidebar-width transition-all duration-300 overflow-hidden group">
+    <aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full z-[1010] bg-surface-container-low border-r border-outline/10 w-16 hover:w-sidebar-width transition-all duration-300 overflow-hidden group">
         <div class="mt-20 px-4 mb-12 flex items-center gap-4">
             <div class="w-8 h-8 bg-primary shrink-0 flex items-center justify-center">
                 <span class="material-symbols-outlined text-white text-sm">precision_manufacturing</span>
@@ -140,21 +143,40 @@
             </div>
         </div>
         <div class="flex flex-col flex-1 gap-1 px-2">
-            <button class="flex items-center gap-4 p-3 bg-secondary/10 text-secondary transition-precise group/item rounded-none">
-                <span class="material-symbols-outlined" data-icon="layers">layers</span>
-                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Map View</span>
+            <!-- 1. Home -->
+            <button id="sidebar-link-hero" class="flex items-center gap-4 p-3 bg-secondary/10 text-secondary transition-precise group/item rounded-none" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="home">home</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Home Base</span>
             </button>
-            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
-                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Project Layers</span>
+            <!-- 2. About -->
+            <button id="sidebar-link-about" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="person">person</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Dataset: Profil</span>
             </button>
-            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+            <!-- 3. Skills -->
+            <button id="sidebar-link-skills" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
                 <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Skill Legend</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Legend: Keahlian</span>
             </button>
-            <button class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
+            <!-- 4. Experience -->
+            <button id="sidebar-link-experience" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
                 <span class="material-symbols-outlined" data-icon="explore">explore</span>
-                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Experience Logs</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Timeline: Pengalaman</span>
+            </button>
+            <!-- 5. Projects -->
+            <button id="sidebar-link-projects" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="layers">layers</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Layers: Proyek</span>
+            </button>
+            <!-- 6. Achievements -->
+            <button id="sidebar-link-awards" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('awards').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Achievements</span>
+            </button>
+            <!-- 7. Contact -->
+            <button id="sidebar-link-contact" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap">Connect</span>
             </button>
         </div>
         <div class="p-4 border-t border-outline/10 group-hover:block hidden">
@@ -242,8 +264,8 @@
         <!-- Skills Section -->
         <section class="py-24 px-margin-mobile md:px-margin-desktop bg-primary text-white border-b border-outline/20" id="skills">
             <h2 class="font-headline-md text-headline-md mb-12" data-i18n="skills_heading">◉ LEGEND: KEAHLIAN</h2>
-            <!-- Grid of 2 clean columns for WebGIS and Software/AI skill categories -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline/20 border border-outline/20">
+            <!-- Grid of 3 clean columns for WebGIS, Software/AI, and Language skill categories -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline/20 border border-outline/20">
                 <!-- Skill Card 1: WebGIS & Data Spasial -->
                 <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
                     <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="map">map</span>
@@ -282,6 +304,19 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Skill Card 3: Bahasa -->
+                <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
+                    <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="translate">translate</span>
+                    <h3 class="font-label-caps text-label-caps mb-4 text-secondary uppercase" data-i18n="skills_cat3">Bahasa</h3>
+                    <ul class="space-y-3">
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item9">
+                            Bahasa Indonesia — Penutur Asli (Native)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item10">
+                            Bahasa Inggris — Upper-Intermediate (CEFR, EF SET)
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -303,19 +338,19 @@
                     </p>
                     <!-- Gallery Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/junior-developer/JUNIOR.jpeg', 'PT Geocode Smart Solution - GeoAI Barru development', 'IMG_01: GEOAI_DEV')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="PT Geocode Smart Solution - GeoAI Barru development" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: GEOAI_DEV</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/junior-developer/JUNIOR1.jpeg', 'PT Geocode Smart Solution - UI/UX configuration', 'IMG_02: UI_INTERFACE')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="PT Geocode Smart Solution - UI/UX configuration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR1.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: UI_INTERFACE</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/junior-developer/JUNIOR3.jpeg', 'PT Geocode Smart Solution - Backend integration', 'IMG_03: BACKEND_AI')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="PT Geocode Smart Solution - Backend integration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/junior-developer/JUNIOR3.jpeg"/>
                             </div>
@@ -336,19 +371,19 @@
                     </p>
                     <!-- Gallery Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/gis-intern-pln/PLN.jpeg', 'UPT PLN Makassar - Transmission grid mapping', 'IMG_01: SUTT_DISTRIBUTION')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="UPT PLN Makassar - Transmission grid mapping" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: SUTT_DISTRIBUTION</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/gis-intern-pln/PLN1.jpeg', 'UPT PLN Makassar - Soil vulnerability analysis', 'IMG_02: SLIDE_SUSCEPTIBILITY')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="UPT PLN Makassar - Soil vulnerability analysis" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN1.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: SLIDE_SUSCEPTIBILITY</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/gis-intern-pln/PLN2.jpeg', 'UPT PLN Makassar - Field team briefing', 'IMG_03: GIS_METADATA')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="UPT PLN Makassar - Field team briefing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/gis-intern-pln/PLN2.jpeg"/>
                             </div>
@@ -369,19 +404,19 @@
                     </p>
                     <!-- Gallery Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/field-surveyor/OPLAH.jpeg', 'Field Surveyor - Mapping farmer groups', 'IMG_01: FARMER_MAPPING')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Field Surveyor - Mapping farmer groups" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: FARMER_MAPPING</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/field-surveyor/OPLAH1.jpeg', 'Field Surveyor - Land validation check', 'IMG_02: FIELD_VALIDATION')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Field Surveyor - Land validation check" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH1.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: FIELD_VALIDATION</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/field-surveyor/OPLAH2.jpeg', 'Field Surveyor - Spatial data collection', 'IMG_03: SURVEY_LOGS')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Field Surveyor - Spatial data collection" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/field-surveyor/OPLAH2.jpeg"/>
                             </div>
@@ -403,19 +438,19 @@
                     </p>
                     <!-- Gallery Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/data-entry/KEDAIREKA1.jpeg', 'Data Entry Intern - Agricultural WebGIS setup', 'IMG_01: WEBGIS_COLLAB')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Data Entry Intern - Agricultural WebGIS setup" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA1.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: WEBGIS_COLLAB</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/data-entry/KEDAIREKA3.jpeg', 'Data Entry Intern - Spatial data audit', 'IMG_02: DATA_AUDIT')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Data Entry Intern - Spatial data audit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA3.jpeg"/>
                             </div>
                             <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: DATA_AUDIT</p>
                         </div>
-                        <div class="group">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/data-entry/KEDAIREKA4.jpeg', 'Data Entry Intern - Land suitability system', 'IMG_03: SUITABILITY_INDEX')">
                             <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
                                 <img alt="Data Entry Intern - Land suitability system" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/data-entry/KEDAIREKA4.jpeg"/>
                             </div>
@@ -613,26 +648,28 @@
             <div class="max-w-4xl">
                 <h2 class="font-headline-md text-headline-md text-primary mb-2" data-i18n="contact_heading">Hubungi Saya!</h2>
                 <p class="font-label-data text-label-data text-on-surface-variant uppercase mb-12" data-i18n="contact_sub">Transmission established. Waiting for input.</p>
-                <form class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="relative">
-                            <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">USER_NAME</label>
-                            <input class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="Entry identification..." data-i18n-placeholder="contact_name" type="text" required/>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-8">
+                    <!-- WhatsApp Link Card -->
+                    <a href="https://wa.me/6282285580351" target="_blank" class="group p-6 border border-outline/20 hover:border-secondary transition-precise bg-white/50 flex items-center gap-4 rounded-none">
+                        <div class="text-secondary shrink-0">
+                            <span class="material-symbols-outlined text-3xl">chat</span>
                         </div>
-                        <div class="relative">
-                            <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">EMAIL_ADDRESS</label>
-                            <input class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="protocol@domain.com" data-i18n-placeholder="contact_email" type="email" required/>
+                        <div>
+                            <p class="font-label-caps text-[10px] text-secondary tracking-widest">WHATSAPP / TELEPON</p>
+                            <p class="font-headline-md text-headline-md text-primary mt-1">0822 8558 0351</p>
                         </div>
-                    </div>
-                    <div class="relative">
-                        <label class="block font-label-caps text-[10px] text-secondary absolute -top-2 left-4 px-1 bg-background z-10">TRANSMISSION_CONTENT</label>
-                        <textarea class="w-full bg-transparent border border-outline/20 focus:border-secondary focus:ring-0 p-4 font-label-data text-label-data transition-precise rounded-none" placeholder="Describe project parameters or collaboration scope..." data-i18n-placeholder="contact_msg" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="px-12 py-4 bg-primary text-white font-label-caps text-sm font-bold flex items-center gap-3 transition-precise hover:bg-secondary rounded-none">
-                        <span data-i18n="btn_send">SEND DATA PACKET</span>
-                        <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
-                    </button>
-                </form>
+                    </a>
+                    <!-- Email Link Card -->
+                    <a href="mailto:herfiadireskialviansyah03@gmail.com" class="group p-6 border border-outline/20 hover:border-secondary transition-precise bg-white/50 flex items-center gap-4 rounded-none">
+                        <div class="text-secondary shrink-0">
+                            <span class="material-symbols-outlined text-3xl">mail</span>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-[10px] text-secondary tracking-widest">EMAIL_PROTOCOL</p>
+                            <p class="font-headline-md text-headline-md text-primary mt-1">herfiadireskialviansyah03@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -655,7 +692,7 @@
     </main>
 
     <!-- Floating GeoAI Assistant Widget (DESIGN.md sharp corners and colors) -->
-    <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4">
+    <div class="fixed bottom-8 right-8 z-[1030] flex flex-col items-end gap-4">
         <div class="hidden w-80 bg-background border border-outline shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 duration-300" id="ai-chat">
             <div class="bg-primary p-3 flex justify-between items-center">
                 <span class="font-label-caps text-[10px] text-white">GEO_ASSISTANT_V2.1</span>
@@ -684,6 +721,23 @@
         <button class="w-16 h-16 bg-secondary text-white border border-secondary hover:bg-primary transition-precise flex items-center justify-center shadow-lg group rounded-none" onclick="toggleChat()">
             <span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform" data-icon="hub">hub</span>
         </button>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[2000] hidden items-center justify-center bg-primary/70 backdrop-blur-sm p-4 transition-opacity duration-300">
+        <div class="bg-background border border-outline max-w-3xl w-full max-h-[85vh] flex flex-col relative animate-in zoom-in-95 duration-200">
+            <!-- Modal Header / Title -->
+            <div class="bg-primary p-3 flex justify-between items-center text-white">
+                <span id="lightbox-caption" class="font-label-caps text-[10px] tracking-wider">IMAGE_PREVIEW</span>
+                <button id="lightbox-close" class="text-white hover:text-secondary bg-transparent p-0 border-none outline-none cursor-pointer flex items-center" aria-label="Close Lightbox">
+                    <span class="material-symbols-outlined text-sm">close</span>
+                </button>
+            </div>
+            <!-- Image Area -->
+            <div class="p-4 flex items-center justify-center bg-surface-container-lowest overflow-hidden flex-1">
+                <img id="lightbox-img" src="" alt="Full preview" class="max-w-full max-h-[60vh] object-contain border border-outline/10"/>
+            </div>
+        </div>
     </div>
 
     <!-- Typed JS for typing animation -->
