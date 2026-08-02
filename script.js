@@ -314,6 +314,24 @@ if (menuIcon && navbar) {
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
+// --- Reusable Smooth Scroll Helper ---
+function scrollToSection(targetId) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+window.scrollToSection = scrollToSection;
+
+// Bind smooth scroll to top navigation links
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+    });
+});
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
