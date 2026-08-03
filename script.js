@@ -69,7 +69,17 @@ const translations = {
         chat_suggest_1: "Apa saja proyek WebGIS Herfiadi?",
         chat_suggest_2: "Bagaimana latar belakang pendidikannya?",
         chat_suggest_3: "Bagaimana cara menghubungi Herfiadi?",
-        chat_placeholder: "Kirim query..."
+        chat_placeholder: "Kirim query...",
+        side_home: "Home Base",
+        side_about: "Dataset: Profil",
+        side_skills: "Legend: Keahlian",
+        side_experience: "Timeline: Pengalaman",
+        side_projects: "Layers: Proyek",
+        side_awards: "Prestasi",
+        side_contact: "Hubungi",
+        side_send: "KIRIM PESAN",
+        side_linkedin: "LinkedIn",
+        side_github: "GitHub"
     },
     en: {
         nav_home: "Home",
@@ -140,7 +150,17 @@ const translations = {
         chat_suggest_1: "What WebGIS projects has Herfiadi built?",
         chat_suggest_2: "What is his educational background?",
         chat_suggest_3: "How can I contact Herfiadi?",
-        chat_placeholder: "Enter query..."
+        chat_placeholder: "Enter query...",
+        side_home: "Home Base",
+        side_about: "Dataset: Profile",
+        side_skills: "Legend: Skills",
+        side_experience: "Timeline: Experience",
+        side_projects: "Layers: Projects",
+        side_awards: "Achievements",
+        side_contact: "Connect",
+        side_send: "SEND MESSAGE",
+        side_linkedin: "LinkedIn",
+        side_github: "GitHub"
     },
     jp: {
         nav_home: "ホーム",
@@ -211,7 +231,17 @@ const translations = {
         chat_suggest_1: "ヘルフィアディはどのようなWebGISプロジェクトを構築しましたか？",
         chat_suggest_2: "彼の学歴はどうなっていますか？",
         chat_suggest_3: "ヘルフィアディに連絡するにはどうすればいいですか？",
-        chat_placeholder: "クエリを入力..."
+        chat_placeholder: "クエリを入力...",
+        side_home: "ホームベース",
+        side_about: "データセット: プロフィール",
+        side_skills: "凡例: スキル",
+        side_experience: "タイムライン: 経歴",
+        side_projects: "レイヤー: プロジェクト",
+        side_awards: "実績",
+        side_contact: "コネクト",
+        side_send: "メッセージ送信",
+        side_linkedin: "LinkedIn",
+        side_github: "GitHub"
     },
     zh: {
         nav_home: "首页",
@@ -282,7 +312,17 @@ const translations = {
         chat_suggest_1: "Herfiadi 开发了哪些 WebGIS 项目？",
         chat_suggest_2: "他的教育背景是什么？",
         chat_suggest_3: "如何联系 Herfiadi？",
-        chat_placeholder: "输入查询..."
+        chat_placeholder: "输入查询...",
+        side_home: "首页基地",
+        side_about: "数据集: 个人简介",
+        side_skills: "图例: 技能",
+        side_experience: "时间轴: 工作经历",
+        side_projects: "图层: 最新项目",
+        side_awards: "成就",
+        side_contact: "联系",
+        side_send: "发送消息",
+        side_linkedin: "LinkedIn",
+        side_github: "GitHub"
     }
 };
 
