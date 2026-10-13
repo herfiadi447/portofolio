@@ -58,24 +58,30 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
 - Bachelor of Geophysics (S.Si) - Hasanuddin University (Graduated in 2026)
 
 === Professional Experience ===
-1. Junior Web Developer at PT Geocode Smart Solution (2025)
+1. Survey & Mapping Assistant – HPL Transmigration Land Inventory & Verification Team, West Papua (2026)
+   - Conducted field surveys and mapping to support inventory and verification of transmigration land (HPL) in West Papua Province.
+   - Assisted drone survey operations by supporting field preparation and observing the execution of pre-planned flight missions.
+   - Assisted GNSS geodetic field surveys by setting up base and rover units at Ground Control Points (GCP); data processing was handled by the technical team.
+   - Edited and updated 2024 land cover shapefiles (polygon cut and merge) and developed a Python script to correct spatial topology errors (overlaps and gaps).
+2. Junior Web Developer at PT Geocode Smart Solution (2025)
    - Developed WebGIS platforms: GeoAI Barru (geoaibarru.com), Geopangansidrap (geopangansidrap.id), and Sijagung (sijagung.id).
    - Designed and implemented AI chatbot features using n8n and Supabase vector database to enhance user interactivity.
    - Managed spatial databases using PostgreSQL/PostGIS and MySQL.
    - Improved UI/UX for GIS applications using Leaflet and Folium.
-2. Intern at UPT PLN Makassar (2025)
+3. Intern at UPT PLN Makassar (2025)
    - Developed a spatial distribution map of High-Voltage Transmission Towers (SUTT) in Makassar City.
    - Created landslide susceptibility maps for each SUTT location.
-3. Field Surveyor at OPLAH (Land Optimization) Project, Sidrap Regency (2025)
+4. Field Surveyor at OPLAH (Land Optimization) Project, Sidrap Regency / Hasanuddin University – LPPM Witaris (2025)
    - Conducted field surveys to map agricultural farmer groups (POKTAN) using geospatial data collection techniques.
    - Collected and validated spatial and attribute data.
-4. Intern at Kedaireka MKMB, Barru Regency (2024)
+5. Intern at Kedaireka MKMB, Barru Regency (2024)
    - Collaborated with Barru Regency Government under the Kedaireka MBKM program to develop a WebGIS platform for agricultural land suitability analysis.
    - Assisted in building an interactive WebGIS system to support local stakeholders in improving agricultural resource efficiency and land-use decision-making.
 
 === Core Skills ===
 - WebGIS & Spatial Data: Flask, Leaflet, Folium, ArcMap, QGIS, Spatial Analysis (Overlay, Buffer, Interpolation, Raster/Terrain/Suitability analysis), Spatial Data Management.
-- Software & AI: Python (for GIS applications), AI Chatbot Integration (RAG, n8n, Supabase), PostgreSQL/PostGIS, MySQL, UI/UX Development for GIS.
+- Software & AI: Python (for GIS applications & spatial topology cleaning), AI Chatbot Integration (RAG, n8n, Supabase), PostgreSQL/PostGIS, MySQL, UI/UX Development for GIS.
+- Field Survey & Mapping Support: UAV/Drone Survey Assistance, GNSS Geodetic Receiver Setup (Base & Rover), Ground Control Points (GCP), Land Inventory Field Survey.
 
 === Awards & Achievements ===
 - Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)

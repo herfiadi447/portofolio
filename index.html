@@ -278,8 +278,8 @@
         <!-- Skills Section -->
         <section class="py-24 px-margin-mobile md:px-margin-desktop bg-primary text-white border-b border-outline/20" id="skills">
             <h2 class="font-headline-md text-headline-md mb-12" data-i18n="skills_heading">◉ LEGEND: KEAHLIAN</h2>
-            <!-- Grid of 3 clean columns for WebGIS, Software/AI, and Language skill categories -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline/20 border border-outline/20">
+            <!-- Grid of 4 clean columns for WebGIS, Software/AI, Field Survey, and Language skill categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline/20 border border-outline/20">
                 <!-- Skill Card 1: WebGIS & Data Spasial -->
                 <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
                     <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="map">map</span>
@@ -318,7 +318,26 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Skill Card 3: Bahasa -->
+                <!-- Skill Card 3: Survei Lapangan & Pemetaan -->
+                <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
+                    <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="navigation">navigation</span>
+                    <h3 class="font-label-caps text-label-caps mb-4 text-secondary uppercase" data-i18n="skills_cat4">Survei Lapangan & Pemetaan</h3>
+                    <ul class="space-y-3">
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item11">
+                            Dukungan Survei Drone / UAV (Persiapan & Misi Terbang)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item12">
+                            Setup GNSS Geodetik Receiver (Base & Rover)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item13">
+                            Survei Inventarisasi & Verifikasi Lahan Transmigrasi (HPL)
+                        </li>
+                        <li class="font-label-data text-label-data flex justify-between border-b border-outline/10 pb-1" data-i18n="skills_item14">
+                            Koreksi Topologi & Editing Data Spasial (Python & QGIS)
+                        </li>
+                    </ul>
+                </div>
+                <!-- Skill Card 4: Bahasa -->
                 <div class="bg-primary p-8 hover:bg-on-primary-fixed-variant transition-precise group">
                     <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="translate">translate</span>
                     <h3 class="font-label-caps text-label-caps mb-4 text-secondary uppercase" data-i18n="skills_cat3">Bahasa</h3>
@@ -338,10 +357,51 @@
         <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="experience">
             <h2 class="font-headline-md text-headline-md text-primary mb-16" data-i18n="exp_heading">◉ TIMELINE: PENGALAMAN</h2>
             <div class="space-y-0 border-l border-outline/20 ml-4 md:ml-0">
-                <!-- Entry 1: Junior Web Developer -->
+                <!-- Entry 0: Survey & Mapping Assistant (Latest) -->
                 <div class="relative pl-12 pb-16">
                     <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-secondary"></div>
-                    <p class="font-label-data text-label-data text-secondary mb-2" data-i18n="exp_date1">2025</p>
+                    <p class="font-label-data text-label-data text-secondary mb-2" data-i18n="exp_date0">2026</p>
+                    <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title0">Asisten Survei & Pemetaan (Survey & Mapping Assistant)</h3>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase" data-i18n="exp_subtitle0">Tim Inventarisasi & Verifikasi Tanah Transmigrasi HPL, Papua Barat</p>
+                    <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc0">
+                        • Melakukan survei lapangan dan pemetaan guna mendukung inventarisasi serta verifikasi tanah transmigrasi (HPL) di Provinsi Papua Barat.<br>
+                        • Mendukung operasional survei drone melalui persiapan lapangan dan pengamatan eksekusi misi penerbangan.<br>
+                        • Membantu pelaksanaan survei GNSS geodetik dengan setting unit base dan rover di titik kontrol tanah.<br>
+                        • Mengedit dan memperbarui shapefile tutupan lahan tahun 2024 (polygon cut dan merge), serta mengembangkan skrip Python untuk koreksi topologi data spasial (overlaps dan gaps).
+                    </p>
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/survey-mapping-assistant/SURVEY_GNSS.jpeg', 'Pengukuran GNSS Geodetik (Rover) & GCP Titik Kontrol', 'Tim HPL Transmigrasi Papua Barat')">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Pengukuran GNSS Geodetik (Rover)" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/survey-mapping-assistant/SURVEY_GNSS.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_01: GNSS_ROVER</p>
+                        </div>
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/survey-mapping-assistant/SURVEY_DRONE.jpeg', 'Operasional & Persiapan Survei Drone UAV', 'Tim HPL Transmigrasi Papua Barat')">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Operasional Drone UAV" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/survey-mapping-assistant/SURVEY_DRONE.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_02: UAV_DRONE</p>
+                        </div>
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/survey-mapping-assistant/SURVEY_BASE.jpeg', 'Setting Base Station GNSS & Benchmark Titik Kontrol', 'Tim HPL Transmigrasi Papua Barat')">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Base Station GNSS" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/survey-mapping-assistant/SURVEY_BASE.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_03: GNSS_BASE</p>
+                        </div>
+                        <div class="group cursor-pointer" onclick="openLightbox('assets/experience/survey-mapping-assistant/SURVEY_TEAM.jpeg', 'Survei Lapangan & Pemasangan Patok Batas HPL Papua Barat', 'Tim HPL Transmigrasi Papua Barat')">
+                            <div class="aspect-square border border-primary overflow-hidden transition-colors duration-200 group-hover:border-secondary">
+                                <img alt="Tim Survei Lapangan Papua Barat" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="assets/experience/survey-mapping-assistant/SURVEY_TEAM.jpeg"/>
+                            </div>
+                            <p class="font-label-data text-[10px] text-primary/60 mt-1 uppercase">IMG_04: TIM_LAPANGAN</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 1: Junior Web Developer -->
+                <div class="relative pl-12 pb-16">
+                    <div class="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-primary"></div>
+                    <p class="font-label-data text-label-data text-primary/60 mb-2" data-i18n="exp_date1">2025</p>
                     <h3 class="font-headline-md text-headline-md leading-none mb-1" data-i18n="exp_title1">Junior Web Developer</h3>
                     <p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">PT Geocode Smart Solution</p>
                     <p class="font-body-md text-body-md text-on-surface max-w-3xl" data-i18n="exp_desc1">
