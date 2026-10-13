@@ -140,31 +140,18 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
 
   messages.push({ role: 'user', content: message });
 
-  let response;
-  let modelUsed = 'llama-3.3-70b-versatile';
-  
-  try {
-    response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        model: modelUsed,
-        messages: messages,
-        temperature: 0.7,
-        max_tokens: 500
-      })
-    });
+  // Priority list of currently available and active chat models on Groq
+  const candidateModels = [
+    'openai/gpt-oss-120b',
+    'openai/gpt-oss-20b',
+    'qwen/qwen3.8-27b'
+  ];
 
-    // Fallback if the main model fails or returns an error
-    if (!response.ok) {
-      const errText = await response.text();
-      console.warn(`Model ${modelUsed} failed with: ${errText}. Attempting fallback model.`);
-      
-      modelUsed = 'llama-3.1-8b-instant';
-      response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+  let lastErrorText = '';
+
+  for (const modelUsed of candidateModels) {
+    try {
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -174,21 +161,28 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
           model: modelUsed,
           messages: messages,
           temperature: 0.7,
-          max_tokens: 500
+          max_tokens: 600
         })
       });
+
+      if (!response.ok) {
+        lastErrorText = await response.text();
+        console.warn(`Model ${modelUsed} failed with: ${lastErrorText}. Trying next candidate.`);
+        continue;
+      }
+
+      const data = await response.json();
+      const choice = data.choices && data.choices[0];
+      const reply = (choice && choice.message && choice.message.content) || (choice && choice.message && choice.message.reasoning) || '';
+
+      if (reply) {
+        return res.status(200).json({ reply });
+      }
+    } catch (err) {
+      lastErrorText = err.message;
+      console.warn(`Error querying model ${modelUsed}:`, err);
     }
-
-    if (!response.ok) {
-      const errText = await response.text();
-      return res.status(response.status).json({ error: `Groq API Error: ${errText}` });
-    }
-
-    const data = await response.json();
-    const reply = data.choices[0].message.content;
-
-    return res.status(200).json({ reply });
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
   }
+
+  return res.status(500).json({ error: `Groq API Error: ${lastErrorText || 'All models failed'}` });
 }
