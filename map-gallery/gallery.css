@@ -1,0 +1,821 @@
+/* =====================================================================
+   GALERI JENIS PETA - STYLESHEET TERISOLASI
+   Semua selector di-scope di dalam .map-gallery agar tidak menimpa style situs.
+   ===================================================================== */
+
+.map-gallery {
+  /* Token Warna Default (Light Mode yang harmonis dengan Technical Cartography portofolio) */
+  --bg: #EDEFEA;
+  --surf: #ffffff;
+  --ink: #16232E;
+  --mut: #44474b;
+  --line: #c4c7cb;
+  --acc: #A6673A;
+  --map: #e2eae7;
+  --grid: #c3d0cc;
+
+  /* Token Warna Analisis Spasial */
+  --c1: #2f9e5b;
+  --c2: #9bc84a;
+  --c3: #f0d54a;
+  --c4: #f08a3c;
+  --c5: #d1463d;
+  --blue: #2f7fb8;
+
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+
+.map-gallery *,
+.map-gallery *::before,
+.map-gallery *::after {
+  box-sizing: border-box;
+}
+
+/* Dukungan Dark Mode melalui .dark pada <html>/<body>, data-theme="dark", atau prefers-color-scheme */
+:root[data-theme="dark"] .map-gallery,
+:root.dark .map-gallery,
+html.dark .map-gallery,
+body.dark .map-gallery {
+  --bg: #0d191c;
+  --surf: #132428;
+  --ink: #e4eeec;
+  --mut: #93a8a9;
+  --line: #264045;
+  --acc: #f2b134;
+  --map: #0f1e21;
+  --grid: #1b3135;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.light) body:not(.light-mode) .map-gallery {
+    --bg: #0d191c;
+    --surf: #132428;
+    --ink: #e4eeec;
+    --mut: #93a8a9;
+    --line: #264045;
+    --acc: #f2b134;
+    --map: #0f1e21;
+    --grid: #1b3135;
+    color-scheme: dark;
+  }
+}
+
+.map-gallery [hidden] {
+  display: none !important;
+}
+
+.map-gallery .mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* Typography Galeri */
+.map-gallery .gallery-title {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.15;
+  margin: 0 0 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.map-gallery .lead {
+  max-width: 72ch;
+  color: var(--mut);
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.map-gallery .lead.small {
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+/* Toolbar Filter & Urutan */
+.map-gallery .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.map-gallery .filters,
+.map-gallery .sorts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.map-gallery .sorts > span {
+  font: 500 12px "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+.map-gallery .filters button,
+.map-gallery .sorts button {
+  font: 500 12px "IBM Plex Mono", monospace;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 2px;
+  cursor: pointer;
+  min-height: 36px;
+  transition: all 0.15s ease;
+}
+
+.map-gallery .filters button[aria-pressed="true"],
+.map-gallery .sorts button[aria-pressed="true"] {
+  background: var(--acc);
+  border-color: var(--acc);
+  color: #ffffff;
+}
+
+.map-gallery button:focus-visible,
+.map-gallery input:focus-visible,
+.map-gallery select:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
+}
+
+/* Grid Kartu */
+.map-gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .map-gallery .grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+/* Komponen Kartu */
+.map-gallery .card {
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(10, 30, 30, 0.05);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.map-gallery .card:hover {
+  box-shadow: 0 6px 18px rgba(10, 30, 30, 0.12);
+  border-color: var(--acc);
+}
+
+.map-gallery .card[hidden] {
+  display: none !important;
+}
+
+.map-gallery .vis {
+  border-bottom: 1px solid var(--line);
+}
+
+.map-gallery .vhead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font: 500 11px "IBM Plex Mono", monospace;
+  background: var(--surf);
+}
+
+.map-gallery .no {
+  color: var(--mut);
+}
+
+.map-gallery .lvl {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 1px 7px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.map-gallery .lvl-lanjut {
+  color: var(--acc);
+  border-color: var(--acc);
+}
+
+.map-gallery .lvl-menengah {
+  color: var(--ink);
+}
+
+.map-gallery .lvl-dasar {
+  color: var(--mut);
+}
+
+.map-gallery .badge {
+  margin-left: auto;
+  color: var(--acc);
+  border: 1px solid var(--line);
+  padding: 1px 7px;
+  border-radius: 2px;
+  background: var(--bg);
+  font-size: 10px;
+}
+
+/* Kontainer Peta */
+.map-gallery .mapwrap {
+  position: relative;
+}
+
+.map-gallery .map {
+  height: 240px;
+  position: relative;
+  z-index: 0;
+  background: var(--map);
+}
+
+@media (max-width: 480px) {
+  .map-gallery .map {
+    height: 230px;
+  }
+}
+
+.map-gallery .map.tiles-failed {
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.map-gallery .mapmsg,
+.map-gallery .hint {
+  position: absolute;
+  z-index: 500;
+  pointer-events: none;
+  font: 400 11px "IBM Plex Mono", monospace;
+  background: var(--surf);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.map-gallery .mapmsg {
+  top: 8px;
+  left: 48px;
+  right: 48px;
+}
+
+.map-gallery .hint {
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Badan Kartu */
+.map-gallery .body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.map-gallery .projline {
+  display: none;
+  margin: 0;
+  font: 500 11px "IBM Plex Mono", monospace;
+  color: var(--acc);
+}
+
+.map-gallery .grid[data-sort="proj"] .projline {
+  display: block;
+}
+
+.map-gallery .body h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+}
+
+.map-gallery .body p {
+  margin: 0;
+  color: var(--mut);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.map-gallery .body p.note {
+  font: 400 11px "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+/* Legenda */
+.map-gallery .leg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font: 400 11px "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+.map-gallery .leg i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: -1px;
+}
+
+.map-gallery .leg-btn {
+  font: 400 11px "IBM Plex Mono", monospace;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 4px 8px;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.map-gallery .leg-btn[aria-pressed="false"] {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.map-gallery .ramp-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-gallery .ramp {
+  display: inline-block;
+  width: 110px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+}
+
+/* Kontrol Per Kartu */
+.map-gallery .ctl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-gallery .ctl:empty {
+  display: none;
+}
+
+.map-gallery .ctl-row {
+  display: grid;
+  grid-template-columns: minmax(84px, auto) 1fr 4.6em;
+  align-items: center;
+  gap: 8px;
+  font: 400 12px "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+.map-gallery .ctl-row input[type="range"] {
+  width: 100%;
+  min-height: 24px;
+  accent-color: var(--acc);
+  cursor: pointer;
+}
+
+.map-gallery .ctl-o {
+  text-align: right;
+  color: var(--ink);
+}
+
+.map-gallery .ctl-grp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+}
+
+.map-gallery .ctl-chk {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 400 12px "IBM Plex Mono", monospace;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 24px;
+}
+
+.map-gallery .ctl-chk input {
+  accent-color: var(--acc);
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.map-gallery .ctl-sel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 400 12px "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+.map-gallery .ctl select {
+  font: 400 12px "IBM Plex Mono", monospace;
+  background: var(--surf);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 5px 8px;
+  min-height: 32px;
+  cursor: pointer;
+}
+
+.map-gallery .ctl-btn {
+  font: 500 12px "IBM Plex Mono", monospace;
+  padding: 6px 14px;
+  border: 1px solid var(--acc);
+  background: transparent;
+  color: var(--acc);
+  border-radius: 3px;
+  cursor: pointer;
+  min-height: 32px;
+  transition: all 0.15s ease;
+}
+
+.map-gallery .ctl-btn:hover {
+  background: var(--acc);
+  color: #ffffff;
+}
+
+.map-gallery .ctl-note {
+  font: 400 11px "IBM Plex Mono", monospace;
+  color: var(--mut);
+  margin: 0;
+}
+
+.map-gallery .readout {
+  font: 400 11.5px/1.45 "IBM Plex Mono", monospace;
+  color: var(--ink);
+  min-height: 2.8em;
+  padding: 4px 6px;
+  background: color-mix(in srgb, var(--map) 40%, transparent);
+  border-left: 2px solid var(--acc);
+}
+
+.map-gallery .summary {
+  font: 400 11.5px/1.45 "IBM Plex Mono", monospace;
+  color: var(--mut);
+}
+
+.map-gallery .summary:empty {
+  display: none;
+}
+
+.map-gallery .toggle {
+  margin-top: auto;
+  align-self: flex-start;
+  font: 500 12px "IBM Plex Mono", monospace;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--acc);
+  color: var(--acc);
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.map-gallery .more {
+  display: none;
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.map-gallery .card.open .more {
+  display: block;
+}
+
+.map-gallery .more ol {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: var(--mut);
+}
+
+.map-gallery .more li {
+  margin-bottom: 4px;
+}
+
+.map-gallery .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.map-gallery .chips span {
+  font: 400 11px "IBM Plex Mono", monospace;
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--surf);
+  color: var(--ink);
+}
+
+.map-gallery .proj {
+  color: var(--mut);
+  font-size: 12px;
+}
+
+.map-gallery .proj b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-gallery .card.open .more {
+    animation: mg-in 0.2s ease-out;
+  }
+  @keyframes mg-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-gallery .card {
+    transition: none;
+  }
+}
+
+/* =====================================================================
+   LEAFLET INTEGRASI DALAM .MAP-GALLERY
+   ===================================================================== */
+.map-gallery .leaflet-container {
+  background: var(--map);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+}
+
+.map-gallery .leaflet-container:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: -2px;
+}
+
+.map-gallery .leaflet-bar a,
+.map-gallery .leaflet-bar a:hover {
+  background: var(--surf);
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+
+.map-gallery .leaflet-bar {
+  border: 1px solid var(--line);
+  box-shadow: none;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.map-gallery .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--surf) 82%, transparent);
+  color: var(--mut);
+  font-size: 9px;
+}
+
+.map-gallery .leaflet-control-attribution a {
+  color: var(--acc);
+}
+
+.map-gallery .leaflet-control-scale-line {
+  background: color-mix(in srgb, var(--surf) 82%, transparent);
+  color: var(--ink);
+  border-color: var(--ink);
+  font-size: 10px;
+}
+
+.map-gallery .leaflet-tooltip {
+  background: var(--surf);
+  color: var(--ink);
+  border-color: var(--line);
+  font: 400 11px "IBM Plex Mono", monospace;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.map-gallery .leaflet-control a:focus-visible,
+.map-gallery .leaflet-marker-icon:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 1px;
+}
+
+.map-gallery .north {
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 2px 5px;
+  color: var(--ink);
+  text-align: center;
+  line-height: 0;
+}
+
+.map-gallery .north span {
+  display: block;
+  font: 500 9px "IBM Plex Mono", monospace;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* =====================================================================
+   GAYA VEKTOR SVG DALAM LEAFLET MAPS
+   ===================================================================== */
+.map-gallery .f1 { fill: var(--c1); }
+.map-gallery .f2 { fill: var(--c2); }
+.map-gallery .f3 { fill: var(--c3); }
+.map-gallery .f4 { fill: var(--c4); }
+.map-gallery .f5 { fill: var(--c5); }
+.map-gallery .fb { fill: var(--blue); }
+.map-gallery .fa { fill: var(--acc); }
+
+.map-gallery .s1 { stroke: var(--c1); }
+.map-gallery .s3 { stroke: var(--c3); }
+.map-gallery .s5 { stroke: var(--c5); }
+.map-gallery .sk { stroke: var(--ink); }
+
+.map-gallery .casing {
+  stroke: var(--ink);
+  stroke-opacity: 0.6;
+}
+
+.map-gallery .hl-cell {
+  stroke: var(--ink);
+  fill: none;
+}
+
+.map-gallery .lc {
+  stroke: var(--surf);
+  stroke-opacity: 0.55;
+  stroke-width: 0.8px;
+}
+
+.map-gallery .lc.hv,
+.map-gallery .ch.hv {
+  stroke: var(--ink);
+  stroke-opacity: 1;
+  stroke-width: 2.5px;
+}
+
+.map-gallery .ch {
+  fill: var(--blue);
+  stroke: var(--ink);
+  stroke-opacity: 0.6;
+}
+
+.map-gallery .ov-a { fill: var(--blue); stroke: var(--blue); }
+.map-gallery .ov-b { fill: var(--acc); stroke: var(--acc); }
+.map-gallery .ov-r {
+  fill: var(--c5);
+  stroke: var(--ink);
+  stroke-dasharray: 4 3;
+}
+.map-gallery .ov-bb {
+  fill: none;
+  stroke: var(--mut);
+  stroke-dasharray: 3 3;
+}
+
+.map-gallery .pick {
+  fill: var(--acc);
+  stroke: var(--ink);
+}
+
+.map-gallery .area {
+  fill: var(--blue);
+  stroke: var(--acc);
+  stroke-dasharray: 5 3;
+}
+
+.map-gallery .path-full {
+  stroke: var(--blue);
+  stroke-opacity: 0.55;
+}
+
+.map-gallery .path-done {
+  stroke: var(--acc);
+}
+
+.map-gallery .sutt {
+  stroke: var(--blue);
+}
+
+.map-gallery .sutt.sel {
+  stroke: var(--acc);
+}
+
+.map-gallery .raster {
+  image-rendering: pixelated;
+}
+
+.map-gallery .smooth {
+  image-rendering: auto;
+}
+
+/* DivIcon Kustom */
+.map-gallery .ic {
+  background: none;
+  border: 0;
+}
+
+.map-gallery .ic i {
+  position: absolute;
+  display: block;
+}
+
+.map-gallery .ic .tw {
+  left: 1px;
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 11px solid var(--ink);
+}
+
+.map-gallery .ic.sel .tw {
+  border-bottom-color: var(--acc);
+}
+
+.map-gallery .ic .sub {
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--c5);
+  border: 2px solid var(--ink);
+}
+
+.map-gallery .ic .ctlp {
+  left: 1px;
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 11px solid var(--c5);
+}
+
+.map-gallery .ic .base {
+  left: 1px;
+  top: 1px;
+  width: 12px;
+  height: 12px;
+  background: var(--ink);
+  border: 2px solid var(--surf);
+}
+
+.map-gallery .ic .rov {
+  left: 2px;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--acc);
+  border: 2px solid var(--ink);
+}
+
+/* Swipe UI untuk NDVI */
+.map-gallery .swipe-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--ink);
+  z-index: 700;
+  pointer-events: none;
+}
+
+.map-gallery .swipe-tag {
+  position: absolute;
+  bottom: 34px;
+  z-index: 700;
+  pointer-events: none;
+  font: 500 10px "IBM Plex Mono", monospace;
+  background: var(--surf);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 1px 6px;
+}

@@ -12,6 +12,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Leaflet 1.9.4 (versi dikunci) & Map Gallery CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="map-gallery/gallery.css"/>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -130,6 +133,7 @@
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#skills" data-i18n="nav_skills">Skills</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#experience" data-i18n="nav_experience">Experience</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#projects" data-i18n="nav_projects">Projects</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#maps" data-i18n="nav_maps">Maps</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#awards" data-i18n="nav_awards">Achievements</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
@@ -181,6 +185,11 @@
             <button id="sidebar-link-projects" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('projects')">
                 <span class="material-symbols-outlined" data-icon="layers">layers</span>
                 <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap" data-i18n="side_projects">Layers: Proyek</span>
+            </button>
+            <!-- 5b. Maps -->
+            <button id="sidebar-link-maps" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('maps')">
+                <span class="material-symbols-outlined" data-icon="map">map</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap" data-i18n="side_maps">Maps: Jenis Peta</span>
             </button>
             <!-- 6. Achievements -->
             <button id="sidebar-link-awards" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('awards')">
@@ -724,6 +733,26 @@
             </div>
         </section>
 
+        <!-- Map Gallery Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20 map-gallery" id="maps">
+            <div class="mb-10">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data uppercase tracking-wider">INTERACTIVE_MAP_GALLERY</span>
+                    <span class="font-label-data text-[10px] text-primary/40 uppercase">DATA_SINTETIS</span>
+                </div>
+                <h2 class="gallery-title">Jenis peta yang bisa saya buat</h2>
+                <p class="lead">Sembilan jenis peta dan analisis spasial dari proyek dan pengalaman saya, diurutkan dari yang paling rumit. Tiap kartu adalah peta mini interaktif: geser slider, nyalakan layer, atau arahkan kursor ke peta.</p>
+                <p class="lead small"><b>Data contoh, bukan hasil kerja asli.</b> Latar peta memakai wilayah nyata, tetapi semua layer analisis dibangkitkan secara sintetis oleh kode. Di layar sentuh, ketuk peta untuk menggeser dan gunakan dua jari untuk zoom. Di desktop, klik peta lalu scroll untuk zoom.</p>
+            </div>
+            <div class="bar">
+                <div class="filters" id="filters" role="group" aria-label="Filter kategori"></div>
+                <div class="sorts" id="sorts" role="group" aria-label="Urutan kartu"><span>Urutan:</span></div>
+            </div>
+            <div class="grid" id="grid" data-sort="rank"></div>
+            <!-- TODO: tambah jenis peta lain di sini -->
+            <!-- Cara menambah: lihat panduan di map-gallery/README.md atau map-gallery/data.js -->
+        </section>
+
         <!-- Achievements Section -->
         <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="awards">
             <h2 class="font-headline-md text-headline-md text-primary mb-12" data-i18n="awards_heading">Penghargaan & Prestasi</h2>
@@ -961,6 +990,10 @@
   resize();
 })();
 </script>
+    <!-- Leaflet 1.9.4 & Turf 7.2.0 (versi dikunci) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.2.0/turf.min.js"></script>
+    <script type="module" src="map-gallery/gallery.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
