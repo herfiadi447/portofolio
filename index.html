@@ -661,49 +661,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 5: BengkelPro App -->
-                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
-                    <!-- CSS Technical Placeholder -->
-                    <div class="aspect-[16/10] bg-surface-container-high border-b border-outline/10 flex items-center justify-center font-label-data text-xs text-on-surface-variant/60 uppercase">
-                        SCREENSHOT_PENDING
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="flex gap-2 mb-4">
-                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">MANAGEMENT</span>
-                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">POS</span>
-                        </div>
-                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">BengkelPro App</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc4">
-                            Aplikasi manajemen bengkel dengan peran Admin/Mekanik, sistem kasir (POS), dan manajemen inventaris.
-                        </p>
-                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
-                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: BP-MANAGEMENT</span>
-                            <span class="font-label-caps text-label-caps text-primary/40 font-bold">DEV_LOCAL</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 6: AI GIS Chatbot -->
-                <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
-                    <!-- CSS Technical Placeholder -->
-                    <div class="aspect-[16/10] bg-surface-container-high border-b border-outline/10 flex items-center justify-center font-label-data text-xs text-on-surface-variant/60 uppercase">
-                        SCREENSHOT_PENDING
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="flex gap-2 mb-4">
-                            <span class="px-2 py-0.5 text-[10px] bg-tertiary/10 text-tertiary font-label-data">AI_CHATBOT</span>
-                            <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data">VECTOR_DB</span>
-                        </div>
-                        <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">AI GIS Chatbot</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1" data-i18n="proj_desc5">
-                            Integrasi API Groq, n8n, dan Supabase vector database untuk kueri data spasial yang cerdas.
-                        </p>
-                        <div class="flex justify-between items-center border-t border-outline/10 pt-4 mt-auto">
-                            <span class="font-label-data text-[10px] text-primary/40 uppercase">UUID: AI-GIS-BOT</span>
-                            <span class="font-label-caps text-label-caps text-primary/40 font-bold">API_ENDPOINT</span>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Project Card 7: GeoToolbox WebGIS -->
                 <div class="group border border-outline/10 bg-background overflow-hidden relative transition-precise hover:border-secondary flex flex-col h-full">
@@ -824,34 +782,37 @@
     </main>
 
     <!-- Floating GeoAI Assistant Widget (DESIGN.md sharp corners and colors) -->
-    <div class="fixed bottom-8 right-8 z-[1030] flex flex-col items-end gap-4">
-        <div class="hidden w-80 bg-background border border-outline shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 duration-300" id="ai-chat">
-            <div class="bg-primary p-3 flex justify-between items-center">
-                <span class="font-label-caps text-[10px] text-white">GEO_ASSISTANT_V2.1</span>
+    <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[1030] flex flex-col items-end gap-3">
+        <div class="hidden w-[calc(100vw-2rem)] sm:w-[380px] md:w-[440px] max-w-[480px] bg-background border border-outline shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 duration-300" id="ai-chat">
+            <div class="bg-primary p-3.5 flex justify-between items-center border-b border-outline/20">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="font-label-caps text-xs text-white tracking-wider font-bold">GEO_ASSISTANT_V2.1</span>
+                </div>
                 <!-- Updated click handler to match modified script.js toggle chat function -->
-                <button class="text-white hover:text-secondary bg-transparent p-0 border-none outline-none cursor-pointer flex items-center" onclick="toggleChat()"><span class="material-symbols-outlined text-sm">close</span></button>
+                <button class="text-white hover:text-secondary bg-transparent p-1 border-none outline-none cursor-pointer flex items-center transition-colors" onclick="toggleChat()" aria-label="Tutup Chat"><span class="material-symbols-outlined text-base">close</span></button>
             </div>
-            <div class="h-64 p-4 overflow-y-auto font-label-data text-xs bg-surface-container-lowest no-scrollbar flex flex-col gap-3" id="chat-messages">
-                <div class="message bot-message self-start bg-[#16232e]/5 border border-outline/10 p-2 max-w-[85%]">
+            <div class="h-[340px] sm:h-[400px] md:h-[430px] max-h-[62vh] p-4 overflow-y-auto font-label-data text-xs sm:text-[13px] bg-surface-container-lowest no-scrollbar flex flex-col gap-3.5" id="chat-messages">
+                <div class="message bot-message self-start bg-[#16232e]/5 border border-outline/10 p-3 max-w-[92%] break-words">
                     <p data-i18n="chat_welcome"><span class="text-secondary font-bold">[SYS]:</span> Terminal ready. How can I assist with your spatial data exploration?</p>
                 </div>
             </div>
             <!-- Quick Suggestions styled matching DESIGN.md technical theme -->
-            <div class="p-3 border-t border-outline/10 bg-background flex flex-col gap-1.5" id="chat-suggestions">
-                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_1">Apa saja proyek WebGIS Herfiadi?</button>
-                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_2">Bagaimana latar belakang pendidikannya?</button>
-                <button type="button" class="suggestion-btn text-left font-label-data text-[10px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_3">Bagaimana cara menghubungi Herfiadi?</button>
+            <div class="p-3 border-t border-outline/10 bg-background flex flex-col gap-2" id="chat-suggestions">
+                <button type="button" class="suggestion-btn text-left font-label-data text-[11px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_1">Apa saja proyek WebGIS Herfiadi?</button>
+                <button type="button" class="suggestion-btn text-left font-label-data text-[11px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_2">Bagaimana latar belakang pendidikannya?</button>
+                <button type="button" class="suggestion-btn text-left font-label-data text-[11px] text-primary/70 hover:text-secondary hover:underline transition-colors bg-transparent border-none outline-none cursor-pointer" data-i18n="chat_suggest_3">Bagaimana cara menghubungi Herfiadi?</button>
             </div>
             <div class="p-3 border-t border-outline/10 bg-background">
                 <form class="flex gap-2" id="chat-form">
-                    <input class="flex-1 bg-surface-container-low border-none focus:ring-1 focus:ring-secondary text-xs font-label-data py-2 px-3 outline-none" placeholder="Enter query..." id="chat-input" data-i18n-placeholder="chat_placeholder" type="text" required autocomplete="off"/>
-                    <button type="submit" class="bg-primary text-white px-3 flex items-center justify-center border-none outline-none cursor-pointer hover:bg-secondary"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+                    <input class="flex-1 bg-surface-container-low border border-outline/10 focus:border-secondary focus:ring-1 focus:ring-secondary text-xs sm:text-sm font-label-data py-2 px-3 outline-none" placeholder="Enter query..." id="chat-input" data-i18n-placeholder="chat_placeholder" type="text" required autocomplete="off"/>
+                    <button type="submit" class="bg-primary text-white px-4 flex items-center justify-center border-none outline-none cursor-pointer hover:bg-secondary transition-colors"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
                 </form>
             </div>
         </div>
         <!-- Main floating assistant trigger button -->
-        <button class="w-16 h-16 bg-secondary text-white border border-secondary hover:bg-primary transition-precise flex items-center justify-center shadow-lg group rounded-none" onclick="toggleChat()">
-            <span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform" data-icon="hub">hub</span>
+        <button class="w-14 h-14 sm:w-16 sm:h-16 bg-secondary text-white border border-secondary hover:bg-primary transition-precise flex items-center justify-center shadow-lg group rounded-none" onclick="toggleChat()" aria-label="Buka GeoAI Assistant">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl group-hover:rotate-12 transition-transform" data-icon="hub">hub</span>
         </button>
     </div>
 

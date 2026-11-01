@@ -577,7 +577,7 @@ function parseMarkdown(text) {
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
     // 4. Links: [text](url) -> <a href="$2" target="_blank" style="color: #A6673A; text-decoration: underline; font-weight: 600;">$1</a>
-    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: #A6673A; text-decoration: underline; font-weight: 600;">$1</a>');
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: #A6673A; text-decoration: underline; font-weight: 600; word-break: break-word;">$1</a>');
 
     // 5. Line-by-line parsing for lists and paragraphs
     const lines = html.split('\n');
@@ -599,20 +599,20 @@ function parseMarkdown(text) {
                 inNumList = false;
             }
             if (!inBulletList) {
-                result.push('<ul style="margin-left: 1.5rem; margin-top: 0.3rem; margin-bottom: 0.3rem; list-style-type: disc;">');
+                result.push('<ul style="margin-left: 1.15rem; margin-top: 0.35rem; margin-bottom: 0.35rem; list-style-type: disc; padding-left: 0;">');
                 inBulletList = true;
             }
-            result.push(`<li style="margin-bottom: 0.3rem; line-height: 1.4;">${bulletMatch[1]}</li>`);
+            result.push(`<li style="margin-bottom: 0.35rem; line-height: 1.5; word-break: break-word;">${bulletMatch[1]}</li>`);
         } else if (numListMatch) {
             if (inBulletList) {
                 result.push('</ul>');
                 inBulletList = false;
             }
             if (!inNumList) {
-                result.push('<ol style="margin-left: 1.5rem; margin-top: 0.3rem; margin-bottom: 0.3rem; list-style-type: decimal;">');
+                result.push('<ol style="margin-left: 1.15rem; margin-top: 0.35rem; margin-bottom: 0.35rem; list-style-type: decimal; padding-left: 0;">');
                 inNumList = true;
             }
-            result.push(`<li style="margin-bottom: 0.3rem; line-height: 1.4;">${numListMatch[2]}</li>`);
+            result.push(`<li style="margin-bottom: 0.35rem; line-height: 1.5; word-break: break-word;">${numListMatch[2]}</li>`);
         } else {
             if (inBulletList) {
                 result.push('</ul>');
@@ -624,9 +624,9 @@ function parseMarkdown(text) {
             }
             
             if (line === '') {
-                result.push('<div style="height: 0.6rem;"></div>');
+                result.push('<div style="height: 0.5rem;"></div>');
             } else {
-                result.push(`<p style="margin-bottom: 0.4rem; line-height: 1.4;">${line}</p>`);
+                result.push(`<p style="margin-bottom: 0.45rem; line-height: 1.5; word-break: break-word;">${line}</p>`);
             }
         }
     }
@@ -641,7 +641,9 @@ function parseMarkdown(text) {
 function appendMessage(sender, text) {
     if (!chatMessages) return;
     const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message', `${sender}-message`, 'self-start', 'max-w-[85%]', 'p-2', 'border', 'font-label-data', 'text-xs');
+    messageDiv.classList.add('message', `${sender}-message`, 'self-start', 'max-w-[92%]', 'p-3', 'border', 'font-label-data', 'text-xs', 'sm:text-[13px]', 'break-words', 'leading-relaxed');
+    messageDiv.style.wordBreak = 'break-word';
+    messageDiv.style.overflowWrap = 'anywhere';
     
     if (sender === 'bot') {
         messageDiv.classList.add('bg-[#16232e]/5', 'border-outline/10');
@@ -651,6 +653,8 @@ function appendMessage(sender, text) {
         messageDiv.classList.add('bg-[#A6673A]/10', 'border-[#A6673A]/35', 'text-secondary');
         const paragraph = document.createElement('p');
         paragraph.textContent = text;
+        paragraph.style.wordBreak = 'break-word';
+        paragraph.style.overflowWrap = 'anywhere';
         messageDiv.appendChild(paragraph);
     }
     
