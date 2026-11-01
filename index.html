@@ -122,10 +122,10 @@
 <body class="bg-background text-primary font-body-md selection:bg-secondary/30">
     <canvas id="topoCanvas" class="topo-canvas"></canvas>
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-[1020] flex justify-between items-center px-gutter py-4 bg-background/90 backdrop-blur-sm border-b border-outline/10">
-        <div class="flex items-center gap-2 text-headline-md font-headline-md font-bold text-primary tracking-tighter uppercase">
-            <img src="icon/logo_square.png" alt="Logo" class="h-6 w-6 object-contain"/>
-            <span>GEO_PORTFOLIO_V1.0</span>
+    <nav class="fixed top-0 w-full z-[1020] flex justify-between items-center px-4 sm:px-gutter py-3 sm:py-4 bg-background/90 backdrop-blur-sm border-b border-outline/10 gap-2">
+        <div class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-base md:text-headline-md font-headline-md font-bold text-primary tracking-tight uppercase min-w-0">
+            <img src="icon/logo_square.png" alt="Logo" class="h-5 w-5 sm:h-6 sm:w-6 object-contain shrink-0"/>
+            <span class="truncate">GEO_PORTFOLIO_V1.0</span>
         </div>
         <div class="hidden md:flex gap-8 items-center">
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#hero" data-i18n="nav_home">Home</a>
@@ -138,15 +138,15 @@
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#awards" data-i18n="nav_awards">Achievements</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 sm:gap-6 shrink-0">
             <!-- Language Selector Switch styled according to DESIGN.md -->
-            <select id="lang-switch" class="bg-transparent border border-primary text-label-caps font-bold py-1 px-2 rounded-none focus:ring-0 focus:border-secondary outline-none cursor-pointer text-xs">
+            <select id="lang-switch" class="bg-transparent border border-primary text-label-caps font-bold py-1 px-1.5 sm:px-2 rounded-none focus:ring-0 focus:border-secondary outline-none cursor-pointer text-[11px] sm:text-xs">
                 <option value="id" selected>ID</option>
                 <option value="en">EN</option>
                 <option value="jp">JP</option>
                 <option value="zh">ZH</option>
             </select>
-            <button class="px-4 py-2 border border-primary text-label-caps font-bold hover:bg-primary hover:text-white transition-precise text-xs" onclick="scrollToSection('contact')">CONNECT</button>
+            <button class="px-2.5 py-1 sm:px-4 sm:py-2 border border-primary text-label-caps font-bold hover:bg-primary hover:text-white transition-precise text-[11px] sm:text-xs" onclick="scrollToSection('contact')">CONNECT</button>
         </div>
     </nav>
 
