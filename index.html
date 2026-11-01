@@ -134,6 +134,7 @@
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#experience" data-i18n="nav_experience">Experience</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#projects" data-i18n="nav_projects">Projects</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#maps" data-i18n="nav_maps">Maps</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#running" data-i18n="nav_running">Lari</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#awards" data-i18n="nav_awards">Achievements</a>
             <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
@@ -190,6 +191,11 @@
             <button id="sidebar-link-maps" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('maps')">
                 <span class="material-symbols-outlined" data-icon="map">map</span>
                 <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap" data-i18n="side_maps">Maps: Jenis Peta</span>
+            </button>
+            <!-- 5c. Running -->
+            <button id="sidebar-link-running" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('running')">
+                <span class="material-symbols-outlined" data-icon="directions_run">directions_run</span>
+                <span class="font-label-data text-label-data opacity-0 group-hover:opacity-100 whitespace-nowrap" data-i18n="side_running">Off-Duty: Lari</span>
             </button>
             <!-- 6. Achievements -->
             <button id="sidebar-link-awards" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-variant transition-precise rounded-none" onclick="scrollToSection('awards')">
@@ -709,6 +715,172 @@
             <div class="grid" id="grid" data-sort="rank"></div>
             <!-- TODO: tambah jenis peta lain di sini -->
             <!-- Cara menambah: lihat panduan di map-gallery/README.md atau map-gallery/data.js -->
+        </section>
+
+        <!-- Running / Lari Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop border-b border-outline/20" id="running">
+            <div class="mb-12">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-[10px] bg-secondary/10 text-secondary font-label-data uppercase tracking-wider">OFF_DUTY_LOG</span>
+                    <span class="font-label-data text-[10px] text-primary/40 uppercase" data-i18n="running_sub">Kegiatan di luar layar</span>
+                </div>
+                <h2 class="font-headline-md text-headline-md text-primary mb-4" data-i18n="running_heading">◉ OFF_DUTY: LARI</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl" data-i18n="running_lead">Lari sudah jadi bagian dari keseharian saya — bukan sekadar olahraga, tapi cara saya membersihkan pikiran setelah seharian di depan komputer. Dari putaran 7 km di sekitar kompleks sampai half marathon, setiap sesi punya ceritanya sendiri. Tiga rekaman di bawah ini hanya sebagian kecil dari jejak yang sudah saya tempuh.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+                <!-- Card RUN_01 -->
+                <article class="group border border-outline/10 bg-background overflow-hidden transition-precise hover:border-secondary flex flex-col">
+                    <div class="relative overflow-hidden border-b border-outline/10">
+                        <button
+                            type="button"
+                            class="block w-full text-left focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-zoom-in"
+                            aria-label="Perbesar foto RUN_01"
+                            onclick="openLightbox('img/lari-01.webp', 'Lari 7 km — Rekaman Strava', 'RUN_01: Lari 7 km')">
+                            <img
+                                src="img/lari-01.webp"
+                                alt="Rekaman lari 7 km dengan data Strava menampilkan jarak, waktu, dan pace"
+                                class="w-full h-auto object-contain"
+                                loading="lazy"
+                                width="720" height="960"
+                            />
+                        </button>
+                        <span class="absolute top-2 left-2 px-2 py-0.5 text-[10px] font-label-data bg-background/90 text-secondary border border-outline/20 uppercase">RUN_01</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 gap-3">
+                        <h3 class="font-headline-md text-[18px] font-semibold group-hover:text-secondary transition-colors" data-i18n="run_01_title">Lari 7 km</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="run_01_desc">Rute pendek berbentuk lintasan tertutup.</p>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-1">
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_dist">Jarak</span>
+                                <b class="font-label-data text-[18px] text-primary">6,90 km</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_time">Waktu</span>
+                                <b class="font-label-data text-[18px] text-primary">50:17</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_pace">Pace /km</span>
+                                <b class="font-label-data text-[18px] text-primary">7:17</b>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3 border-t border-outline/10">
+                            <button
+                                type="button"
+                                class="run-toggle font-label-data text-[12px] text-secondary border-b border-secondary pb-0.5 hover:text-secondary/70 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-pointer"
+                                aria-expanded="false"
+                                data-i18n-toggle data-open="run_btn_close" data-close="run_btn_detail">
+                                <span data-i18n="run_btn_detail">Lihat data</span>
+                            </button>
+                            <div class="run-detail hidden mt-3 pt-3 border-t border-dashed border-outline/20 font-label-data text-[12px] text-on-surface-variant leading-relaxed" aria-live="polite">
+                                <p data-i18n="run_01_detail">Geometri: polyline loop · Sumber: Strava (GPS) · Kategori: jarak menengah</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card RUN_02 -->
+                <article class="group border border-outline/10 bg-background overflow-hidden transition-precise hover:border-secondary flex flex-col">
+                    <div class="relative overflow-hidden border-b border-outline/10">
+                        <button
+                            type="button"
+                            class="block w-full text-left focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-zoom-in"
+                            aria-label="Perbesar foto RUN_02"
+                            onclick="openLightbox('img/lari-02.webp', 'Half Marathon — Rekaman Strava', 'RUN_02: Half Marathon')">
+                            <img
+                                src="img/lari-02.webp"
+                                alt="Rekaman half marathon 21,15 km dengan data Strava menampilkan jarak, waktu, dan pace"
+                                class="w-full h-auto object-contain"
+                                loading="lazy"
+                                width="720" height="960"
+                            />
+                        </button>
+                        <span class="absolute top-2 left-2 px-2 py-0.5 text-[10px] font-label-data bg-background/90 text-secondary border border-outline/20 uppercase">RUN_02</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 gap-3">
+                        <h3 class="font-headline-md text-[18px] font-semibold group-hover:text-secondary transition-colors" data-i18n="run_02_title">Half Marathon</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="run_02_desc">Setengah maraton lewat jalur berpohon yang teduh.</p>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-1">
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_dist">Jarak</span>
+                                <b class="font-label-data text-[18px] text-primary">21,15 km</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_time">Waktu</span>
+                                <b class="font-label-data text-[18px] text-primary">3:30:00</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_pace">Pace /km</span>
+                                <b class="font-label-data text-[18px] text-primary">9:56</b>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3 border-t border-outline/10">
+                            <button
+                                type="button"
+                                class="run-toggle font-label-data text-[12px] text-secondary border-b border-secondary pb-0.5 hover:text-secondary/70 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-pointer"
+                                aria-expanded="false"
+                                data-i18n-toggle data-open="run_btn_close" data-close="run_btn_detail">
+                                <span data-i18n="run_btn_detail">Lihat data</span>
+                            </button>
+                            <div class="run-detail hidden mt-3 pt-3 border-t border-dashed border-outline/20 font-label-data text-[12px] text-on-surface-variant leading-relaxed" aria-live="polite">
+                                <p data-i18n="run_02_detail">Geometri: polyline · Sumber: Strava (GPS) · Kategori: half marathon</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card RUN_03 -->
+                <article class="group border border-outline/10 bg-background overflow-hidden transition-precise hover:border-secondary flex flex-col">
+                    <div class="relative overflow-hidden border-b border-outline/10">
+                        <button
+                            type="button"
+                            class="block w-full text-left focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-zoom-in"
+                            aria-label="Perbesar foto RUN_03"
+                            onclick="openLightbox('img/lari-03.webp', 'Half Marathon Rute Hati — Rekaman Strava', 'RUN_03: Half Marathon — Rute Hati')">
+                            <img
+                                src="img/lari-03.webp"
+                                alt="Rekaman half marathon 21,21 km dengan rute GPS berbentuk hati dan data Strava"
+                                class="w-full h-auto object-contain"
+                                loading="lazy"
+                                width="720" height="960"
+                            />
+                        </button>
+                        <span class="absolute top-2 left-2 px-2 py-0.5 text-[10px] font-label-data bg-background/90 text-secondary border border-outline/20 uppercase">RUN_03</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 gap-3">
+                        <h3 class="font-headline-md text-[18px] font-semibold group-hover:text-secondary transition-colors" data-i18n="run_03_title">Half Marathon — Rute Hati</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="run_03_desc">Lintasan GPS-nya kebetulan membentuk hati.</p>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-1">
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_dist">Jarak</span>
+                                <b class="font-label-data text-[18px] text-primary">21,21 km</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_time">Waktu</span>
+                                <b class="font-label-data text-[18px] text-primary">3:16:00</b>
+                            </div>
+                            <div>
+                                <span class="font-label-data text-[11px] text-on-surface-variant uppercase block" data-i18n="run_stat_pace">Pace /km</span>
+                                <b class="font-label-data text-[18px] text-primary">9:15</b>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3 border-t border-outline/10">
+                            <button
+                                type="button"
+                                class="run-toggle font-label-data text-[12px] text-secondary border-b border-secondary pb-0.5 hover:text-secondary/70 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cursor-pointer"
+                                aria-expanded="false"
+                                data-i18n-toggle data-open="run_btn_close" data-close="run_btn_detail">
+                                <span data-i18n="run_btn_detail">Lihat data</span>
+                            </button>
+                            <div class="run-detail hidden mt-3 pt-3 border-t border-dashed border-outline/20 font-label-data text-[12px] text-on-surface-variant leading-relaxed" aria-live="polite">
+                                <p data-i18n="run_03_detail">Geometri: polyline loop · Sumber: Strava (GPS) · Kategori: half marathon</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </section>
 
         <!-- Achievements Section -->

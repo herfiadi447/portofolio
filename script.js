@@ -87,11 +87,30 @@ const translations = {
         side_experience: "Timeline: Pengalaman",
         side_projects: "Layers: Proyek",
         side_maps: "Maps: Jenis Peta",
+        nav_running: "Lari",
+        side_running: "Off-Duty: Lari",
         side_awards: "Prestasi",
         side_contact: "Hubungi",
         side_send: "KIRIM PESAN",
         side_linkedin: "LinkedIn",
-        side_github: "GitHub"
+        side_github: "GitHub",
+        running_heading: "◉ OFF_DUTY: LARI",
+        running_sub: "Kegiatan di luar layar",
+        running_lead: "Lari sudah jadi bagian dari keseharian saya — bukan sekadar olahraga, tapi cara saya membersihkan pikiran setelah seharian di depan komputer. Dari putaran 7 km di sekitar kompleks sampai half marathon, setiap sesi punya ceritanya sendiri. Tiga rekaman di bawah ini hanya sebagian kecil dari jejak yang sudah saya tempuh.",
+        run_01_title: "Lari 7 km",
+        run_01_desc: "Rute pendek berbentuk lintasan tertutup.",
+        run_01_detail: "Geometri: polyline loop · Sumber: Strava (GPS) · Kategori: jarak menengah",
+        run_02_title: "Half Marathon",
+        run_02_desc: "Setengah maraton lewat jalur berpohon yang teduh.",
+        run_02_detail: "Geometri: polyline · Sumber: Strava (GPS) · Kategori: half marathon",
+        run_03_title: "Half Marathon — Rute Hati",
+        run_03_desc: "Lintasan GPS-nya kebetulan membentuk hati.",
+        run_03_detail: "Geometri: polyline loop · Sumber: Strava (GPS) · Kategori: half marathon",
+        run_stat_dist: "Jarak",
+        run_stat_time: "Waktu",
+        run_stat_pace: "Pace /km",
+        run_btn_detail: "Lihat data",
+        run_btn_close: "Tutup"
     },
     en: {
         nav_home: "Home",
@@ -180,11 +199,30 @@ const translations = {
         side_experience: "Timeline: Experience",
         side_projects: "Layers: Projects",
         side_maps: "Maps: Map Types",
+        nav_running: "Running",
+        side_running: "Off-Duty: Running",
         side_awards: "Achievements",
         side_contact: "Connect",
         side_send: "SEND MESSAGE",
         side_linkedin: "LinkedIn",
-        side_github: "GitHub"
+        side_github: "GitHub",
+        running_heading: "◉ OFF_DUTY: RUNNING",
+        running_sub: "Outside the screen",
+        running_lead: "Running has become part of my daily routine — not just exercise, but a way to clear my head after long hours in front of the screen. From 7 km loops to half marathons, every session has its own story. These three recordings are just a small part of the trail I've covered.",
+        run_01_title: "7 km Run",
+        run_01_desc: "A short closed-loop route.",
+        run_01_detail: "Geometry: polyline loop · Source: Strava (GPS) · Category: mid distance",
+        run_02_title: "Half Marathon",
+        run_02_desc: "A half marathon along a shaded tree-lined path.",
+        run_02_detail: "Geometry: polyline · Source: Strava (GPS) · Category: half marathon",
+        run_03_title: "Half Marathon — Heart Route",
+        run_03_desc: "The GPS trace accidentally formed a heart shape.",
+        run_03_detail: "Geometry: polyline loop · Source: Strava (GPS) · Category: half marathon",
+        run_stat_dist: "Distance",
+        run_stat_time: "Time",
+        run_stat_pace: "Pace /km",
+        run_btn_detail: "View data",
+        run_btn_close: "Close"
     },
     jp: {
         nav_home: "ホーム",
@@ -273,11 +311,30 @@ const translations = {
         side_experience: "タイムライン: 経歴",
         side_projects: "レイヤー: プロジェクト",
         side_maps: "マップ: 地図種類",
+        nav_running: "ランニング",
+        side_running: "趣味: ランニング",
         side_awards: "実績",
         side_contact: "コネクト",
         side_send: "メッセージ送信",
         side_linkedin: "LinkedIn",
-        side_github: "GitHub"
+        side_github: "GitHub",
+        running_heading: "◉ OFF_DUTY: ランニング",
+        running_sub: "スクリーンの外の活動",
+        running_lead: "ランニングは私の日課の一部になっています。7kmのループからハーフマラソンまで、それぞれのセッションに独自のストーリーがあります。以下の3つの記録は、これまで歩んできた道のりのほんの一部です。",
+        run_01_title: "7km ラン",
+        run_01_desc: "閉じたループコースの短いラン。",
+        run_01_detail: "ジオメトリ: ポリラインループ · ソース: Strava (GPS) · カテゴリ: 中距離",
+        run_02_title: "ハーフマラソン",
+        run_02_desc: "木陕の涅しい道を走るハーフマラソン。",
+        run_02_detail: "ジオメトリ: ポリライン · ソース: Strava (GPS) · カテゴリ: ハーフマラソン",
+        run_03_title: "ハーフマラソン — ハートルート",
+        run_03_desc: "GPSの軌跡が偶然ハートの形を描いた。",
+        run_03_detail: "ジオメトリ: ポリラインループ · ソース: Strava (GPS) · カテゴリ: ハーフマラソン",
+        run_stat_dist: "距離",
+        run_stat_time: "タイム",
+        run_stat_pace: "ペース /km",
+        run_btn_detail: "データを見る",
+        run_btn_close: "閉じる"
     },
     zh: {
         nav_home: "首页",
@@ -366,11 +423,30 @@ const translations = {
         side_experience: "时间轴: 工作经历",
         side_projects: "图层: 最新项目",
         side_maps: "地图: 地图类型",
+        nav_running: "跑步",
+        side_running: "业余: 跑步",
         side_awards: "成就",
         side_contact: "联系",
         side_send: "发送消息",
         side_linkedin: "LinkedIn",
-        side_github: "GitHub"
+        side_github: "GitHub",
+        running_heading: "◉ OFF_DUTY: 跑步",
+        running_sub: "屏幕之外的活动",
+        running_lead: "跑步已成为我日常生活的一部分——不仅仅是运动，更是我在长时间盯着屏幕后放空思绪的方式。从 7 公里的绕圈到半程马拉松，每次跑步都有它自己的故事。以下三条记录只是我留下的足迹中的一小部分。",
+        run_01_title: "7 公里跑",
+        run_01_desc: "短距离闭合环线路线。",
+        run_01_detail: "几何: 折线环 · 来源: Strava (GPS) · 类别: 中距离",
+        run_02_title: "半程马拉松",
+        run_02_desc: "沿绿阴小道跑完半程马拉松。",
+        run_02_detail: "几何: 折线 · 来源: Strava (GPS) · 类别: 半程马拉松",
+        run_03_title: "半程马拉松 — 心形路线",
+        run_03_desc: "GPS 轨迹偶然形成了心形。",
+        run_03_detail: "几何: 折线环 · 来源: Strava (GPS) · 类别: 半程马拉松",
+        run_stat_dist: "距离",
+        run_stat_time: "时间",
+        run_stat_pace: "配速 /km",
+        run_btn_detail: "查看数据",
+        run_btn_close: "关闭"
     }
 };
 
@@ -836,3 +912,51 @@ window.addEventListener('keydown', (e) => {
 
 // Expose openLightbox to window for inline onclick triggers
 window.openLightbox = openLightbox;
+
+
+// --- Running Section: "Lihat data" toggle ---
+document.addEventListener('DOMContentLoaded', () => {
+    function initRunToggles() {
+        document.querySelectorAll('#running .run-toggle').forEach(btn => {
+            if (btn._runInitialized) return;
+            btn._runInitialized = true;
+            btn.addEventListener('click', () => {
+                const card = btn.closest('article');
+                const detail = card.querySelector('.run-detail');
+                const span = btn.querySelector('[data-i18n]');
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                if (isOpen) {
+                    detail.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                    // re-apply current language label
+                    const lang = document.getElementById('lang-switch') ? document.getElementById('lang-switch').value : 'id';
+                    const t = translations[lang];
+                    if (span && t) span.textContent = t['run_btn_detail'] || 'Lihat data';
+                } else {
+                    detail.classList.remove('hidden');
+                    btn.setAttribute('aria-expanded', 'true');
+                    const lang = document.getElementById('lang-switch') ? document.getElementById('lang-switch').value : 'id';
+                    const t = translations[lang];
+                    if (span && t) span.textContent = t['run_btn_close'] || 'Tutup';
+                }
+            });
+        });
+    }
+    initRunToggles();
+
+    // Also re-init when language changes so button text follows
+    const langSwitch = document.getElementById('lang-switch');
+    if (langSwitch) {
+        langSwitch.addEventListener('change', () => {
+            const lang = langSwitch.value;
+            const t = translations[lang];
+            if (!t) return;
+            document.querySelectorAll('#running .run-toggle').forEach(btn => {
+                const span = btn.querySelector('[data-i18n]');
+                if (!span) return;
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                span.textContent = isOpen ? (t['run_btn_close'] || 'Close') : (t['run_btn_detail'] || 'View data');
+            });
+        });
+    }
+});
