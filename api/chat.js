@@ -52,48 +52,55 @@ Here is Herfiadi's complete profile and CV information:
 - GitHub: github.com/herfiadi447
 
 === Summary ===
-Geophysics graduate from Hasanuddin University (graduated recently, receiving Bachelor of Science - S.Si) specializing in Geoinformatics. Experienced in GIS analysis, WebGIS development (Flask, Leaflet, Folium), spatial database management (PostgreSQL/PostGIS, MySQL), and integrating AI chatbot features (via n8n, Supabase vector database, Groq API) for geospatial decision support systems.
+Geophysics Graduate from Hasanuddin University with strong interests in GIS, Remote Sensing, Geospatial Analysis, and WebGIS Development. Experienced in spatial data processing, land suitability analysis, and WebGIS development through government collaboration projects. Proficient in Python, QGIS, ArcGIS, PostgreSQL/PostGIS, and modern geospatial technologies. Passionate about applying geospatial science to support environmental management, agriculture, and resource planning.
 
 === Education ===
-- Bachelor of Geophysics (S.Si) - Hasanuddin University (Graduated in 2026)
+- Hasanuddin University (2022 - 2026): Bachelor of Geophysics (S.Si) - GPA 3.81
 
 === Professional Experience ===
-1. Survey & Mapping Assistant – HPL Transmigration Land Inventory & Verification Team, West Papua (2026)
-   - Conducted field surveys and mapping to support inventory and verification of transmigration land (HPL) in West Papua Province.
+1. Mapping Survey & Drone Operator Assistant – HPL Transmigration Land Inventory & Verification Team, West Papua (2026)
+   - Conducted field surveys and mapping to support inventory and verification of transmigration land (HPL) in West Papua Province, covering approximately 3,000 ha in Manokwari and 718 ha in Teluk Wondama.
    - Assisted drone survey operations by supporting field preparation and observing the execution of pre-planned flight missions.
-   - Assisted GNSS geodetic field surveys by setting up base and rover units at Ground Control Points (GCP); data processing was handled by the technical team.
-   - Edited and updated 2024 land cover shapefiles (polygon cut and merge) and developed a Python script to correct spatial topology errors (overlaps and gaps).
-2. Junior Web Developer at PT Geocode Smart Solution (2025)
-   - Developed WebGIS platforms: GeoAI Barru (geoaibarru.com), Geopangansidrap (geopangansidrap.id), and Sijagung (sijagung.id).
-   - Designed and implemented AI chatbot features using n8n and Supabase vector database to enhance user interactivity.
-   - Managed spatial databases using PostgreSQL/PostGIS and MySQL.
-   - Improved UI/UX for GIS applications using Leaflet and Folium.
-3. Intern at UPT PLN Makassar (2025)
+   - Assisted GNSS geodetic field surveys by setting up base and rover units; data processing was handled by the technical team.
+   - Produced land cover maps for ~3,000 ha (Manokwari) and 718 ha (Teluk Wondama) through manual delineation of 2021-2025 Sentinel-2 imagery, and developed a Python script to correct topology errors (overlaps and gaps).
+   - Generated annual NDVI maps (2021-2025) from Sentinel-2 imagery for the Manokwari and Teluk Wondama study areas.
+2. Junior Web Developer – PT Geocode Smart Solution (2025)
+   - Developed WebGIS platforms such as GeoAI Barru (geoaibarru.com), Geopangansidrap (geopangansidrap.id), and Sijagung (sijagung.id).
+   - Designed and implemented AI chatbot features using n8n and Supabase to enhance user interactivity.
+   - Worked with PostgreSQL/PostGIS and MySQL for spatial data management.
+   - Developed and improved UI/UX for GIS applications using Leaflet and Folium.
+3. Intern – UPT PLN Makassar (2025)
    - Developed a spatial distribution map of High-Voltage Transmission Towers (SUTT) in Makassar City.
-   - Created landslide susceptibility maps for each SUTT location.
-4. Field Surveyor at OPLAH (Land Optimization) Project, Sidrap Regency / Hasanuddin University – LPPM Witaris (2025)
+   - Created a landslide susceptibility map for each SUTT location in Makassar City.
+4. Field Surveyor – Hasanuddin University – LPPM Witaris (2025)
    - Conducted field surveys to map agricultural farmer groups (POKTAN) using geospatial data collection techniques.
-   - Collected and validated spatial and attribute data.
-5. Intern at Kedaireka MKMB, Barru Regency (2024)
-   - Collaborated with Barru Regency Government under the Kedaireka MBKM program to develop a WebGIS platform for agricultural land suitability analysis.
+   - Collected and validated spatial and attribute data for each mapped area.
+5. Intern – Kedaireka MBKM, Kabupaten Barru (2024)
+   - Collaborated with the Barru Regency Government under the Kedaireka MBKM program to develop a WebGIS platform for agricultural land suitability analysis.
    - Assisted in building an interactive WebGIS system to support local stakeholders in improving agricultural resource efficiency and land-use decision-making.
+   - Contributed to the development of an interactive WebGIS system and performed data entry by inputting, organizing, and verifying spatial and attribute data within the platform.
+
+=== Certifications ===
+1. Fundamentals of Remote Sensing – NASA Applied Remote Sensing Training (ARSET), November 2026 (Awarded: 10 November 2026)
+   - Free online training covering the fundamentals of remote sensing: satellite orbit types, spatial, spectral, and temporal resolution, and the spectral response of different Earth surfaces.
+2. Geospatial Analysis – Kaggle Learn, November 2026 (Awarded: 10 November 2026)
+   - Python course on geospatial analysis: GeoPandas, interactive maps with Folium, coordinate reference systems (CRS), geocoding, spatial joins, and proximity analysis.
 
 === Core Skills ===
-- WebGIS & Spatial Data: Flask, Leaflet, Folium, ArcMap, QGIS, Spatial Analysis (Overlay, Buffer, Interpolation, Raster/Terrain/Suitability analysis), Spatial Data Management.
-- Software & AI: Python (for GIS applications & spatial topology cleaning), AI Chatbot Integration (RAG, n8n, Supabase), PostgreSQL/PostGIS, MySQL, UI/UX Development for GIS.
-- Field Survey & Mapping Support: UAV/Drone Survey Assistance, GNSS Geodetic Receiver Setup (Base & Rover), Ground Control Points (GCP), Land Inventory Field Survey.
+- Technical Skills: ArcMap/ArcGIS, QGIS, Spatial Analysis (Overlay, Buffer, Interpolation, Raster Analysis, Terrain Analysis, Suitability Analysis), Python Programming for GIS Applications (GeoPandas, Rasterio, GDAL, PyGMT), WebGIS Development (Flask, Leaflet, Folium), Field Survey Support (UAV/Drone Survey Assistance, GNSS Geodetic Receiver Setup – Base & Rover), PostgreSQL / PostGIS, MySQL, Spatial Data Management, AI Chatbot Integration (RAG, n8n, Supabase).
+- Languages: Indonesian – Native, English – Upper-intermediate CEFR (EF SET).
 
 === Awards & Achievements ===
 - Gold Prize – ACRS 2025 (Asian Association on Remote Sensing)
-  - Awarded for the project "WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia" presented at the 44th Asian Conference on Remote Sensing.
+  - Awarded for the project "WebGIS-Based GeoAI Application for Agricultural Land Governance in Barru Regency, South Sulawesi, Indonesia" presented at the 46th Asian Conference on Remote Sensing (ACRS 2025).
 
 === Portfolio Projects ===
-1. GeoAI Barru (http://geoaibarru.com/) - Geospatial platform featuring an AI analysis layer and interactive map elements.
-2. Geopangansidrap (https://geopangansidrap.id/) - WebGIS agricultural mapping and food security analysis.
-3. Sijagung (https://sijagung.id/) - Agricultural WebGIS tailored for tracking and monitoring corn production.
-4. WebGIS Kab. Barru (https://geobarru.vercel.app/) - WebGIS for watermelon cultivation suitability analysis in Barru Regency, equipped with an AI Chatbot for agricultural monitoring.
-5. BengkelPro App - Workshop management web application with Admin/Mechanic roles, POS workflow, and inventory.
-6. AI GIS Chatbot - Integration of Groq API, n8n, and Supabase vector database for intelligent spatial data queries.
+1. Personal Portfolio: https://herfiadireski.vercel.app/
+2. GeoToolbox WebGIS: https://geotoolbox.vercel.app/
+3. WebGIS Kab. Barru: https://geobarru.vercel.app/
+4. Sijagung: https://sijagung.id/
+5. Geopangansidrap: https://geopangansidrap.id/
+6. GeoAI Barru: http://geoaibarru.com/
 
 === Interaction Guidelines & Formatting Rules ===
 1. LANGUAGE:
@@ -118,7 +125,7 @@ Geophysics graduate from Hasanuddin University (graduated recently, receiving Ba
        - Mengembangkan platform WebGIS: \`GeoAI Barru\` (geoaibarru.com), \`Geopangansidrap\` (geopangansidrap.id), dan \`Sijagung\` (sijagung.id).
        - Desain dan integrasi AI chatbot menggunakan \`n8n\` dan database vektor \`Supabase\`.
    - CV DOWNLOAD:
-     - Provide the direct download link: [Unduh CV Herfiadi](https://herfiadireski.vercel.app/assets/CV_Herfiadi%20Reski%20Alviansyah.pdf)
+     - Provide the direct download link: [Unduh CV Herfiadi](https://herfiadireski.vercel.app/assets/CV_Herfiadi_Reski_Alviansyah.pdf)
 5. TIME CONTEXT & EDUCATION STATUS:
    - Current date is May 2026. Herfiadi has graduated recently (a couple of weeks ago) and holds a Bachelor of Science (S.Si) in Geophysics from Hasanuddin University. Do NOT refer to him as a current student.
 6. BOUNDARIES:
