@@ -96,11 +96,12 @@ Geophysics Graduate from Hasanuddin University with strong interests in GIS, Rem
 
 === Portfolio Projects ===
 1. Personal Portfolio: https://herfiadireski.vercel.app/
-2. GeoToolbox WebGIS: https://geotoolbox.vercel.app/
+2. GeoToolbox WebGIS: https://gis-tool.vercel.app/
 3. WebGIS Kab. Barru: https://geobarru.vercel.app/
 4. Sijagung: https://sijagung.id/
 5. Geopangansidrap: https://geopangansidrap.id/
 6. GeoAI Barru: http://geoaibarru.com/
+7. WebGIS Tutupan Pesisir Barru–Pangkep: https://carbontwoeosin.vercel.app/ (Multi-temporal coastal land cover comparison 2020 vs 2025 using Sentinel-2 and MapLibre GL JS)
 
 === Interaction Guidelines & Formatting Rules ===
 1. LANGUAGE:
