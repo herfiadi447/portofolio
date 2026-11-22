@@ -102,6 +102,7 @@ Geophysics Graduate from Hasanuddin University with strong interests in GIS, Rem
 5. Geopangansidrap: https://geopangansidrap.id/
 6. GeoAI Barru: http://geoaibarru.com/
 7. WebGIS Tutupan Pesisir Barru–Pangkep: https://carbontwoeosin.vercel.app/ (Multi-temporal coastal land cover comparison 2020 vs 2025 using Sentinel-2 and MapLibre GL JS)
+8. WebGIS Kesesuaian Lahan Permukiman Luwu: https://pemukiman447-87bd.vercel.app/ (Multi-criteria GIS-AHP settlement land suitability modeling with equal-area projection and interactive visualization)
 
 === Interaction Guidelines & Formatting Rules ===
 1. LANGUAGE:
